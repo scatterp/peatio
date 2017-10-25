@@ -1,16 +1,125 @@
 header.text-center
-  .container
-    section
-    #getstart.row
-      - unless current_user
-        .col-xs-4.col-xs-offset-8
-          a href="#{signin_path}" class="btn btn-primary btn-lg btn-block" role="button" = t("header.signin")
-        - if ENV['WEIBO_AUTH'] == "true"
-          .col-xs-4
-            a href="/auth/weibo" class="btn btn-primary btn-lg btn-block" role="button" = t("header.login_via_weibo")
-        .col-xs-4
-          a href="#{signup_path}" class="btn btn-primary btn-lg btn-block" role="button" = t("header.signup")
-      - else
-        .col-xs-6.col-xs-offset-9.text-center
-          a href="#{market_path(current_market)}" class="btn btn-primary btn-lg btn-block" role="button" = t("header.getstart")
-          a href="#{settings_path}" class="btn btn-primary btn-lg btn-block" role="button" = t("header.settings")
+  .seperator-line
+  #wrap3
+    a.anchor#home
+    .banner.hidden-xs
+      /.banner-text = t("mainpage.message2")
+      /.banner-pair
+        - @tickers.each do |ticker|
+          .ticker-pair #{ticker.name} #{number_with_precision(ticker.ticker[:last], precision: ticker[:bid]["fixed"]) }
+      .intro
+        .fullscreen-bg
+          /video.fullscreen-bg__video loop='loop' preload='preload' muted='muted' autoplay='autoplay' poster='/languages/intro-bg.jpg'
+          video.fullscreen-bg__video loop='loop' preload='preload' muted='muted' autoplay='autoplay' poster='/languages/coinxprov2poster.jpg'
+            source src='/languages/coinxprov2.mp4' type='video/mp4'
+        .intro__wrapper
+          img src='/languages/intro-logo.png'
+          p = t("mainpage.message2")
+      .banner-pair
+        - @tickers.each do |ticker|
+          .ticker-pair #{ticker.name} #{number_with_precision(ticker.ticker[:last], precision: ticker[:bid]["fixed"]) }
+    .banner-mob.visible-xs.hidden-xs
+      img.img-responsive src='/languages/big-logo.jpg'
+      .banner-pair
+        - @tickers.each do |ticker|
+          .ticker-pair #{ticker.name} #{number_with_precision(ticker.ticker[:last], precision: ticker[:bid]["fixed"]) }
+
+    a.anchor#about-us
+    .index-block1
+      .index-block1-head = t("mainpage.message1")
+      .index-block1-dsc.myntexalstyle = t("mainpage.message3")
+    .index-block2
+      .index-block2-head
+        span class='white' = 'CoinxPro '
+        = t("mainpage.message13")
+      .container
+        .row
+          .col-md-4
+            .index-block2-img : img src="/languages/index-icons/1.png" alt="CoinxPro"
+            .index-block2-header = t("mainpage.message4a")
+            .index-block2-dsc = t("mainpage.message4b")
+            div.clearfix
+          .col-md-4
+            .index-block2-img : img src="/languages/index-icons/2.png" alt="CoinxPro"
+            .index-block2-header = t("mainpage.message6a")
+            .index-block2-dsc = t("mainpage.message6b")
+            div.clearfix
+          .col-md-4
+            .index-block2-img : img src="/languages/index-icons/3.png" alt="CoinxPro"
+            .index-block2-header = t("mainpage.message10a")
+            .index-block2-dsc = t("mainpage.message10b")
+            div.clearfix
+          div.clearfix
+          .index-block2-sep.hidden-xs
+          .col-md-4
+            .index-block2-img : img src="/languages/index-icons/4.png" alt="CoinxPro"
+            .index-block2-header = t("mainpage.message5a")
+            .index-block2-dsc = t("mainpage.message5b")
+            div.clearfix
+          .col-md-4
+            .index-block2-img : img src="/languages/index-icons/5.png" alt="CoinxPro"
+            .index-block2-header = t("mainpage.message7a")
+            .index-block2-dsc = t("mainpage.message7b")
+            div.clearfix
+          .col-md-4
+            .index-block2-img : img src="/languages/index-icons/6.png" alt="CoinxPro"
+            .index-block2-header = t("mainpage.message11a")
+            .index-block2-dsc = t("mainpage.message11b")
+            div.clearfix
+    .banner2 : img src="/languages/banners/ban2.jpg" alt="CoinxPro" style='width: 100%;'
+    .index-block3
+      .index-block3-title = t("mainpage.message12")
+      a href='/signup'
+        .index-block3-btn = t("mainpage.message3с")
+      .index-block3-sep
+    a.anchor#statistic
+    .banner2
+      img.img-responsive.hidden-xs.hidden-sm src="/languages/banners/ban3.jpg" alt="CoinxPro"
+      .container.banner4-grid.text-left
+        .row
+          .ban4-tblock.col-md-3.col-md-offset-1.ban4-l
+            .banner2-title = t("mainpage.message14")
+            .banner2-dsc = t("mainpage.message15")
+          .col-md-4.hidden-xs.hidden-sm
+            img.img-responsive src='/languages/banners/logo.png'
+          .ban4-tblock.col-md-3.ban4-r
+            .banner2-title = t("mainpage.message16")
+            .banner2-dsc = t("mainpage.message17")
+        .row.hidden-xs.hidden-sm style='height:20px;'
+        .row
+          .ban4-tblock.col-md-3.col-md-offset-5
+            .banner2-title = t("mainpage.message18")
+            .banner2-dsc = t("mainpage.message19")
+
+  a.anchor#description
+  /#wrap_new
+    hr class="star-light"
+  /b: h4 = 'Multi Coin Transactions'
+  /a href='./': img src="/languages/coinswallet_.png" alt="CoinxPro"
+  /.container
+    /a href='./'
+    /h1 = 'CRYPTO EXCHANGE WORLD'
+    /section
+      h1 = 'CRYPTO EXCHANGE WORLD'
+      #wrap_new
+        hr class="star-light"
+      h2 = ' '
+      h2 = ' '   
+      /h3 = t(:slogan)
+      b: h4 = 'Multi Coin Transactions'
+      /h2 = ' '
+      a href='./': img src="/languages/coinswallet_.png" alt="CoinxPro"
+    /section      
+      #getstart.row
+        - unless current_user
+          .col-xs-4.col-xs-offset-10.text-center
+            a href="#{signin_path}" class="btn btn-primary btn-lg btn-block" role="button" = t("header.signin")
+            a href="#{signup_path}" class="btn btn-primary btn-lg btn-block" role="button" = t("header.signup")
+          - if ENV['WEIBO_AUTH'] == "true"
+            .col-xs-4
+              a href="/auth/weibo" class="btn btn-primary btn-lg btn-block" role="button" = t("header.login_via_weibo")
+        - else
+          .col-xs-6.col-xs-offset-9.text-center
+            a href="#{market_path(current_market)}" class="btn btn-primary btn-lg btn-block" role="button" = t("header.getstart")
+            a href="#{funds_path}" class="btn btn-primary btn-lg btn-block" role="button" = t("header.funds")
+            a href="#{settings_path}" class="btn btn-primary btn-lg btn-block" role="button" = t("header.settings")

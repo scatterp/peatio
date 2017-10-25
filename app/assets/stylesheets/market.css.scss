@@ -618,6 +618,11 @@ header {
       &.all { tr { display: block; } }
       &.cny { tr.quote-cny { display: block; } }
       &.btc { tr.quote-btc { display: block; } }
+      &.ltc { tr.quote-ltc { display: block; } }
+      &.ppc { tr.quote-ppc { display: block; } }
+      &.blk { tr.quote-blk { display: block; } }
+      &.rpt { tr.quote-rpt { display: block; } }
+      &.trt { tr.quote-trt { display: block; } }
     }
   }
 }
@@ -837,6 +842,15 @@ table {
 
 .dropdown:hover .dropdown-menu {
     display: block;
+}
+.new_order_bid, .new_order_ask {
+  zoom: 85%;
+}
+input#fee[disabled] {
+  background-color: black;
+}
+input#order_bid_fee, input#order_ask_fee {
+  background: black;
 }
 
 @import 'custom/market';

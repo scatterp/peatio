@@ -5,14 +5,49 @@
   fee: 0.0005
   inuse: true
   type: WithdrawChannelSatoshi
-- id: 400
-  key: bank
-  currency: eur
-  fixed: 2
-  fee_max: 0
-  min: 100
-  max: 50000
-  fee: 0.003
-  proportion: true
+# - id: 400
+#   key: bank
+#   currency: cny
+#   fixed: 2
+#   fee_max: 0
+#   min: 100
+#   max: 50000
+#   fee: 0.003
+#   proportion: true
+#   inuse: true
+#   type: WithdrawChannelBank
+- id: 700
+  key: litecoin
+  currency: ltc
+  fixed: 8
+  fee: 0.0005
   inuse: true
-  type: WithdrawChannelBank
+  type: WithdrawChannelLitecoin
+- id: 800
+  key: blackcoin
+  currency: blk
+  fixed: 8
+  fee: 0.0005
+  inuse: true
+  type: WithdrawChannelBlackcoin
+- id: 900
+  key: peercoin
+  currency: ppc
+  fixed: 8
+  fee: 0.0005
+  inuse: true
+  type: WithdrawChannelPeercoin
+- id: 1000
+  key: realpointcoin
+  currency: rpt
+  fixed: 8
+  fee: 0.001
+  inuse: true
+  type: WithdrawChannelRealpointcoin
+- id: 1100
+  key: tritiumcoin
+  currency: trt
+  fixed: 8
+  fee: 0.001
+  inuse: true
+  type: WithdrawChannelTritiumcoin

@@ -3,7 +3,7 @@
 FactoryGirl.define do
   factory :payment_address do
     address "MyString"
-    account { create(:member).get_account(:eur) }
+    account { create(:member).get_account(:cny) }
 
     trait :btc_address do
       address { Faker::Bitcoin.address }

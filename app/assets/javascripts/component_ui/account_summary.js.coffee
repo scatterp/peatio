@@ -10,7 +10,8 @@
 
   @updateTotalAssets = ->
     fiatCurrency = gon.fiat_currency
-    symbol = gon.currencies[fiatCurrency].symbol
+    #symbol = gon.currencies[fiatCurrency].symbol
+    symbol = '$'
     sum = 0
 
     for currency, account of @accounts

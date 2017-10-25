@@ -7,7 +7,7 @@
     <div class="col-sm-12" ng-if="fund_sources().length">
 
       <select id="fund_source" class="select required form-control" name="fund_source"
-        ng-model="selected_fund_source"
+        ng-model="selected_fund_source_id"
         ng-model-options="{ getterSetter: true }"
         ng-options="fs.id as fs.label for fs in fund_sources()"
         required>
@@ -36,9 +36,36 @@
         <div class="input-group-btn"><button ng-click="withdrawsCtrl.withdrawAll()" class="btn btn-success" id="withdraw_all_btn" type="button">{{"funds.withdraw_coin.withdraw_all" | t}}</button></div>
       </div>
     </div>
-    <span class="col-sm-6 help-block"><a target="_balance" href="/documents/price">{{"funds.withdraw_coin.fee_explain" | t}}</a></span>
+    <!-- <span class="col-sm-6 help-block"><a target="_balance" href="/documents/price">{{"funds.withdraw_coin.fee_explain" | t}}</a></span> -->
+    <span class="col-sm-6 help-block"><a href="#" ng-click="aboutfee(); $event.preventDefault()">{{"funds.withdraw_coin.fee_explain" | t}}</a></span>
+    <!-- <span class="col-sm-6 help-block"><a href="javascript:;" ng-click="aboutfee()" ng-bind="'funds.withdraw_coin.fee_explain' | t"></a></span> -->
+
   </div>
 
+  <div class="form-group">
+    <div class="col-sm-6">
+      <label class="optional control-label">Fee</label>
+    </div>
+    <div class="col-sm-12">
+      <p class="form-control-static"><span class="currency-fee" id="withdraw_fee"  ng-bind-html='withdrawsCtrl.withdraw.withdraw_fee'>0</span></p>
+    </div>
+  </div>
+  <script>
+    function updateFeeWithdraw(){
+      var fee = parseFloat($('#withdraw_sum').val())*0.002
+      if (isNaN(fee)){
+        fee = 0
+      }
+      $('#withdraw_fee').html(fee)
+    }
+    $('#withdraw_all_btn').click(function () {
+      updateFeeWithdraw()
+    })
+    $('#withdraw_sum').keyup(function() {
+      updateFeeWithdraw()
+    });
+
+  </script>
   <ng-include src="'/templates/funds/_two_factor_auth.html'"></ng-include>
 
   <div class="form-group">
@@ -77,4 +104,5 @@
   </tr>
   <tr ng-if="wdCtrl.noWithdraw()"><td colspan="6"><span class="help-block text-center">{{"funds.withdraw_history.no_data" | t}}</span></td></tr>
 </table>
+
 

@@ -2,6 +2,8 @@
   = f.input :email, :input_html => {:name => 'email', :autofocus => 'true'}
   = f.input :password, :input_html => {:name => 'password'}
   = f.input :password_confirmation, :input_html => {:name => 'password_confirmation'}
+  = f.input :captcha, required: true, label: t('simple_form.labels.session.captcha') do
+    = show_simple_captcha
   hr.split
   = f.button :wrapped, t('header.signup'), cancel: root_path
 

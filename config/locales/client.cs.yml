@@ -5,15 +5,15 @@
 
 cs:
   js:
-    brand: Peatio
+    brand: CoinxPro
     submit: Odeslat
     funds:
       deposit: Vklad
       withdraw: Výběr
       currency_name:
-        eur: EUR
+        cny: CNY
         btc: BTC
-      deposit_eur:
+      deposit_cny:
         title: Vložit Čínský Yuan
         desc: "Vklad bankovním převodem, prosím postupujte dle těchto kroků:"
         desc_item_1: "1. Odeslat formulář pro získání Variabilního symbolu pro platbu."
@@ -63,7 +63,7 @@ cs:
         checked: Kontrolováno
         warning: Upozornění
         suspect: Nedůvěryhodné
-      withdraw_eur:
+      withdraw_cny:
         title: Výběr Čínského Yuanu
         intro: Zvolte banku, částku a zadejte číslo účtu pro výběr.
         intro_2: Jméno účtu u Vaší banky by mělo souhlasit s Vaší skutečným, zde ověřeným jménem.

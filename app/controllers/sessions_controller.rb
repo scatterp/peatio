@@ -13,7 +13,8 @@ class SessionsController < ApplicationController
   end
 
   def create
-    if !require_captcha? || simple_captcha_valid?
+    #if !require_captcha? || simple_captcha_valid?
+    if simple_captcha_valid?
       @member = Member.from_auth(auth_hash)
     end
 
@@ -30,6 +31,8 @@ class SessionsController < ApplicationController
         MemberMailer.notify_signin(@member.id).deliver if @member.activated?
         redirect_back_or_settings_page
       end
+    elsif (!simple_captcha_valid?)
+      redirect_to signin_path, alert: t('.put_capture')
     else
       increase_failed_logins
       redirect_to signin_path, alert: t('.error')

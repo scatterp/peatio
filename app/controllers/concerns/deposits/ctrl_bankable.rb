@@ -25,6 +25,8 @@ module Deposits
     private
 
     def fetch
+      Rails.logger.info(current_user.inspect)
+      Rails.logger.info(channel.inspect)
       @account = current_user.get_account(channel.currency)
       @model = model_kls
       @fund_sources = current_user.fund_sources.with_currency(channel.currency)

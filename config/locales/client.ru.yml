@@ -1,0 +1,248 @@
+ru:
+  js:
+    brand: CoinxPro
+    submit: Отправить
+    cancel: Отмена
+    confirm: Подтвердить
+    banks:
+      icbc: Industryand Commercial Bank of China
+      cbc: Construction Bank of China
+      bc: Bank of China
+      bcm: Bank of Communications
+      abc: Agriculture Bank of China
+      cmb: China Merchants Bank Ltd
+      cmbc: China Minsheng Banking Co., Ltd
+      cncb: China CITIC Bank
+      hxb: Hua Xia Bank Co., Ltd.
+      cib: Industrial Bank Co., Ltd
+      spdb: Shanghai Pudong Development Bank
+      bob: Bank of Beijing
+      ceb: China Everbright Bank CO.LTD
+      sdb: Shenzhen Development Bank
+      pab: Ping An Bank Co., Ltd.
+      gdb: Guangdong Development Bank
+      psbc: Postal Savings Bank of China
+      bos: Bank of Shanghai
+    fund_sources:
+      manage_bank_account: Bank Account Management
+      manage_bank_account_desc: To facilitate the choice of bank withdrawals address
+      manage_coin_address: Coin Address Management
+      manage_coin_address_desc: To facilitate the choice of coin withdrawals address
+      bank: Bank
+      account: Bank Account
+      label: Label
+      address: Address
+      action: Action
+      add: Add
+      remove: Remove
+      default: Default
+    funds:
+      deposit: Deposit
+      withdraw: Withdraw
+      currency_name:
+        cny: CNY
+        btc: BTC
+        usd: USD
+        eur: EUR
+        ppc: PPC
+        ltc: LTC
+        blk: BLK
+        rpt: RPT
+        trt: TRT
+      deposit_cny:
+        title: Chinese Yuan Deposit
+        desc: "To deposit via Bank transfer, please follow these steps:"
+        desc_item_1: "1. Submit the form to get the identification code."
+        desc_item_2: "2. Transfer the money to exchange's bank account. Please make sure your referral code was written on the form you fill in."
+        desc_item_3: "3. Your deposit will be confirmed as soon as the money is received."
+        attention: "Attention: The name of your bank account must be the same as your account name on our site, otherwise your deposit may fail."
+        from: From
+        to: To
+        deposit_name: Your Name
+        deposit_account: Deposit Account
+        add: Add
+        manage: Manage
+        amount: Deposit Amount
+        min_amount: At least 10 yuan
+        to_account: Account
+        to_name: Name
+        to_bank_name: Bank Name
+        opening_bank_name: Account where created
+        remark: 'Referral Code (Transfer identification code)'
+      deposit_usd:
+        title: Unites States Dollar Deposit
+        desc: "To deposit via Bank transfer, please follow these steps:"
+        desc_item_1: "1. Submit the form to get the identification code."
+        desc_item_2: "2. Transfer the money to exchange's bank account. Please make sure your referral code was written on the form you fill in."
+        desc_item_3: "3. Your deposit will be confirmed as soon as the money is received."
+        attention: "Attention: The name of your bank account must be the same as your account name on our site, otherwise your deposit may fail."
+        from: From
+        to: To
+        deposit_name: Your Name
+        deposit_account: Deposit Account
+        add: Add
+        manage: Manage
+        amount: Deposit Amount
+        min_amount: At least 10 yuan
+        to_account: Account
+        to_name: Name
+        to_bank_name: Bank Name
+        opening_bank_name: Account where created
+        remark: 'Referral Code (Transfer identification code)'
+      deposit_eur:
+        title: Euro Deposit
+        desc: "To deposit via Bank transfer, please follow these steps:"
+        desc_item_1: "1. Submit the form to get the identification code."
+        desc_item_2: "2. Transfer the money to exchange's bank account. Please make sure your referral code was written on the form you fill in."
+        desc_item_3: "3. Your deposit will be confirmed as soon as the money is received."
+        attention: "Attention: The name of your bank account must be the same as your account name on our site, otherwise your deposit may fail."
+        from: From
+        to: To
+        deposit_name: Your Name
+        deposit_account: Deposit Account
+        add: Add
+        manage: Manage
+        amount: Deposit Amount
+        min_amount: At least 10 yuan
+        to_account: Account
+        to_name: Name
+        to_bank_name: Bank Name
+        opening_bank_name: Account where created
+        remark: 'Referral Code (Transfer identification code)'
+
+
+      deposit_btc:
+        title: BTC Deposit
+      deposit_ltc:
+        title: LTC Deposit
+      deposit_ppc:
+        title: PPC Deposit
+      deposit_blk:
+        title: BLK Deposit
+      deposit_rpt:
+        title: RPT Deposit
+      deposit_trt:
+        title: TRT Deposit
+
+      deposit_coin:
+        address: Адрес
+        new_address: Новый адрес
+        confirm_gen_new_address: Вы уверены, что хотите создать новый адрес депозита?
+        open-wallet: Пожалуйста, используйте общий кошелек, локальный кошелек, мобильный терминал или онлайн-кошелек, выберите платеж и отправьте.
+        detail: Пожалуйста, вставьте указанный ниже адрес в ваш кошелек, укажите сумму, которую вы хотите внести, затем подтвердите и отправьте.
+        scan-qr: Сканируйте QR-код для оплаты в кошельке мобильного терминала.
+        after_deposit: После завершения отправки, вы можете проверить статус вашего нового депозита ниже.
+        generate-new: Создать новый адрес
+
+      deposit_history:
+        title: История Депозитов
+        number: '#'
+        identification: Identification Code
+        time: Время
+        txid: ID транзакции
+        confirmations: Подтверждение
+        from: От
+        amount: Сумма
+        state_and_action: "Состояние"
+        cancel: Отменить
+        no_data: Нет истории данных
+
+        submitting: Отправка
+        cancelled: Отменено
+        submitted: Отправлено
+        accepted: Принято
+        rejected: Отклонено
+        checked: Проверено
+        warning: Предупреждение
+        suspect: Подозрительный
+
+      withdraw_cny:
+        title: Chinese Yuan Withdraw
+        intro: Select the bank to cash withdrawal amount and enter the account number and complete submission.
+        intro_2: Your bank account and name must be consistent with the real-name authentication name.
+        attention: "Working Hours: 9:00 - 18:00"
+        account_name: Account Name
+        withdraw_address: Withdraw Address
+        balance: Balance
+        withdraw_amount: Withdraw Amount
+        manage_withdraw: Manage Withdraw
+        fee_explain: About Fee
+        min: At least
+        withdraw_all: Withdraw all
+
+      withdraw_btc:
+        title: Вывод BTC
+      withdraw_ltc:
+        title: Вывод LTC
+      withdraw_ppc:
+        title: Вывод PPC
+      withdraw_blk:
+        title: Вывод BLK
+      withdraw_rpt:
+        title: Вывод RPT
+      withdraw_trt:
+        title: Вывод TRT
+
+      withdraw_coin:
+        intro: Пожалуйста, заполните адрес и сумму, затем отправьте форму. Вывод будет подтвержден через 10 минут.
+        label: Label
+        balance: Баланс
+        amount: Сумма
+        manage_withdraw: Управление адресами
+        min: Не менее
+        withdraw_all: Вывести все
+        fee_explain: О комиссии
+        fee_explain_message: Комисия составляет 2% от сумы
+
+      withdraw_history:
+        title: Withdraw History
+        number: Number
+        withdraw_time: Time
+        withdraw_account: Withdraw Account
+        withdraw_address: Address
+        withdraw_amount: Amount
+        actual_amount: Actual Amount
+        fee: Fee
+        miner_fee: Fee
+        state_and_action: "State/Action"
+        cancel: Cancel
+        no_data: There is no history data
+
+        submitting: Отправка
+        submitted: Submitted
+        rejected: Rejected
+        accepted: Accepted
+        suspect: Suspect
+        processing: Processing
+        coin_ready: Coin Ready
+        coin_done: Coin Done
+        done: Done
+        almost_done: Almost Done
+        canceled: Withdraw Canceled
+        failed: Failed
+
+    auth:
+      please_active_two_factor: Please set mobile number or google authenticator first.
+      submit: Submit
+      otp_placeholder: 6-digit password
+      google_app: Google Authenticator
+      sms: SMS Verification Messages
+      send_code: Send Code
+      send_code_alt: Resend in COUNT seconds
+      hints:
+        app: Google Authenticator will re-generate a new password every thirty seconds, please input timely.
+        sms: We'll send a text message to you phone with verify code.
+
+    markets:
+      market_list:
+        all: All Market
+        cny: CNY Market
+        usd: USD Market
+        btc: BTC Market
+        eur: EUR Market
+        ltc: LTC Market
+        ppc: PPC Market
+        blk: BLK Market
+        rpt: RPT Market
+        trt: TRT Market
+

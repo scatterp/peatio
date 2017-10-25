@@ -1,81 +1,81 @@
 - id: 1
   code: icbc
-  currency: eur
+  currency: cny
   deposit: true
   withdraw: true
 - id: 2
   code: cbc
-  currency: eur
+  currency: cny
   deposit: true
   withdraw: true
 - id: 3
   code: bc
-  currency: eur
+  currency: cny
   deposit: true
   withdraw: true
 - id: 4
   code: bcm
-  currency: eur
+  currency: cny
   deposit: true
   withdraw: true
 - id: 5
   code: abc
-  currency: eur
+  currency: cny
   deposit: true
   withdraw: true
 - id: 6
   code: cmb
-  currency: eur
+  currency: cny
   deposit: true
   withdraw: true
 - id: 7
   code: cmbc
-  currency: eur
+  currency: cny
   deposit: true
   withdraw: true
 - id: 8
   code: cncb
-  currency: eur
+  currency: cny
   deposit: true
   withdraw: true
 - id: 9
   code: hxb
-  currency: eur
+  currency: cny
   deposit: true
   withdraw: true
 - id: 10
   code: cib
-  currency: eur
+  currency: cny
   deposit: true
   withdraw: true
 - id: 11
   code: spdb
-  currency: eur
+  currency: cny
   deposit: true
   withdraw: true
 - id: 12
   code: bob
-  currency: eur
+  currency: cny
   deposit: true
   withdraw: true
 - id: 13
   code: ceb
-  currency: eur
+  currency: cny
   deposit: true
   withdraw: true
 - id: 14
   code: sdb
-  currency: eur
+  currency: cny
   deposit: true
   withdraw: true
 - id: 15
   code: pab
-  currency: eur
+  currency: cny
   deposit: true
   withdraw: true
 - id: 16
   code: gdb
-  currency: eur
+  currency: cny
   deposit: true
   withdraw: true
 

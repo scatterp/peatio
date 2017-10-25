@@ -43,7 +43,7 @@ Peatio::Application.configure do
   config.force_ssl = false
 
   # Set to :debug to see everything in the log.
-  config.log_level = :info
+  config.log_level = :debug
 
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
@@ -76,7 +76,8 @@ Peatio::Application.configure do
     address:        ENV["SMTP_ADDRESS"],
     user_name:      ENV["SMTP_USERNAME"],
     password:       ENV["SMTP_PASSWORD"],
-    authentication: ENV["SMTP_AUTHENTICATION"]
+    authentication: ENV["SMTP_AUTHENTICATION"],
+    enable_starttls_auto: false
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to

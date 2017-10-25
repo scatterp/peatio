@@ -3,122 +3,249 @@
 # Never edit this file. It will be overwritten when translations are pulled from Transifex.
 #
 
-ru_RU:
+ru-RU:
   js:
-    brand: Peatio
-    submit: Подтвердить
+    brand: CoinxPro
+    submit: Отправить
+    cancel: Отмена
+    confirm: Подтвердить
+    banks:
+      icbc: Индустриально - коммерческий Банк Китая
+      cbc: Строительный Банк Китая
+      bc: Банк Китая
+      bcm: Банк коммуникаций
+      abc: Сельскохозяйственный банк Китая
+      cmb: China Merchants Bank Ltd
+      cmbc: China Minsheng Banking Co., Ltd
+      cncb: China CITIC Bank
+      hxb: Hua Xia Bank Co., Ltd.
+      cib: Промышленный Банк Co., Ltd
+      spdb: Shanghai Pudong Development Bank
+      bob: Банк Пекина
+      ceb: China Everbright Bank CO.LTD
+      sdb: Shenzhen Development Bank
+      pab: Ping An Bank Co., Ltd.
+      gdb: Guangdong Development Bank
+      psbc: Почтово-сберегательный Банк Китая
+      bos: Банк Шанхая
+    fund_sources:
+      manage_bank_account: Управление банковским счетом
+      manage_bank_account_desc: Для того, чтобы облегчить выбор адреса банка для вывода средств
+      manage_coin_address: Управление адресами монет
+      manage_coin_address_desc: Для того, чтобы облегчить выбор адреса банка для вывода средств
+      bank: Банк
+      account: Банковский счет
+      label: Label
+      address: Адрес
+      action: Действие
+      add: Добавить
+      remove: Удалить
+      default: По умолчанию
     funds:
-      deposit: Пополнить
-      withdraw: Вывести
+      deposit: Депозит
+      withdraw: Вывод средств
       currency_name:
-        eur: EUR
+        cny: CNY
         btc: BTC
-      deposit_eur:
-        title: Пополнить в китайских юанях
-        desc: "Чтобы внести средства банковским платежом:"
-        desc_item_1: "1. Для получения идентификационного кода заполните форму."
-        desc_item_2: "2. Перечислите средства на банковский счет биржи. Убедитесь что код авторизации присутствует на заполняемой форме."
-        desc_item_3: "3. Ваш счет будет пополнен как только мы получим деньги."
-        attention: "Внимание: имя владельца банковского счета должно совпадать с именем владельца аккаунта, иначе перевод может быть отклонен."
-        from: Из
-        to: На
+        usd: USD
+        eur: EUR
+        ppc: PPC
+        ltc: LTC
+        blk: BLK
+        rpt: RPT
+        trt: TRT
+      deposit_cny:
+        title: Депозит китайского юаня
+        desc: "Для того, чтобы внести депозит с помощью банковского перевода, выполните следующие действия:"
+        desc_item_1: "1. Предоставьте форму, чтобы получить идентификационный код."
+        desc_item_2: "2. Переведите деньги на банковский счет биржи. Пожалуйста, убедитесь, что Ваш реферальный код был написан в форме, которую Вы заполняете."
+        desc_item_3: "3. Ваш депозит будет подтвержден, как только деньги будут получены."
+        attention: "Внимание: имя Вашего банковского счета должно совпадать с именем Вашего счета на нашем сайте, иначе депозит может не получиться."
+        from: От 
+        to: Кому
         deposit_name: Ваше имя
-        deposit_account: Счет пополнения
+        deposit_account: Депозитный счет
         add: Добавить
-        manage: Управлять
-        amount: Сумма пополнения
-        min_amount: Как минимум 10 юаней
+        manage: Управление
+        amount: Сумма депозита
+        min_amount: Не менее 10 юаней
         to_account: Счет
         to_name: Имя
-        to_bank_name: Наименование банка
-        opening_bank_name: Учетная запись была создана
-        remark: 'Код авторизации'
+        to_bank_name: Название Банка
+        opening_bank_name: Account where created
+        remark: 'Реферальный код (идентификационный код передачи)'
+      deposit_usd:
+        title: Депозит в долларах США
+        desc: "Для того, чтобы внести депозит с помощью банковского перевода, выполните следующие действия:"
+        desc_item_1: "1. Предоставьте форму, чтобы получить идентификационный код."
+        desc_item_2: "2. Переведите деньги на банковский счет биржи. Пожалуйста, убедитесь, что Ваш реферальный код был написан в форме, которую Вы заполняете."
+        desc_item_3: "3. Ваш депозит будет подтвержден, как только деньги будут получены."
+        attention: "Внимание: имя Вашего банковского счета должно совпадать с именем Вашего счета на нашем сайте, иначе депозит может не получиться."
+        from: От кого
+        to: Кому
+        deposit_name: Ваше имя
+        deposit_account: Депозитный счет
+        add: Добавить
+        manage: Управление
+        amount: Сумма депозита
+        min_amount: Не менее 10 юаней
+        to_account: Счет
+        to_name: Имя
+        to_bank_name: Название Банка
+        opening_bank_name: Account where created
+        remark: 'Реферальный код (идентификационный код передачи)'
+      deposit_eur:
+        title: Депозит в евро
+        desc: "Для того, чтобы внести депозит с помощью банковского перевода, выполните следующие действия:"
+        desc_item_1: "1. Предоставьте форму, чтобы получить идентификационный код."
+        desc_item_2: "2. Переведите деньги на банковский счет биржи. Пожалуйста, убедитесь, что Ваш реферальный код был написан в форме, которую Вы заполняете."
+        desc_item_3: "3. Ваш депозит будет подтвержден, как только деньги будут получены."
+        attention: "Внимание: имя Вашего банковского счета должно совпадать с именем Вашего аккаунта на нашем сайте, иначе депозит может не получиться."
+        from: От кого
+        to: Кому
+        deposit_name: Ваше имя
+        deposit_account: Депозитный счет
+        add: Добавить
+        manage: Управление
+        amount: Сумма депозита
+        min_amount: Не менее 10 юаней
+        to_account: Счет
+        to_name: Имя
+        to_bank_name: Название Банка
+        opening_bank_name: Account where created
+        remark: 'Реферальный код (идентификационный код передачи)'
+
+
       deposit_btc:
-        title: Пополнение в BTC
+        title: BTC Депозит
+      deposit_ltc:
+        title: LTC Депозит
+      deposit_ppc:
+        title: PPC Депозит
+      deposit_blk:
+        title: BLK Депозит
+      deposit_rpt:
+        title: RPT Депозит
+      deposit_trt:
+        title: TRT Депозит
+
       deposit_coin:
         address: Адрес
         new_address: Новый адрес
-        open-wallet: Используйте Ваш локальный кошелек, мобильное приложение или онлайн сервис для оплаты.
-        detail: Пожалуйста скопируйте адрес в Ваш кошелек, введите сумму, которую Вы хотите зачислить и подтвердите зачисление.
-        scan-qr: Отсканируйте QR код для оплаты из мобильного приложения.
-        after_deposit: Как только Вы закончите отправку, Вы можете проверить статус Вашего нового депозита ниже.
-        generate-new: Сгенерировать новый адрес
+        confirm_gen_new_address: Вы уверены, что хотите создать новый адрес депозита?
+        open-wallet: Пожалуйста, используйте общий кошелек, локальный кошелек, мобильный терминал или онлайн-кошелек, выберите платеж и отправьте.
+        detail: Пожалуйста, вставьте указанный ниже адрес в ваш кошелек, укажите сумму, которую вы хотите внести, затем подтвердите и отправьте.
+        scan-qr: Сканируйте QR-код для оплаты в кошельке мобильного терминала.
+        after_deposit: После завершения отправки, вы можете проверить статус вашего нового депозита ниже.
+        generate-new: Создать новый адрес
+
       deposit_history:
-        title: История пополнения
+        title: История Депозитов
         number: '#'
         identification: Идентификационный код
         time: Время
-        txid: Номер перевода
-        confirmations: Подтверждения
-        from: От
+        txid: ID транзакции
+        confirmations: Подтверждение
+        from: От 
         amount: Сумма
-        cancel: отменить
-        no_data: Нет исторических данных
-        submitting: В процессе подтверждения
-        cancelled: Отменен
-        submitted: Подтвержден
-        accepted: Принят
-        rejected: Отклонен
-        checked: Проверен
+        state_and_action: "Состояние / Действие"
+        cancel: Отменить
+        no_data: Нет истории данных
+
+        submitting: Отправка
+        cancelled: Отменено
+        submitted: Отправлено
+        accepted: Принято
+        rejected: Отклонено
+        checked: Проверено
         warning: Предупреждение
-      withdraw_eur:
-        title: Вывести в китайских юанях
-        intro: Выберите банк для вывода средств и введите номер счета.
-        intro_2: Имя владельца банковского счета должно совпадать с Вашим именем.
-        attention: "Часы работы: с 9:00 до 18:00"
+        suspect: Подозрительный
+
+      withdraw_cny:
+        title: Вывод китайского юаня
+        intro: Выберите банк для снятия наличных, введите номер счета и отправьте его.
+        intro_2: имя вашего банковского счета должно совпадать с настоящим именем, прошедшим аутентификацию.
+        attention: "Рабочее время: 9:00 - 18:00"
         account_name: Имя учетной записи
-        withdraw_address: Адрес вывода
+        withdraw_address: Адрес вывода средств
         balance: Баланс
         withdraw_amount: Сумма вывода
-        manage_withdraw: Управлять выводом
-        fee_explain: О комиссиях
-        min: Как минимум
+        manage_withdraw: Управление выводом средств
+        fee_explain: О комиссии
+        min: не менее
         withdraw_all: Вывести все
+
       withdraw_btc:
-        title: Вывести BTC
+        title: Вывод BTC 
+      withdraw_ltc:
+        title: Вывод LTC 
+      withdraw_ppc:
+        title: Вывод PPC 
+      withdraw_blk:
+        title: Вывод BLK 
+      withdraw_rpt:
+        title: Вывод RPT
+      withdraw_trt:
+        title: Вывод TRT
+
       withdraw_coin:
-        intro: Пожалуйста введите адрес и сумму, затем нажмите "Отправить". Заявка будет подтверждена в течение 10 минут
-        label: Ярлык
+        intro: Пожалуйста, заполните адрес и сумму, затем отправьте форму. Она будет подтверждена через 10 минут.
+        label: Label
         balance: Баланс
         amount: Сумма
-        manage_withdraw: Изменить адрес
-        min: Как минимум
+        manage_withdraw: Управление адресом
+        min: не менее
         withdraw_all: Вывести все
-        fee_explain: О коммиссиях
+        fee_explain: О комиссии
+
       withdraw_history:
-        title: История вывода
+        title: История вывода средств
         number: Число
         withdraw_time: Время
-        withdraw_account: Счет вывода
+        withdraw_account: Счет вывода средств
         withdraw_address: Адрес
         withdraw_amount: Сумма
-        actual_amount: Текущий остаток
+        actual_amount: Фактическая сумма
         fee: Комиссия
         miner_fee: Комиссия
-        cancel: Отмена
-        no_data: Нет исторических данных
-        submitting: В процессе подтверждения
-        submitted: Подтверждено
+        state_and_action: "Состояние / Действие"
+        cancel: Отменить
+        no_data: Нет истории данных
+
+        submitting: Отправка
+        submitted: Отправлено
         rejected: Отклонено
         accepted: Принято
-        processing: Обрабатывается
-        done: Готово
-        almost_done: Почти готово
-        canceled: Отклонено
-        failed: Не удалось
+        suspect: Подозрительный
+        processing: Обработка
+        coin_ready: Монета готова
+        coin_done: Монеты выполнена
+        done: Выполнено
+        almost_done: Почти выполнено
+        canceled: Отменено
+        failed: Ошибка
+
     auth:
-      please_active_two_factor: Введите номер мобильного или подключите Google Authentificator сначала
-      submit: Подтвердить
+      please_active_two_factor: Для начала установите Google Authenticator или номер мобильного телефона.
+      submit: Отправить
       otp_placeholder: Шестизначный пароль
       google_app: Google Authenticator
-      sms: СМС подтверждения
+      sms: SMS проверка сообщения
       send_code: Отправить код
       send_code_alt: Отправить повторно через COUNT секунд
       hints:
-        app: Код Google Authenticator действителен в течение 30 секунд. Если  Вы не успели, пожалуйста, попробуйте еще раз.
-        sms: Мы отправим Вам СМС с проверочным кодом
+        app: Google Authenticator будет генерировать новый пароль каждые тридцать секунд. Пожалуйста, введите его вовремя.
+        sms: Мы отправим текстовое сообщение на Ваш телефон с кодом подтверждения.
+
     markets:
       market_list:
         all: Все рынки
-        eur: Рынок EUR
-        btc: Рынок BTC
+        cny: CNY Рынок
+        usd: USD Рынок
+        btc: BTC Рынок
+        eur: EUR Рынок
+        ltc: LTC Рынок
+        ppc: PPC Рынок
+        blk: BLK Рынок
+        rpt: RPT Рынок
+        trt: TRT Рынок

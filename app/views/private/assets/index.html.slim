@@ -6,11 +6,26 @@
       li        data-scroll-nav='1'
         a = t('.btc-assets')
       li        data-scroll-nav='2'
-        a = t('.eur-assets')
+        a = t('.ltc-assets')
+      li        data-scroll-nav='3'
+        a = t('.ppc-assets')
+      li        data-scroll-nav='4'
+        a = t('.blk-assets')
+      li        data-scroll-nav='5'
+        a = t('.rpt-assets')
+      li        data-scroll-nav='6'
+        a = t('.trt-assets')
+      li        data-scroll-nav='7'
+        a = t('.cny-assets')
 
     - if current_user
       div data-scroll-index=0 = render 'liability_proof'
 
     div data-scroll-index=1 = render 'btc_assets'
-    div data-scroll-index=2 = render 'eur_assets'
+    div data-scroll-index=1 = render 'ltc_assets'
+    div data-scroll-index=1 = render 'ppc_assets'
+    div data-scroll-index=1 = render 'blk_assets'
+    div data-scroll-index=1 = render 'rpt_assets'
+    div data-scroll-index=1 = render 'trt_assets'
+    div data-scroll-index=2 = render 'cny_assets'
 

@@ -287,7 +287,7 @@ ko:
   market:
     currency:
       btc: BTC
-      eur: EUR
+      cny: CNY
       doge: DOGE
       pts: PTS
       ltc: LTC
@@ -302,9 +302,9 @@ ko:
       code: BTSX
       name: BitsharesX
       format: '0,0.0000'
-    euro:
-      key: EUR
-      code: EUR
+    renminbi:
+      key: CNY
+      code: CNY
       name: WON
       format: '0,0.00'
     dogecoin:
@@ -677,17 +677,17 @@ ko:
       index:
         liability-proof: 자산 증명
         btc-assets: BTC자산
-        eur-assets: EUR자산
+        cny-assets: CNY자산
       liability_tabs:
         verify-btc: 나의 BTC자산 확인
-        verify-eur: 나의 EUR자산 확인
+        verify-cny: 나의 CNY자산 확인
         btc-assets-total: '거래소 BTC 총자산'
-        eur-assets-total: '거래소 EUR총자산'
+        cny-assets-total: '거래소 CNY총자산'
       liability_proof:
         title: 자산 증명
         intro: 우리는 은행계좌,코인주소 등 모든 자산정보를 100%공개합니다. 회원님들은 실시간으로 우리 거래소의 자산 정보를 볼수있습니다.디지털 인증 방식으로 우리가 제공하는 모든 자산정보를 증명할수있습니다. 최고의 기술로 고객님의 자산을 안전하게 보장합니다.
         how-to-verify: 어떤 방식으로 거래소 지불능력을 확인 합니까?
-        how-to-verify-uri: https://peatio.com/documents/liability_proof
+        how-to-verify-uri: http://coinxpro.com/documents/liability_proof
       liability_data:
         liability-proof-generating: 나의 자산정보 전송중,30분있다 다시 확인하세요
         root-json: 거래소 총 자산 인증코드
@@ -700,20 +700,20 @@ ko:
         intro: 거래소 모든 BTC 내역 확인하기
         total: BTC 총액
         address: 비트코인 주소
-      eur_assets:
-        title: EUR자산 확인
-        intro: 거래소 모든 EUR내역 확인하기
-        total: EUR총액
+      cny_assets:
+        title: CNY자산 확인
+        intro: 거래소 모든 CNY내역 확인하기
+        total: CNY총액
         description: "<p>계좌 잔액을 통해 감시할수있습니다:</p> <p>은행: %{bank}</p> <p>계좌:%{address}</p> <p>문의 비밀번호:%{password}</p> <p>문의 전화:  %{tel}</p>"
       partial_tree:
         success: '완료!데이트 확인 시간은:%{timestamp}'
     funds:
       show:
         account_history: 계좌 내역
-        eur_format: '0.00'
+        cny_format: '0.00'
         btc_format: '0.00000000'
         reason:
-          eur:
+          cny:
             strike_add: 판매완료
             strike_sub: 구매완료
             deposit: 입금
@@ -919,7 +919,7 @@ ko:
         balance: 잔액
         available: 사용가능한
         title: "%{icon} %{c}계정"
-        eur_format: '0.00'
+        cny_format: '0.00'
         btc_format: '0.00000000'
         total: 합계
   guides:
@@ -1217,7 +1217,7 @@ ko:
       trade: PEATIO거래소 이용하고있는것을 표시합니다
     authorizations:
       new:
-        title: PEATIO Application Authorization
+        title: COINXPRO Application Authorization
         authorize_html: Authorize <strong class='text-info'>%{name}</strong> to use your account?
         scopes: 'This application will be able to:'
         authorize: Authorize
@@ -1291,7 +1291,7 @@ ko:
       wait: 대기
       cancel: 취소
     currency:
-      eur: EUR
+      cny: CNY
       btc: BTC
     order:
       state:
@@ -1338,37 +1338,37 @@ ko:
       truncate: "..."
   mailer:
     dear_user: 안녕하세요
-    signature: 감사합니다. The PEATIO Team
+    signature: 감사합니다. The COINXPRO Team
     please_contact: '본인이 직접 로그인하시지 않은경우 <a href=''mailto:%{contact_mail}''>바로 고객센터로 연락하세요.</a> '
     footer: 자동으로 전송된 이메일 입니다, 회신하지마세요.문의사항 있을경우<a href="mailto:%{contact_mail}"> 연락하세요.
   comment_mailer:
     admin_notification:
-      subject: "[PEATIO] User reply a ticket"
+      subject: "[COINXPRO] User reply a ticket"
       notification_content: User %{email} reply a ticket, please follow the link below to see the detail
     user_notification:
-      subject: "[PEATIO] Your ticket got a new reply"
+      subject: "[COINXPRO] Your ticket got a new reply"
       notification_content: 'Your ticket got a new reply, please follow the link below to see the detail:'
   member_mailer:
     notify_signin:
-      subject: "[PEATIO] 거래소를 성공적으로 로그인 하였습니다"
+      subject: "[COINXPRO] 거래소를 성공적으로 로그인 하였습니다"
       just_signed_in: 거래소를 성공적으로 로그인 하였습니다.
     google_auth_activated:
-      subject: "[PEATIO] 구글 이중인증"
+      subject: "[COINXPRO] 구글 이중인증"
       google_auth_activated: 구글 이중인증이 성공적으로 받아습니다.
     google_auth_deactivated:
-      subject: "[PEATIO] 구글 인중인증 재설정"
+      subject: "[COINXPRO] 구글 인중인증 재설정"
       google_auth_deactivated: 구글 인중인증 재설정이 완료되었습니다.
     sms_auth_activated:
-      subject: "[PEATIO]핸드폰SMS 인증"
+      subject: "[COINXPRO]핸드폰SMS 인증"
       sms_auth_activated: 핸드폰SMS인증이 완료되었습니다.
     sms_auth_deactivated:
-      subject: "[PEATIO] 핸드폰SMS인증을 재설정"
+      subject: "[COINXPRO] 핸드폰SMS인증을 재설정"
       sms_auth_deactivated: 핸드폰SMS인증이 완료되었습니다.
     reset_password_done:
-      subject: "[PEATIO] 비밀번호 수정 완료"
+      subject: "[COINXPRO] 비밀번호 수정 완료"
       successful: 회원님이 비밀번호가 성공적으로 수정되었습니다.
     phone_number_verified:
-      subject: "[PEATIO] 핸드폰 인증 완료"
+      subject: "[COINXPRO] 핸드폰 인증 완료"
       verified: '핸드폰 인증 완료 되었습니다. 핸드폰 번호:%{phone_number}'
   system_mailer:
     daily_stats:
@@ -1381,24 +1381,24 @@ ko:
       trades_change_total: 거래수량 변동 합계
   ticket_mailer:
     admin_notification:
-      subject: "[PEATIO] User created a new ticket"
+      subject: "[COINXPRO] User created a new ticket"
       admin_notification_content: User %{email} created a new ticket, please follow the link below to see the detail
     author_notification:
-      subject: "[PEATIO] Thank you for submit ticket"
+      subject: "[COINXPRO] Thank you for submit ticket"
       thanks_for_submit_ticket: 소중한의견을 주셔서 감사합니다. 빠른시간에 처리하고 연락을 드리겠습니다.
   token_mailer:
     activation:
-      subject: "[PEATIO]계정 활성화"
+      subject: "[COINXPRO]계정 활성화"
       click_to_verify: 'PEATIO가입하신것을 환영합니다. 아래 링크 클릭하신후 이메일 인증 받으세요'
       unable_to_click: 링크가 클릭이 안될경우 브라우저 주소창에 주소를 복사해서 방문하세요.
       link_expire: 링크 유효기간 30분 입니다.
     reset_password:
-      subject: "[PEATIO]비밀번호를 재설정"
+      subject: "[COINXPRO]비밀번호를 재설정"
       hi: 안녕하세요.
       follow_the_link: '아래 링크 클릭하신후, 30분안에 비밀번호를 재설정하세요.'
   withdraw_mailer:
     withdraw_state:
-      subject: "[PEATIO]출금 처리 상황"
+      subject: "[COINXPRO]출금 처리 상황"
       your_state: '출금 처리 상황 보기'
   view_on_github: View on Github
   slogan: PEATIO는 세계에서 최고의 안정적인 거래소 기술을 제공합니다.
@@ -1434,7 +1434,7 @@ ko:
       short: "%m-%d %H:%M"
       default: "%m/%d/%Y %H:%M"
   sms:
-    verification_code: '인증번호:%{code}.유효 기간 30분 입니다. (인증번호를 안전하게 관리하세요.)[PEATIO]'
+    verification_code: '인증번호:%{code}.유효 기간 30분 입니다. (인증번호를 안전하게 관리하세요.)[COINXPRO]'
     password_changed: Hi %{email}, 회원님 비밀번호가 성공적으로 수정 되었습니다.
     deposit_done: Hi %{email}, 회원님이 입금신청 처리 되여습니다.
     withdraw_done: Hi %{email}, 회원님 출금신청이 처리되었습니다.
@@ -1622,9 +1622,9 @@ ko:
     application:
       close: 닫기
     meta:
-      page_title: Peatio - The Opensource Cryptocurrency Exchange
-      page_description: Peatio- The Opensource Cryptocurrency Exchange
-      page_keywords: Peatio,오펀소스, 거래소 , 암호화 화폐
+      page_title: CoinxPro - The Opensource Cryptocurrency Exchange
+      page_description: CoinxPro- The Opensource Cryptocurrency Exchange
+      page_keywords: CoinxPro,오펀소스, 거래소 , 암호화 화폐
   members:
     edit:
       name: 자산을 안전하게 관리하기위해 이름과 개인정보를 정확히 입력하세요.

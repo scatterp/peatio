@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :order_bid do
-    bid :eur
+    bid :cny
     ask :btc
-    currency :btceur
+    currency :btccny
     state :wait
     source 'Web'
     ord_type 'limit'
@@ -14,9 +14,9 @@ FactoryGirl.define do
   end
 
   factory :order_ask do
-    bid :eur
+    bid :cny
     ask :btc
-    currency :btceur
+    currency :btccny
     state :wait
     source 'Web'
     ord_type 'limit'

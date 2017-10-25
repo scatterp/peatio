@@ -3,7 +3,7 @@ module Withdraws
     extend ActiveSupport::Concern
 
     def set_fee
-      self.fee = "0.0001".to_d
+      self.fee = "0.0003".to_d
     end
 
     def blockchain_url

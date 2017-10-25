@@ -17,7 +17,7 @@
   symbol: "฿"
   coin: true
   quick_withdraw_max: 0
-  rpc: http://scatterp:0c5u8ZVSK7az@127.0.0.1:18332
+  rpc: http://user1:magic123@127.0.0.1:18332
   blockchain: https://blockchain.info/tx/#{txid}
   address_url: https://blockchain.info/address/#{address}
   assets:

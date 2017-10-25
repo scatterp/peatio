@@ -5,7 +5,7 @@ describe Private::MarketsController do
   before { session[:member_id] = member.id }
 
   context "logged in user" do
-    describe "GET /markets/btceur" do
+    describe "GET /markets/btccny" do
       before { get :show, data }
 
       it { should respond_with :ok }
@@ -15,7 +15,7 @@ describe Private::MarketsController do
   context "non-login user" do
     before { session[:member_id] = nil }
 
-    describe "GET /markets/btceur" do
+    describe "GET /markets/btccny" do
       before { get :show, data }
 
       it { should respond_with :ok }
@@ -27,10 +27,10 @@ describe Private::MarketsController do
 
   def data
     {
-      id: 'btceur',
-      market: 'btceur',
+      id: 'btccny',
+      market: 'btccny',
       ask: 'btc',
-      bid: 'eur'
+      bid: 'cny'
     }
   end
 

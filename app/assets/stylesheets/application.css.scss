@@ -38,6 +38,9 @@ html, body {
 #wrap {
   height: auto !important;
   min-height: 100%;
+  //background: url(../languages/back_2.jpg) no-repeat;
+  background-color: white;
+  background-size:cover;
   margin: 0 auto 0 - $footer-height;
 
   & + iframe { display: none; }
@@ -97,12 +100,17 @@ html, body {
 }
 
 footer {
-  color: $footer-color;
+  //color: $footer-color;
+  //color: #ffffff;
+  color: rgba(0,0,0, 0.9);
+  font-size: 15px;
   height: $footer-height;
   box-sizing: 'border-box';
-  padding-top: 20px;
-  background-color: $footer-bg;
-  border-top: 1px solid $footer-border;
+  //height: 120px;
+  padding-top: 10px;
+  //background-color: $footer-bg;
+  background-color: transparent;
+  //border-top: 1px solid $footer-border;
 }
 
 /* ticker
@@ -149,8 +157,79 @@ form.simple_form {
   h5 i.fa { margin-right: 10px; }
 }
 
-.navbar-static-top {
-  min-width: 1180px;
+#wrap_new {
+  hr.star-light,hr.star-primary{
+    padding:0;border:none;border-top:solid 5px;text-align:center;max-width:250px;margin:25px auto 30px
+  }
+  hr.star-light:after,hr.star-primary:after{
+    content:"\f005";font-family:FontAwesome;display:inline-block;position:relative;top:-0.8em;font-size:2em;padding:0 0.25em
+  }
+  hr.star-light{border-color:#ff9a18}
+  hr.star-light:after{background-color:#ff9a18;color:white}
+  hr.star-primary{border-color:#2c3e50}
+  hr.star-primary:after{background-color:white;color:#2c3e50}.img-centered{margin:0 auto}
 }
 
+#wrap3 {
+  //padding-top: 30px;
+  margin-top: -15px;
+}
+.navbar-default {
+  border: none;
+  border-bottom: 1px solid #00cee8;
+}
+footer{
+  background-color: #f3f3f3;
+}
+.footer-menu{
+  text-align: center;
+  font-size: 13px;
+  font-family: "Open Sans";
+  color: rgb(5, 68, 80);
+  text-transform: uppercase;
+  padding-top: 20px;
+}
+footer a {
+  color: #054450;
+}
+.footer-copyright{
+  font-family: 'Open Sans';
+  font-size: 10px;
+  color: #364450;
+}
+.panel.panel-default {
+  margin-top: 65px;
+  margin-bottom: 50px;
+}
+h2.panel-title {
+  text-align: center;
+}
+.panel-body {
+  background-color: #f9f9f9;
+}
+.panel-default > .panel-heading {
+  color: #333333;
+  background-color: #ededed;
+  border-color: snow;
+  border: none;
+}
+.btn {
+  border-radius: 0px;
+}
+.btn-default {
+  color: white;
+  background-color: #00cee8;
+  border-color: #00cee8;
+}
+.btn-lg, .btn-group-lg > .btn {
+  border-radius: 0px;
+}
+.btn-info {
+  color: #2f2f2f;
+  background-color: white;
+  border-color: #f2f2f2;
+}
+body {
+  font-family: "Open Sans";
+}
 @import 'layouts/custom';
