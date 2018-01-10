@@ -1,4 +1,4 @@
-Peatio::Application.configure do
+Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   # Code is not reloaded between requests.
@@ -19,11 +19,17 @@ Peatio::Application.configure do
   # For large-scale production use, consider using a caching reverse proxy like nginx, varnish or squid.
   # config.action_dispatch.rack_cache = true
 
+  # Attempt to read encrypted secrets from `config/secrets.yml.enc`.
+  # Requires an encryption key in `ENV["RAILS_MASTER_KEY"]` or
+  # `config/secrets.yml.key`.
+  config.read_encrypted_secrets = true
+
   # Disable Rails's static asset server (Apache or nginx will already do this).
   config.serve_static_assets = false
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = Uglifier.new(:mangle => false)
+  # config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
@@ -95,4 +101,22 @@ Peatio::Application.configure do
   config.active_record.default_timezone = :local
 
   config.middleware.insert_before Rack::Runtime, Middleware::Security
+
+ # Mount Action Cable outside main process or domain
+ # config.action_cable.mount_path = nil
+ # config.action_cable.url = 'wss://example.com/cable'
+ # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
+
+  # Use a different logger for distributed setups.
+  # require 'syslog/logger'
+  # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
+
+  if ENV["RAILS_LOG_TO_STDOUT"].present?
+    logger           = ActiveSupport::Logger.new(STDOUT)
+    logger.formatter = config.log_formatter
+    config.logger    = ActiveSupport::TaggedLogging.new(logger)
+  end
+
+  # Do not dump schema after migrations.
+  config.active_record.dump_schema_after_migration = false
 end

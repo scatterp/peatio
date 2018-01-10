@@ -1,4 +1,4 @@
-class CurrencyValidator < ActiveModel::EachValidator
+class YmlCurrency.alidator < ActiveModel::EachValidator
   def validate_each(record, attribute, value)
     currency = eval Figaro.env.currency
     key = "#{record.bid}_#{record.ask}"

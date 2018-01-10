@@ -1,10 +1,11 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV["RAILS_ENV"] ||= 'test'
 ENV["ADMIN"] ||= 'admin@coinxpro.com'
+
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
-require 'rspec/autorun'
 require 'capybara/poltergeist'
+require 'kline_db'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -27,6 +28,8 @@ end
 Capybara.javascript_driver = :poltergeist
 
 RSpec.configure do |config|
+  config.infer_spec_type_from_file_location!
+
   # ## Mock Framework
   #
   # If you prefer to use mocha, flexmock or RR, uncomment the appropriate line:
@@ -56,8 +59,10 @@ RSpec.configure do |config|
 
   config.include FactoryBot::Syntax::Methods
 
+  config.raise_errors_for_deprecations!
+
   config.before(:suite) do
-    DatabaseCleaner.strategy = :deletion
+    DatabaseCleaner.strategy = :truncation
   end
 
   config.before(:each) do
@@ -68,6 +73,7 @@ RSpec.configure do |config|
     KlineDB.stubs(:kline).returns([])
 
     I18n.locale = :en
+
   end
 
   config.after(:each) do

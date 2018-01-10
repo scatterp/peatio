@@ -1,4 +1,4 @@
-class ChangeWithdraws < ActiveRecord::Migration
+class ChangeWithdraws < ActiveRecord::Migration[4.2]
   def change
     rename_column :withdraws, :withdraw_channel_id, :channel_id
     rename_column :withdraws, :tx_id, :txid

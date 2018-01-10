@@ -1,4 +1,4 @@
-class CreateAPITokens < ActiveRecord::Migration
+class CreateAPITokens < ActiveRecord::Migration[4.2]
   def change
     create_table :api_tokens do |t|
       t.integer :member_id, null: false

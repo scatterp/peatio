@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: fund_sources
+#
+#  id         :integer          not null, primary key
+#  extra      :string
+#  uid        :string
+#  is_locked  :boolean          default(FALSE)
+#  created_at :datetime
+#  updated_at :datetime
+#  deleted_at :datetime
+#  member_id  :integer
+#  currency   :integer
+#
+
 require 'spec_helper'
 
 describe FundSource do

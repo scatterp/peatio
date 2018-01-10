@@ -7,108 +7,119 @@ git_source(:github) do |repo_name|
 end
 
 # Framework
-gem 'rails', '~> 4.2'
-gem 'rails-i18n', '>= 4.0.9'
-gem 'responders', '~> 2.0'
+gem 'rails'
+gem 'globalize', '~> 5.1.0.beta2'
+gem 'responders'
 gem 'rails-observers'
 
 # Frontend
-gem 'datagrid', '>= 1.5.7'
-gem 'kaminari', '>= 0.15.1'
+gem 'datagrid'
+gem 'easy_table'              # Easy HTML Tables
+gem 'kaminari'                # Pagination
 gem 'http_accept_language'
-gem 'simple_form', '~> 3.1.1'
-gem 'slim-rails', '>= 3.1.3'
-gem 'sass-rails', '>= 5.0.6'
-gem 'coffee-rails', '>= 4.2.2'
-gem 'uglifier', '>= 2.7.2'
-gem "jquery-rails", ">= 3.1.4"
+gem 'simple_form'
+gem 'slim-rails'              # Slim HTML Templating
+gem 'sass-rails'
+gem 'coffee-rails'
+gem 'uglifier'
+gem "jquery-rails"
 gem "angularjs-rails"
 gem 'bootstrap-sass', '~> 3.2.0.2'
 gem 'bootstrap-wysihtml5-rails', '>= 0.3.1.24'
 gem 'font-awesome-sass'
 gem 'bourbon'
-gem 'momentjs-rails', '>= 2.17.1'
-gem 'rack-attack', '~> 4.3.1'
-gem 'gon', '~> 5.2.0'
+gem 'momentjs-rails'
+gem 'rack-attack'
+gem 'gon'                     # Pass data to JS
+gem 'browser'                 # Browser detection
 
 # Data
 gem 'pg', '~> 0.20.0'
-gem 'redis-rails', '>= 5.0.2'
+gem 'redis-rails'
 gem 'rotp'
 gem 'json'
 gem 'jbuilder'
-gem 'aasm', '~> 3.4.0'
-gem 'acts-as-taggable-on', '>= 3.0.1'
+gem 'aasm'
+gem 'acts-as-taggable-on'
 gem 'enumerize'
 gem 'paranoid2'
-gem 'paper_trail', '~> 3.0.1'
+gem 'paper_trail'
 gem 'marginalia'        # show where queries are coming from in the logs
-
+gem 'carrierwave'       # store images
+gem 'seedbank'          # better seed management
+gem 'jsonb_accessor'    # effective use of jsonb columns
 
 # Background Processing
 gem 'daemons-rails'
-gem 'amqp', '~> 1.3.0'
-gem 'bunny', '~> 1.2.1'
+gem 'amqp'
+gem 'bunny'
 gem 'pusher'
-gem 'eventmachine', '~> 1.0.4'
-gem 'em-websocket', '~> 0.5.1'
+gem 'eventmachine'
+gem 'em-websocket'
 
 # Authentication
 gem 'doorkeeper'
 gem 'omniauth'
 gem 'omniauth-identity'
 gem 'omniauth-weibo-oauth2'
+gem 'simple_captcha2', require: 'simple_captcha'
 
 # Authorization
 gem 'cancancan'
 
 # API
-gem 'grape', '~> 0.7.0'
-gem 'grape-entity', '~> 0.4.2'
-gem 'grape-swagger', '~> 0.7.2'
-gem 'rest-client', '~> 1.6.8'
+gem 'grape'
+gem 'grape-entity'
+gem 'grape-swagger'
+gem 'rest-client'
+
+# SMS
+gem 'phonelib'
+gem 'twilio-ruby'
+
+# Crypto
+gem 'liability-proof'
+gem 'bcrypt-ruby'
 
 # Misc
-gem 'bcrypt-ruby', '~> 3.1.2'
-gem 'figaro', '>= 0.7.0'
+gem 'unread', github: 'peatio/unread'
+gem 'figaro'                            # ENV var management
+
 gem 'hashie'
-gem 'active_hash', '~> 1.5.0'
+gem 'active_hash'
 
-gem "globalize", "~> 4.0.0"
-gem 'country_select', '~> 2.1.0'
-
+gem 'country_select'
 
 gem 'eco'
-gem 'browser', '~> 0.8.0'
 gem 'rbtree'
-gem 'liability-proof', '0.0.9'
-gem 'whenever', '~> 0.9.2'
-gem 'easy_table', '>= 0.0.6'
-gem 'phonelib', '~> 0.3.5'
-gem 'twilio-ruby', '~> 3.11'
-gem 'unread', github: 'peatio/unread'
-gem 'carrierwave', '~> 0.10.0'
-gem 'simple_captcha2', require: 'simple_captcha'
+gem 'whenever'
+
 gem 'bundleup', require: false
 gem 'colorize'
 gem 'awesome_print'
+gem 'hirb'
+gem 'fast_blank'
+gem 'bootsnap'
 
 group :development, :test do
   gem 'factory_bot_rails'
-  gem 'faker', '~> 1.4.3'
+  gem 'faker'
   gem 'mina'
   gem 'mina-slack', github: 'peatio/mina-slack'
   gem 'meta_request', '>= 0.4.3'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'pry-rails'
-  gem 'quiet_assets', '>= 1.1.0'
-  gem 'mails_viewer', '>= 0.1.2'
+  # gem 'pry-rails'
+  # gem 'quiet_assets'
+  # gem 'mails_viewer'
   gem 'timecop'
-  gem 'dotenv-rails'
-  gem 'rspec-rails', '>= 3.7.1'
+  # gem 'dotenv-rails'
+  gem 'rspec-rails'
+  gem 'rspec-its'
   gem 'byebug'
   gem 'annotate'
+  gem 'listen'
+  gem 'spring'
 end
 
 group :test do

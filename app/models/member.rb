@@ -1,4 +1,24 @@
-class Member < ActiveRecord::Base
+# == Schema Information
+#
+# Table name: members
+#
+#  id           :integer          not null, primary key
+#  sn           :string
+#  email        :string
+#  identity_id  :integer
+#  created_at   :datetime
+#  updated_at   :datetime
+#  state        :integer
+#  activated    :boolean
+#  country_code :integer
+#  phone_number :string
+#  display_name :string
+#  disabled     :boolean          default(FALSE)
+#  api_disabled :boolean          default(FALSE)
+#  nickname     :string
+#
+
+class Member < ApplicationRecord
   acts_as_taggable
   acts_as_reader
 
@@ -156,7 +176,7 @@ class Member < ActiveRecord::Base
   alias :ac :get_account
 
   def touch_accounts
-    less = Currency.codes - self.accounts.map(&:currency).map(&:to_sym)
+    less = YmlCurrency.codes - self.accounts.map(&:currency).map(&:to_sym)
     less.each do |code|
       self.accounts.create(currency: code, balance: 0, locked: 0)
     end

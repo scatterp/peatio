@@ -163,15 +163,15 @@ SimpleForm.setup do |config|
 end
 
 module SimpleForm
-  class FormBuilder
-    def lookup_model_names_with_custom_scope
+  module FormBuilderPeatio
+    def lookup_model_names(options = {})
       if scope = options[:scope]
-        lookup_model_names_without_custom_scope + [scope.to_s]
+        super + [scope.to_s]
       else
-        lookup_model_names_without_custom_scope
+        super
       end
     end
-
-    alias_method_chain :lookup_model_names, :custom_scope
   end
 end
+
+SimpleForm::FormBuilder.prepend(SimpleForm::FormBuilderPeatio)

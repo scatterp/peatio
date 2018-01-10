@@ -1,4 +1,19 @@
-class Document < ActiveRecord::Base
+# == Schema Information
+#
+# Table name: documents
+#
+#  id         :integer          not null, primary key
+#  key        :string
+#  title      :string
+#  body       :text
+#  is_auth    :boolean
+#  created_at :datetime
+#  updated_at :datetime
+#  desc       :text
+#  keywords   :text
+#
+
+class Document < ApplicationRecord
   # TRANSLATABLE_ATTR = [:title, :desc, :keywords, :body]
   # translates *TRANSLATABLE_ATTR
 

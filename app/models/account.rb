@@ -1,4 +1,25 @@
-class Account < ActiveRecord::Base
+# == Schema Information
+#
+# Table name: accounts
+#
+#  id                              :integer          not null, primary key
+#  member_id                       :integer
+#  currency                        :integer
+#  balance                         :decimal(32, 16)
+#  locked                          :decimal(32, 16)
+#  created_at                      :datetime
+#  updated_at                      :datetime
+#  in                              :decimal(32, 16)
+#  out                             :decimal(32, 16)
+#  default_withdraw_fund_source_id :integer
+#
+# Indexes
+#
+#  index_accounts_on_member_id               (member_id)
+#  index_accounts_on_member_id_and_currency  (member_id,currency)
+#
+
+class Account < ApplicationRecord
   include Currencible
 
   FIX = :fix
@@ -25,12 +46,12 @@ class Account < ActiveRecord::Base
 
   # Suppose to use has_one here, but I want to store
   # relationship at account side. (Daniel)
-  belongs_to :default_withdraw_fund_source, class_name: 'FundSource'
+  belongs_to :default_withdraw_fund_source, class_name: FundSource.name
 
   validates :member_id, uniqueness: { scope: :currency }
   validates_numericality_of :balance, :locked, greater_than_or_equal_to: ZERO
 
-  scope :enabled, -> { where("currency in (?)", Currency.ids) }
+  scope :enabled, -> { where("currency in (?)", YmlCurrency.ids) }
 
   after_commit :trigger, :sync_update
 

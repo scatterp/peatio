@@ -1,3 +1,23 @@
+# == Schema Information
+#
+# Table name: members
+#
+#  id           :integer          not null, primary key
+#  sn           :string
+#  email        :string
+#  identity_id  :integer
+#  created_at   :datetime
+#  updated_at   :datetime
+#  state        :integer
+#  activated    :boolean
+#  country_code :integer
+#  phone_number :string
+#  display_name :string
+#  disabled     :boolean          default(FALSE)
+#  api_disabled :boolean          default(FALSE)
+#  nickname     :string
+#
+
 require 'spec_helper'
 
 describe Member do
@@ -22,7 +42,7 @@ describe Member do
         member.save!
       }.to change(member.accounts, :count).by(Currency.codes.size)
 
-      Currency.codes.each do |code|
+      YmlCurrency.codes.each do |code|
         expect(Account.with_currency(code).where(member_id: member.id).count).to eq 1
       end
     end

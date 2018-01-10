@@ -1,4 +1,4 @@
-class ChangeToEnumerizeInTrades < ActiveRecord::Migration
+class ChangeToEnumerizeInTrades < ActiveRecord::Migration[4.2]
   def up
     change_column :trades, :trend, "integer USING trend::integer"
     change_column :trades, :currency, "integer USING currency::integer"

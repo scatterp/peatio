@@ -1,3 +1,24 @@
+# == Schema Information
+#
+# Table name: accounts
+#
+#  id                              :integer          not null, primary key
+#  member_id                       :integer
+#  currency                        :integer
+#  balance                         :decimal(32, 16)
+#  locked                          :decimal(32, 16)
+#  created_at                      :datetime
+#  updated_at                      :datetime
+#  in                              :decimal(32, 16)
+#  out                             :decimal(32, 16)
+#  default_withdraw_fund_source_id :integer
+#
+# Indexes
+#
+#  index_accounts_on_member_id               (member_id)
+#  index_accounts_on_member_id_and_currency  (member_id,currency)
+#
+
 require 'spec_helper'
 
 describe Account do
@@ -286,11 +307,11 @@ describe Account do
   end
 
   describe ".enabled" do
-    let!(:account1) { create(:account, currency: Currency.first.code)}
-    let!(:account2) { create(:account, currency: Currency.last.code)}
-    let!(:account3) { create(:account, currency: Currency.all[1].code)}
+    let!(:account1) { create(:account, currency: YmlCurrency.first.code)}
+    let!(:account2) { create(:account, currency: YmlCurrency.last.code)}
+    let!(:account3) { create(:account, currency: YmlCurrency.all[1].code)}
     before do
-      Currency.stubs(:ids).returns([Currency.first.id, Currency.last.id])
+      YmlCurrency.stubs(:ids).returns([Currency.first.id, YmlCurrency.last.id])
     end
 
     it "should only return the accoutns with currency enabled" do

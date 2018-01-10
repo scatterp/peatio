@@ -1,4 +1,4 @@
-class AddAddressToDeposits < ActiveRecord::Migration
+class AddAddressToDeposits < ActiveRecord::Migration[4.2]
   def change
     change_table :deposits do |t|
       t.string :address, :after => :amount

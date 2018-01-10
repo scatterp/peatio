@@ -1,4 +1,4 @@
-class RenameTxidToPaymentTransactions < ActiveRecord::Migration
+class RenameTxidToPaymentTransactions < ActiveRecord::Migration[4.2]
   def up
     change_table :payment_transactions do |t|
       t.datetime :dont_at

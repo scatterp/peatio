@@ -1,12 +1,32 @@
-class IdDocument < ActiveRecord::Base
+# == Schema Information
+#
+# Table name: id_documents
+#
+#  id                 :integer          not null, primary key
+#  id_document_type   :integer
+#  name               :string
+#  id_document_number :string
+#  member_id          :integer
+#  created_at         :datetime
+#  updated_at         :datetime
+#  birth_date         :date
+#  address            :text
+#  city               :string
+#  country            :string
+#  zipcode            :string
+#  id_bill_type       :integer
+#  aasm_state         :string
+#
+
+class IdDocument < ApplicationRecord
   extend Enumerize
   include AASM
   include AASM::Locking
 
-  has_one :id_document_file, class_name: 'Asset::IdDocumentFile', as: :attachable
+  has_one :id_document_file, class_name: Asset::IdDocumentFile.name, as: :attachable
   accepts_nested_attributes_for :id_document_file
 
-  has_one :id_bill_file, class_name: 'Asset::IdBillFile', as: :attachable
+  has_one :id_bill_file, class_name: Asset::IdBillFile.name, as: :attachable
   accepts_nested_attributes_for :id_bill_file
 
   belongs_to :member

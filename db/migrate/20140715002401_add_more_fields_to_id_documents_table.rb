@@ -1,4 +1,4 @@
-class AddMoreFieldsToIdDocumentsTable < ActiveRecord::Migration
+class AddMoreFieldsToIdDocumentsTable < ActiveRecord::Migration[4.2]
   def change
     add_column :id_documents, :birth_date, :date
     add_column :id_documents, :address, :text

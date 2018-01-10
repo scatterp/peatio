@@ -1,8 +1,41 @@
-class Order < ActiveRecord::Base
+# == Schema Information
+#
+# Table name: orders
+#
+#  id             :integer          not null, primary key
+#  bid            :integer
+#  ask            :integer
+#  currency       :integer
+#  price          :decimal(32, 16)
+#  volume         :decimal(32, 16)
+#  origin_volume  :decimal(32, 16)
+#  state          :integer
+#  done_at        :datetime
+#  type           :string(8)
+#  member_id      :integer
+#  created_at     :datetime
+#  updated_at     :datetime
+#  sn             :string
+#  source         :string           not null
+#  ord_type       :string(10)
+#  locked         :decimal(32, 16)
+#  origin_locked  :decimal(32, 16)
+#  funds_received :decimal(32, 16)  default(0.0)
+#  trades_count   :integer          default(0)
+#
+# Indexes
+#
+#  index_orders_on_currency_and_state   (currency,state)
+#  index_orders_on_member_id            (member_id)
+#  index_orders_on_member_id_and_state  (member_id,state)
+#  index_orders_on_state                (state)
+#
+
+class Order < ApplicationRecord
   extend Enumerize
 
-  enumerize :bid, in: Currency.enumerize
-  enumerize :ask, in: Currency.enumerize
+  enumerize :bid, in: YmlCurrency.enumerize
+  enumerize :ask, in: YmlCurrency.enumerize
   enumerize :currency, in: Market.enumerize, scope: true
   enumerize :state, in: {:wait => 100, :done => 200, :cancel => 0}, scope: true
 
@@ -19,8 +52,8 @@ class Order < ActiveRecord::Base
   validates_numericality_of :origin_volume, :greater_than => 0
 
   validates_numericality_of :price, greater_than: 0, allow_nil: false,
-    if: "ord_type == 'limit'"
-  validate :market_order_validations, if: "ord_type == 'market'"
+    if: -> { ord_type == 'limit' }
+  validate :market_order_validations, if: -> { ord_type == 'market' }
 
   WAIT = 'wait'
   DONE = 'done'

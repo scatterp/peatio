@@ -1,21 +1,15 @@
-require File.expand_path('../boot', __FILE__)
+require_relative 'boot'
 
 # Pick the frameworks you want:
-require "rails"
-require "active_model/railtie"
-require "active_job/railtie"
-require "active_record/railtie"
-require "action_controller/railtie"
-require "action_mailer/railtie"
-require "action_view/railtie"
-require "sprockets/railtie"
+require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
-Bundler.require(:default, Rails.env)
+Bundler.require(*Rails.groups)
 
 module Peatio
   class Application < Rails::Application
+    config.load_defaults 5.1
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -47,9 +41,10 @@ module Peatio
       g.orm             :active_record
       g.template_engine :slim
       g.stylesheets     false
+      g.fixture_replacement :factory_bot, :dir => "spec/factories"
     end
 
     # Observer configuration
-    # config.active_record.observers = :transfer_observer
+    config.active_record.observers = :transfer_observer
   end
 end

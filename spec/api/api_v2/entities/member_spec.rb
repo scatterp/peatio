@@ -6,7 +6,7 @@ describe APIv2::Entities::Member do
 
   subject { OpenStruct.new APIv2::Entities::Member.represent(member).serializable_hash }
 
-  before { Currency.stubs(:codes).returns(%w(eur btc)) }
+  before { YmlCurrency.stubs(:codes).returns(%w(eur btc)) }
 
   its(:sn)        { should == member.sn }
   its(:name)      { should == member.name }

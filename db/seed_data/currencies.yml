@@ -1,0 +1,102 @@
+- id: 1
+  name: Euro
+  code: eur
+  symbol: "€"
+  fiat: true
+  precision: 2
+  accounts:
+    -
+      bank: 'Chase Bank'
+      address: '6225 0885 6022 3501'
+      password: '111111'
+      tel: '95555'
+- id: 2
+  name: Bitcoin
+  code: btc
+  symbol: "฿"
+  fiat: false
+  quick_withdraw_max: 0
+  rpc: http://scatterp:magic123@127.0.0.1:18332
+  blockchain: https://blockchain.info/tx/#{txid}
+  address_url: https://blockchain.info/address/#{address}
+  accounts:
+    -
+      address: 1HjfnJpQmANtuW7yr1ggeDfyfe1kDK7rm3
+- id: 3
+  name: Etherium
+  code: eth
+  symbol: "฿"
+  fiat: false
+  precision: 4
+  quick_withdraw_max: 0
+  rpc: http://localhost
+  blockchain: https://etherscan.io/tx/#{txid}
+  address_url: https://etherscan.io/address/#{address}
+  accounts:
+    -
+      address: 0x4bA2474e063Aec44e23F2Bf7Fb9e4e2878dBaB44
+- id: 4
+  name: Etherium Classic
+  code: etc
+  symbol: "฿"
+  fiat: false
+  precision: 4
+  quick_withdraw_max: 0
+  rpc: http://localhost
+  blockchain: https://etherscan.io/tx/#{txid}
+  address_url: https://etherscan.io/address/#{address}
+  accounts:
+    -
+      address: 0x4bA2474e063Aec44e23F2Bf7Fb9e4e2878dBaB44
+- id: 5
+  name: Litecoin
+  code: ltc
+  symbol: "฿"
+  fiat: false
+  precision: 4
+  quick_withdraw_max: 0
+  rpc: http://localhost
+  blockchain: https://etherscan.io/tx/#{txid}
+  address_url: https://etherscan.io/address/#{address}
+  accounts:
+    -
+      address: 0x4bA2474e063Aec44e23F2Bf7Fb9e4e2878dBaB44
+- id: 6
+  name: Bitcoin Cash
+  code: bcc
+  symbol: "฿"
+  fiat: false
+  precision: 4
+  quick_withdraw_max: 0
+  rpc: http://localhost
+  blockchain: https://etherscan.io/tx/#{txid}
+  address_url: https://etherscan.io/address/#{address}
+  accounts:
+    -
+      address: 0x4bA2474e063Aec44e23F2Bf7Fb9e4e2878dBaB44
+- id: 7
+  name: ZCash
+  code: zec
+  symbol: "฿"
+  fiat: false
+  precision: 4
+  quick_withdraw_max: 0
+  rpc: http://localhost
+  blockchain: https://etherscan.io/tx/#{txid}
+  address_url: https://etherscan.io/address/#{address}
+  accounts:
+    -
+      address: 0x4bA2474e063Aec44e23F2Bf7Fb9e4e2878dBaB44
+- id: 8
+  name: BitShare
+  code: bts
+  symbol: "฿"
+  fiat: false
+  precision: 4
+  quick_withdraw_max: 0
+  rpc: http://localhost
+  blockchain: https://etherscan.io/tx/#{txid}
+  address_url: https://etherscan.io/address/#{address}
+  accounts:
+    -
+      address: 0x4bA2474e063Aec44e23F2Bf7Fb9e4e2878dBaB44

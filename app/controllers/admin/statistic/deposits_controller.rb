@@ -1,7 +1,7 @@
 module Admin
   module Statistic
     class DepositsController < BaseController
-      prepend_before_filter :load_grid
+      prepend_before_action :load_grid
 
       def show
         @groups = {

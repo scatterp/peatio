@@ -1,10 +1,22 @@
-class PaymentAddress < ActiveRecord::Base
+# == Schema Information
+#
+# Table name: payment_addresses
+#
+#  id         :integer          not null, primary key
+#  account_id :integer
+#  address    :string
+#  created_at :datetime
+#  updated_at :datetime
+#  currency   :integer
+#
+
+class PaymentAddress < ApplicationRecord
   include Currencible
   belongs_to :account
 
   after_commit :gen_address, on: :create
 
-  has_many :transactions, class_name: 'PaymentTransaction', foreign_key: 'address', primary_key: 'address'
+  has_many :transactions, class_name: PaymentTransaction.name, foreign_key: 'address', primary_key: 'address'
 
   validates_uniqueness_of :address, allow_nil: true
 
