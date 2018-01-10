@@ -47,3 +47,9 @@ tags
 .ruby-version
 .DS_Store
 .agignore
+
+# Ignore those editor backup files
+*~
+
+# Ignore things in the M/dir
+/M/build-x86_64-linux-gnu/local/*
