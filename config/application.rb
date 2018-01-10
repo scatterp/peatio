@@ -1,11 +1,14 @@
 require File.expand_path('../boot', __FILE__)
 
 # Pick the frameworks you want:
+require "rails"
+require "active_model/railtie"
+require "active_job/railtie"
 require "active_record/railtie"
 require "action_controller/railtie"
 require "action_mailer/railtie"
+require "action_view/railtie"
 require "sprockets/railtie"
-# require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -21,32 +24,32 @@ module Peatio
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     # config.time_zone = 'Central Time (US & Canada)'
 
-    config.i18n.enforce_available_locales = false
+    # config.i18n.enforce_available_locales = false
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
-    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', 'custom', '*.{yml}')]
+    # config.i18n.load_path += Dir[Rails.root.join('config', 'locales', 'custom', '*.{yml}')]
     #config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
-    config.i18n.available_locales = ['en', 'zh-CN', 'ru', 'es', 'nl']
+    # config.i18n.available_locales = ['en', 'zh-CN', 'ru', 'es', 'nl']
     #config.i18n.available_locales = ['en', 'ru']
     #config.i18n.available_locales = ['en']
 
-    config.autoload_paths += %W(#{config.root}/lib #{config.root}/lib/extras)
+    # config.autoload_paths += %W(#{config.root}/lib #{config.root}/lib/extras)
 
     #config.assets.precompile += ['bootstrap-datetimepicker.css']
-    config.assets.initialize_on_precompile = true
+    # config.assets.initialize_on_precompile = true
 
     # Precompile all available locales
-    Dir.glob("#{config.root}/app/assets/javascripts/locales/*.js.erb").each do |file|
-      config.assets.precompile << "locales/#{file.match(/([a-z\-A-Z]+\.js)\.erb$/)[1]}"
-    end
+    # Dir.glob("#{config.root}/app/assets/javascripts/locales/*.js.erb").each do |file|
+ #      config.assets.precompile << "locales/#{file.match(/([a-z\-A-Z]+\.js)\.erb$/)[1]}"
+ #    end
 
     config.generators do |g|
       g.orm             :active_record
-      g.template_engine :erb
+      g.template_engine :slim
       g.stylesheets     false
     end
 
     # Observer configuration
-    config.active_record.observers = :transfer_observer
+    # config.active_record.observers = :transfer_observer
   end
 end

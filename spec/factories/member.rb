@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :member, aliases: [:author] do
     email { Faker::Internet.email }
     phone_number { Faker::Number.number(12).to_s }

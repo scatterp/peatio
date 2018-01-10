@@ -1,9 +1,9 @@
 class ChangeToEnumerizeInOrders < ActiveRecord::Migration
   def up
-    change_column :orders, :bid, :integer
-    change_column :orders, :ask, :integer
-    change_column :orders, :state, :integer
-    change_column :orders, :currency, :integer
+    change_column :orders, :bid, "integer USING bid::integer"
+    change_column :orders, :ask, "integer USING ask::integer"
+    change_column :orders, :state, "integer USING state::integer"
+    change_column :orders, :currency, "integer USING currency::integer"
     change_column :orders, :type, :string, :limit => 8
   end
 

@@ -1,6 +1,6 @@
 class ChangeToEnumerizeInAccounts < ActiveRecord::Migration
   def up
-    change_column :accounts, :currency, :integer
+    change_column :accounts, :currency, "integer USING currency::integer"
   end
 
   def down

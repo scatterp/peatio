@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :deposit do
     member { create(:member) }
     account { member.get_account(currency) }

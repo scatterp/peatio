@@ -1,6 +1,6 @@
 class ChangeToEnumerizeInAccountVersions < ActiveRecord::Migration
   def up
-    change_column :account_versions, :reason, :integer
+    change_column :account_versions, :reason, "integer USING reason::integer"
 
     if index_exists?(:account_versions, [:item_type, :item_id])
       remove_index :account_versions, [:item_type, :item_id]

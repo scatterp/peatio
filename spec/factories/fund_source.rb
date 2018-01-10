@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :fund_source do
     extra 'bitcoin'
     uid { Faker::Bitcoin.address }
