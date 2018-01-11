@@ -3,7 +3,7 @@
 # Table name: members
 #
 #  id           :integer          not null, primary key
-#  sn           :string
+#  sn           :string           not null
 #  email        :string
 #  identity_id  :integer
 #  created_at   :datetime
@@ -16,6 +16,11 @@
 #  disabled     :boolean          default(FALSE)
 #  api_disabled :boolean          default(FALSE)
 #  nickname     :string
+#
+# Indexes
+#
+#  index_members_on_display_name  (display_name) UNIQUE
+#  index_members_on_email         (email) UNIQUE
 #
 
 require 'spec_helper'

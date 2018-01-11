@@ -37,7 +37,7 @@ gem 'browser'                 # Browser detection
 gem 'pg', '~> 0.20.0'
 gem 'redis-rails'
 gem 'rotp'
-gem 'json'
+gem 'oj'
 gem 'jbuilder'
 gem 'aasm'
 gem 'acts-as-taggable-on'
@@ -45,17 +45,21 @@ gem 'enumerize'
 gem 'paranoid2'
 gem 'paper_trail'
 gem 'marginalia'        # show where queries are coming from in the logs
-gem 'carrierwave'       # store images
 gem 'seedbank'          # better seed management
 gem 'jsonb_accessor'    # effective use of jsonb columns
 
+# File handling
+gem 'activestorage'
+gem 'carrierwave'       # store images
+
 # Background Processing
 gem 'daemons-rails'
-gem 'amqp'
-gem 'bunny'
+# gem 'amqp'
+# gem 'bunny'
 gem 'pusher'
-gem 'eventmachine'
-gem 'em-websocket'
+# gem 'eventmachine'
+# gem 'em-websocket'
+gem 'sidekiq'
 
 # Authentication
 gem 'doorkeeper'
@@ -125,7 +129,8 @@ end
 group :test do
   gem 'database_cleaner'
   gem 'mocha', :require => false
-  gem 'shoulda-matchers'
+  gem 'shoulda-matchers', '~> 3.1'
+  gem 'rails-controller-testing'
   gem 'capybara', '>= 2.15.4'
   gem 'launchy'
   gem 'selenium-webdriver', '>= 2.39.0'

@@ -8,7 +8,7 @@ class Ordering
 
   def submit
     ActiveRecord::Base.transaction do
-      @orders.each {|order| do_submit order }
+      @orders.each {|order| do_submit(order) }
     end
 
     @orders.each do |order|
@@ -24,7 +24,7 @@ class Ordering
 
   def cancel!
     ActiveRecord::Base.transaction do
-      @orders.each {|order| do_cancel! order }
+      @orders.each {|order| do_cancel!(order) }
     end
   end
 

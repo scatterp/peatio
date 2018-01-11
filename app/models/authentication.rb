@@ -26,9 +26,7 @@ class Authentication < ApplicationRecord
 
   class << self
     def locate(auth)
-      uid      = auth['uid'].to_s
-      provider = auth['provider']
-      find_by_provider_and_uid provider, uid
+      self.where(provider: auth['provider'], uid: auth['uid']).first
     end
 
     def build_auth(auth)

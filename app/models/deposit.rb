@@ -41,19 +41,17 @@ class Deposit < ApplicationRecord
 
   alias_attribute :sn, :id
 
-  delegate :name, to: :member, prefix: true
-  delegate :id, to: :channel, prefix: true
+  delegate :name, to: :member,  prefix: true
+  delegate :id,   to: :channel, prefix: true
   delegate :coin?, :fiat?, to: :currency_obj
 
   belongs_to :member
   belongs_to :account
 
-  validates_presence_of \
-    :amount, :account, \
-    :member, :currency
+  validates_presence_of :amount, :account, :member, :currency
   validates_numericality_of :amount, greater_than: 0
 
-  scope :recent, -> { order('id DESC')}
+  scope :recent, -> { order('created_at DESC') }
 
   after_update :sync_update
   after_create :sync_create

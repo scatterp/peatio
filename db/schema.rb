@@ -190,7 +190,7 @@ ActiveRecord::Schema.define(version: 20180110180055) do
   end
 
   create_table "members", id: :serial, force: :cascade do |t|
-    t.string "sn"
+    t.string "sn", null: false
     t.string "email"
     t.integer "identity_id"
     t.datetime "created_at"
@@ -203,6 +203,8 @@ ActiveRecord::Schema.define(version: 20180110180055) do
     t.boolean "disabled", default: false
     t.boolean "api_disabled", default: false
     t.string "nickname"
+    t.index ["display_name"], name: "index_members_on_display_name", unique: true
+    t.index ["email"], name: "index_members_on_email", unique: true
   end
 
   create_table "oauth_access_grants", id: :serial, force: :cascade do |t|

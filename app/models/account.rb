@@ -46,7 +46,7 @@ class Account < ApplicationRecord
 
   # Suppose to use has_one here, but I want to store
   # relationship at account side. (Daniel)
-  belongs_to :default_withdraw_fund_source, class_name: FundSource.name
+  belongs_to :default_withdraw_fund_source, class_name: FundSource.name, optional: true
 
   validates :member_id, uniqueness: { scope: :currency }
   validates_numericality_of :balance, :locked, greater_than_or_equal_to: ZERO
@@ -81,7 +81,7 @@ class Account < ApplicationRecord
   end
 
   def lock_funds(amount, reason: nil, ref: nil)
-    (amount <= ZERO or amount > self.balance) and raise AccountError, "cannot lock funds (amount: #{amount})"
+    (amount <= ZERO or amount > self.balance) and raise AccountError, "cannot lock funds #{currency}(amount: #{amount}; funds: #{self.balance})"
     change_balance_and_locked -amount, amount
   end
 
@@ -176,7 +176,8 @@ class Account < ApplicationRecord
   def change_balance_and_locked(delta_b, delta_l)
     self.balance += delta_b
     self.locked  += delta_l
-    self.class.connection.execute "update accounts set balance = balance + #{delta_b}, locked = locked + #{delta_l} where id = #{id}"
+    self.save
+    # self.class.connection.execute "update accounts set balance = balance + #{delta_b}, locked = locked + #{delta_l} where id = #{id}"
     add_to_transaction # so after_commit will be triggered
     self
   end

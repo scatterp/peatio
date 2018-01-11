@@ -114,8 +114,7 @@ class Order < ApplicationRecord
       self.state = Order::DONE
 
       # unlock not used funds
-      hold_account.unlock_funds locked,
-        reason: Account::ORDER_FULLFILLED, ref: trade unless locked.zero?
+      hold_account.unlock_funds(locked, reason: Account::ORDER_FULLFILLED, ref: trade) unless locked.zero?
     elsif ord_type == 'market' && locked.zero?
       # partially filled market order has run out its locked fund
       self.state = Order::CANCEL

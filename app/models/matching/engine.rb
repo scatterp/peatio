@@ -15,7 +15,7 @@ module Matching
     end
 
     def submit(order)
-      book, counter_book = orderbook.get_books order.type
+      book, counter_book = orderbook.get_books(order.type)
       match order, counter_book
       add_or_cancel order, book
     rescue

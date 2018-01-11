@@ -15,11 +15,11 @@ class Market < ActiveYamlBase
 
   self.singleton_class.send :alias_method, :all_with_invisible, :all
   def self.all
-    all_with_invisible.select &:visible
+    all_with_invisible.select(&:visible)
   end
 
   def self.enumerize
-    all_with_invisible.inject({}) {|hash, i| hash[i.id.to_sym] = i.code; hash }
+    @_enumerize ||= all.each_with_object({}) {|e, hash| hash[e.id.to_sym] = e.code }
   end
 
   def self.to_hash

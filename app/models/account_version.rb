@@ -59,7 +59,7 @@ class AccountVersion < ApplicationRecord
   # created.
   #
   # TODO: find a more generic way to construct the sql
-  def self.optimistically_lock_account_and_create!(balance, locked, attrs)
+  def self.optimistically_lock_account_and_create!(balance, locked, attrs = {})
     attrs = attrs.symbolize_keys
 
     attrs[:created_at] = Time.now
