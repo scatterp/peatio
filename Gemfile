@@ -86,7 +86,7 @@ gem 'liability-proof'
 gem 'bcrypt-ruby'
 
 # Misc
-gem 'unread', github: 'peatio/unread'
+gem 'unread'
 gem 'figaro'                            # ENV var management
 
 gem 'hashie'

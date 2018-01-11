@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180110180055) do
+ActiveRecord::Schema.define(version: 20180111144926) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -319,11 +319,12 @@ ActiveRecord::Schema.define(version: 20180110180055) do
 
   create_table "read_marks", id: :serial, force: :cascade do |t|
     t.integer "readable_id"
-    t.integer "member_id", null: false
+    t.integer "reader_id", null: false
     t.string "readable_type", limit: 20, null: false
     t.datetime "timestamp"
-    t.index ["member_id"], name: "index_read_marks_on_member_id"
-    t.index ["readable_type", "readable_id"], name: "index_read_marks_on_readable_type_and_readable_id"
+    t.string "reader_type"
+    t.index ["reader_id", "reader_type", "readable_type", "readable_id"], name: "read_marks_reader_readable_index", unique: true
+    t.index ["reader_id"], name: "index_read_marks_on_reader_id"
   end
 
   create_table "running_accounts", id: :serial, force: :cascade do |t|
