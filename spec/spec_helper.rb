@@ -4,6 +4,7 @@ ENV["ADMIN"] ||= 'admin@coinxpro.com'
 
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
+require 'rspec/collection_matchers'
 require 'capybara/poltergeist'
 require 'kline_db'
 

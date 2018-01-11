@@ -131,6 +131,7 @@ group :test do
   gem 'mocha', :require => false
   gem 'shoulda-matchers', '~> 3.1'
   gem 'rails-controller-testing'
+  gem 'rspec-collection_matchers'
   gem 'capybara', '>= 2.15.4'
   gem 'launchy'
   gem 'selenium-webdriver', '>= 2.39.0'
