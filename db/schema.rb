@@ -180,13 +180,14 @@ ActiveRecord::Schema.define(version: 20180110180055) do
   create_table "identities", id: :serial, force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
-    t.boolean "is_active"
-    t.integer "retry_count"
-    t.boolean "is_locked"
+    t.boolean "is_active", default: true
+    t.integer "retry_count", default: 0
+    t.boolean "is_locked", default: false
     t.datetime "locked_at"
     t.datetime "last_verify_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["email"], name: "index_identities_on_email", unique: true
   end
 
   create_table "members", id: :serial, force: :cascade do |t|

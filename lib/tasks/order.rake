@@ -15,6 +15,11 @@ namespace :order do
     mid = 2200
     (low..high).each do |price|
       klass = (price < mid) ?  OrderBid : OrderAsk
+      if klass.is_a?(OrderBid)
+        print '.'.green
+      else
+        print '.'.yellow
+      end
       volume = rand
 
       acct = nil
@@ -38,7 +43,6 @@ namespace :order do
         volume:        volume,
         origin_volume: volume
       )
-      ap order
       acct.plus_funds(order.compute_locked * 1.5)
 
       Ordering.new(order).submit

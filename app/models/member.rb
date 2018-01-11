@@ -81,24 +81,22 @@ class Member < ApplicationRecord
     end
 
     def search(field: nil, term: nil)
-      result = case field
-               when 'email'
-                 where('members.email LIKE ?', "%#{term}%")
-               when 'phone_number'
-                 where('members.phone_number LIKE ?', "%#{term}%")
-               when 'name'
-                 joins(:id_document).where('id_documents.name LIKE ?', "%#{term}%")
-               when 'wallet_address'
-                 members = joins(:fund_sources).where('fund_sources.uid' => term)
-                 if members.empty?
-                  members = joins(:payment_addresses).where('payment_addresses.address' => term)
-                 end
-                 members
-               else
-                 all
-               end
-
-      result.order(:id).reverse_order
+      results =
+        case field.to_s
+        when 'email'
+          self.where('members.email LIKE ?', "%#{term}%")
+        when 'phone_number'
+          self.where('members.phone_number LIKE ?', "%#{term}%")
+        when 'name'
+          self.joins(:id_document).where('id_documents.name LIKE ?', "%#{term}%")
+        when 'wallet_address'
+          members = self.joins(:fund_sources).where('fund_sources.uid' => term)
+          members = self.joins(:payment_addresses).where('payment_addresses.address' => term) if members.empty?
+          members
+        else
+          self.all
+        end
+      results.order(id: :desc)
     end
 
     private
@@ -248,7 +246,7 @@ class Member < ApplicationRecord
   end
 
   def build_default_id_document
-    build_id_document
+    self.build_id_document
     true
   end
 

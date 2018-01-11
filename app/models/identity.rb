@@ -5,13 +5,17 @@
 #  id              :integer          not null, primary key
 #  email           :string
 #  password_digest :string
-#  is_active       :boolean
-#  retry_count     :integer
-#  is_locked       :boolean
+#  is_active       :boolean          default(TRUE)
+#  retry_count     :integer          default(0)
+#  is_locked       :boolean          default(FALSE)
 #  locked_at       :datetime
 #  last_verify_at  :datetime
 #  created_at      :datetime
 #  updated_at      :datetime
+#
+# Indexes
+#
+#  index_identities_on_email  (email) UNIQUE
 #
 
 class Identity < OmniAuth::Identity::Models::ActiveRecord
@@ -35,7 +39,7 @@ class Identity < OmniAuth::Identity::Models::ActiveRecord
   private
 
   def sanitize
-    self.email&.downcase!
+    self.email = self.email&.downcase
   end
 
 end

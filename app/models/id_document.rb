@@ -40,10 +40,10 @@ class IdDocument < ApplicationRecord
   alias_attribute :full_name, :name
 
   aasm do
-    #state :unverified, initial: true
+    state :unverified, initial: true
     state :unverified
     state :verifying
-    state :verified, initial: true
+    state :verified
 
     event :submit do
       transitions from: :unverified, to: :verifying

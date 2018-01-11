@@ -1,8 +1,7 @@
 RSpec::Matchers.define :be_d do |expected|
   match do |actual|
-    if expected.kind_of? BigDecimal
-      actual.to_d == expected
-    elsif expected.kind_of? String
+    case expected
+    when BigDecimal, String
       actual.to_d == expected.to_d
     else
       raise "not support type #{expected.class}"
