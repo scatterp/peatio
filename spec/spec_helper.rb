@@ -111,4 +111,8 @@ RSpec.configure do |config|
   config.define_derived_metadata(file_path: Regexp.new("/spec/services/")) do |metadata|
     metadata[:type] = :service
   end
+
+  config.infer_spec_type_from_file_location!
+
+  config.filter_rails_from_backtrace!
 end
