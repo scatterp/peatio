@@ -68,7 +68,7 @@ class TwoFactor::Sms < ::TwoFactor
   end
 
   def send_notification
-    return if not self.activated_changed?
+    return unless self.saved_change_to_activated?
 
     if self.activated
       MemberMailer.sms_auth_activated(member.id).deliver
