@@ -31,11 +31,11 @@ describe Matching::Engine do
       subject.submit ask3
       subject.submit mo
 
-      subject.ask_orders.limit_orders.should have(1).price_level
-      subject.ask_orders.limit_orders.values.first.should == [ask3]
-      ask3.volume.should == '0.6'.to_d
+      expect(subject.ask_orders.limit_orders.keys.size).to eq(1)
+      expect(subject.ask_orders.limit_orders.values.first).to eq [ask3]
+      expect(ask3.volume).to be_d(0.6)
 
-      subject.bid_orders.market_orders.should be_empty
+      expect(subject.bid_orders.market_orders).to be_empty
     end
 
     it "should fill the market order partially and cancel it" do
@@ -50,8 +50,8 @@ describe Matching::Engine do
       subject.submit ask2
       subject.submit mo
 
-      subject.ask_orders.limit_orders.should be_empty
-      subject.bid_orders.market_orders.should be_empty
+      expect(subject.ask_orders.limit_orders).to be_empty
+      expect(subject.bid_orders.market_orders).to be_empty
     end
 
     it "should partially fill then cancel the market order if locked funds run out" do
@@ -66,11 +66,11 @@ describe Matching::Engine do
       subject.submit ask3
       subject.submit mo
 
-      subject.ask_orders.limit_orders.should have(2).price_level
-      ask2.volume.should == '0.25'.to_d
-      ask3.volume.should == '1.0'.to_d
+      expect(subject.ask_orders.limit_orders.keys.size).to eq(2)
+      expect(ask2.volume).to be_d(0.25)
+      expect(ask3.volume).to be_d(1)
 
-      subject.bid_orders.market_orders.should be_empty
+      expect(subject.bid_orders.market_orders).to be_empty
     end
   end
 
@@ -83,8 +83,8 @@ describe Matching::Engine do
         subject.submit(ask)
         subject.submit(bid)
 
-        subject.ask_orders.limit_orders.should be_empty
-        subject.bid_orders.limit_orders.should be_empty
+        expect(subject.ask_orders.limit_orders).to be_empty
+        expect(subject.bid_orders.limit_orders).to be_empty
       end
     end
 
@@ -98,13 +98,13 @@ describe Matching::Engine do
         subject.submit(ask)
         subject.submit(bid)
 
-        subject.ask_orders.limit_orders.should be_empty
-        subject.bid_orders.limit_orders.should_not be_empty
+        expect(subject.ask_orders.limit_orders).to be_empty
+        expect(subject.bid_orders.limit_orders).to_not be_empty
 
         AMQPQueue.expects(:enqueue)
           .with(:order_processor, {action: 'cancel', order: bid.attributes}, anything)
         subject.cancel(bid)
-        subject.bid_orders.limit_orders.should be_empty
+        expect(subject.bid_orders.limit_orders).to be_empty
       end
     end
 
@@ -123,8 +123,8 @@ describe Matching::Engine do
         asks.each {|ask| subject.submit(ask) }
         subject.submit(bid)
 
-        subject.ask_orders.limit_orders.should be_empty
-        subject.bid_orders.limit_orders.should_not be_empty
+        expect(subject.ask_orders.limit_orders).to be_empty
+        expect(subject.bid_orders.limit_orders).to_not be_empty
       end
     end
 
@@ -142,8 +142,8 @@ describe Matching::Engine do
         .with(:trade_executor, {market_id: market.id, ask_id: high_ask.id, bid_id: bid.id, strike_price: high_ask.price, volume: high_ask.volume, funds: '30.0'.to_d}, anything)
         subject.submit(bid)
 
-        subject.ask_orders.limit_orders.should be_empty
-        subject.bid_orders.limit_orders.should_not be_empty
+        expect(subject.ask_orders.limit_orders).to be_empty
+        expect(subject.bid_orders.limit_orders).to_not be_empty
       end
     end
   end
@@ -152,11 +152,11 @@ describe Matching::Engine do
     it "should cancel order" do
       subject.submit(ask)
       subject.cancel(ask)
-      subject.ask_orders.limit_orders.should be_empty
+      expect(subject.ask_orders.limit_orders).to be_empty
 
       subject.submit(bid)
       subject.cancel(bid)
-      subject.bid_orders.limit_orders.should be_empty
+      expect(subject.bid_orders.limit_orders).to be_empty
     end
   end
 
@@ -182,7 +182,7 @@ describe Matching::Engine do
       subject.submit ask3
       subject.submit ask4
 
-      used_funds.should ==  order.compute_locked
+      expect(used_funds).to eq(order.compute_locked)
     end
   end
 
@@ -195,11 +195,11 @@ describe Matching::Engine do
       subject.submit(ask)
       subject.submit(bid)
 
-      subject.ask_orders.limit_orders.should be_empty
-      subject.bid_orders.limit_orders.should be_empty
+      expect(subject.ask_orders.limit_orders).to be_empty
+      expect(subject.bid_orders.limit_orders).to be_empty
 
-      subject.queue.should have(1).trade
-      subject.queue.first.should == [:trade_executor, {market_id: market.id, ask_id: ask.id, bid_id: bid.id, strike_price: price, volume: volume, funds: '50.0'.to_d}, {persistent: false}]
+      expect(subject.queue.size).to eq(1)
+      expect(subject.queue.first).to eq [:trade_executor, {market_id: market.id, ask_id: ask.id, bid_id: bid.id, strike_price: price, volume: volume, funds: '50.0'.to_d}, {persistent: false}]
     end
   end
 
