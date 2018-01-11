@@ -71,22 +71,33 @@ class Account < ApplicationRecord
   end
 
   def plus_funds(amount, fee: ZERO, reason: nil, ref: nil)
-    (amount <= ZERO or fee > amount) and raise AccountError, "cannot add funds (amount: #{amount})"
+    if (amount <= ZERO || fee > amount)
+      raise AccountError, "cannot add funds (amount: #{amount})"
+    end
     change_balance_and_locked amount, 0
   end
 
   def sub_funds(amount, fee: ZERO, reason: nil, ref: nil)
-    (amount <= ZERO or amount > self.balance) and raise AccountError, "cannot subtract funds (amount: #{amount})"
+    self.reload
+    if (amount <= ZERO || amount > self.balance)
+      raise AccountError, "cannot subtract funds (amount: #{amount})"
+    end
     change_balance_and_locked -amount, 0
   end
 
   def lock_funds(amount, reason: nil, ref: nil)
-    (amount <= ZERO or amount > self.balance) and raise AccountError, "cannot lock funds #{currency}(amount: #{amount}; funds: #{self.balance})"
+    self.reload
+    if (amount <= ZERO || amount > self.balance)
+      raise AccountError, "cannot lock funds #{currency}(amount: #{amount}; funds: #{self.balance})"
+    end
     change_balance_and_locked -amount, amount
   end
 
   def unlock_funds(amount, reason: nil, ref: nil)
-    (amount <= ZERO or amount > self.locked) and raise AccountError, "cannot unlock funds (amount: #{amount})"
+    self.reload
+    if (amount <= ZERO or amount > self.locked)
+      raise AccountError, "cannot unlock funds (amount: #{amount})"
+    end
     change_balance_and_locked amount, -amount
   end
 

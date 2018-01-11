@@ -52,20 +52,20 @@ describe Account do
   it { expect(subject.lock_funds("10.0".to_d).locked).to eql "20.0".to_d }
   it { expect(subject.lock_funds("10.0".to_d).balance).to eql "0.0".to_d }
 
-  it { expect{subject.sub_funds("11.0".to_d)}.to raise_error }
-  it { expect{subject.lock_funds("11.0".to_d)}.to raise_error }
-  it { expect{subject.unlock_funds("11.0".to_d)}.to raise_error }
+  it { expect{subject.sub_funds("11.0".to_d)}.to raise_error(Account::AccountError) }
+  it { expect{subject.lock_funds("11.0".to_d)}.to raise_error(Account::AccountError) }
+  it { expect{subject.unlock_funds("11.0".to_d)}.to raise_error(Account::AccountError) }
 
-  it { expect{subject.unlock_and_sub_funds('1.1'.to_d, locked: '1.0'.to_d)}.to raise_error }
+  it { expect{subject.unlock_and_sub_funds('1.1'.to_d, locked: '1.0'.to_d)}.to raise_error(Account::AccountError) }
 
-  it { expect{subject.sub_funds("-1.0".to_d)}.to raise_error }
-  it { expect{subject.plus_funds("-1.0".to_d)}.to raise_error }
-  it { expect{subject.lock_funds("-1.0".to_d)}.to raise_error }
-  it { expect{subject.unlock_funds("-1.0".to_d)}.to raise_error }
-  it { expect{subject.sub_funds("0".to_d)}.to raise_error }
-  it { expect{subject.plus_funds("0".to_d)}.to raise_error }
-  it { expect{subject.lock_funds("0".to_d)}.to raise_error }
-  it { expect{subject.unlock_funds("0".to_d)}.to raise_error }
+  it { expect{subject.sub_funds("-1.0".to_d)}.to raise_error(Account::AccountError) }
+  it { expect{subject.plus_funds("-1.0".to_d)}.to raise_error(Account::AccountError) }
+  it { expect{subject.lock_funds("-1.0".to_d)}.to raise_error(Account::AccountError) }
+  it { expect{subject.unlock_funds("-1.0".to_d)}.to raise_error(Account::AccountError) }
+  it { expect{subject.sub_funds("0".to_d)}.to raise_error(Account::AccountError) }
+  it { expect{subject.plus_funds("0".to_d)}.to raise_error(Account::AccountError) }
+  it { expect{subject.lock_funds("0".to_d)}.to raise_error(Account::AccountError) }
+  it { expect{subject.unlock_funds("0".to_d)}.to raise_error(Account::AccountError) }
 
   it "expect to set reason" do
     subject.plus_funds("1.0".to_d)
@@ -73,12 +73,11 @@ describe Account do
   end
 
   it "expect to set ref" do
-    ref = stub(:id => 1)
+    ref = OpenStruct.new(id: 1)
 
     subject.plus_funds("1.0".to_d, ref: ref)
 
-    expect(subject.last_version.modifiable_id).to eql 1
-    expect(subject.last_version.modifiable_type).to eql Mocha::Mock.name
+    expect(subject.last_version.modifiable_id).to eql(ref.id)
   end
 
   describe "double operation" do
@@ -111,7 +110,7 @@ describe Account do
     context 'when account add funds' do
       subject { account.plus_funds("10".to_d, reason: Account::WITHDRAW).last_version }
 
-      it { expect(subject.reason.withdraw?).to be_true }
+      it { expect(subject.reason.withdraw?).to eq(true) }
       it { expect(subject.locked).to be_d "0" }
       it { expect(subject.balance).to be_d "10" }
       it { expect(subject.amount).to be_d "110" }
@@ -122,7 +121,7 @@ describe Account do
     context 'when account add funds with fee' do
       subject { account.plus_funds("10".to_d, fee: '1'.to_d, reason: Account::WITHDRAW).last_version }
 
-      it { expect(subject.reason.withdraw?).to be_true }
+      it { expect(subject.reason.withdraw?).to eq(true) }
       it { expect(subject.locked).to be_d "0" }
       it { expect(subject.balance).to be_d "10" }
       it { expect(subject.amount).to be_d "110" }
@@ -132,7 +131,7 @@ describe Account do
 
     context 'when account sub funds' do
       subject { account.sub_funds("10".to_d, reason: Account::WITHDRAW).last_version }
-      it { expect(subject.reason.withdraw?).to be_true }
+      it { expect(subject.reason.withdraw?).to eq(true) }
       it { expect(subject.locked).to be_d "0" }
       it { expect(subject.balance).to be_d "-10" }
       it { expect(subject.amount).to be_d "90" }
@@ -142,7 +141,7 @@ describe Account do
 
     context 'when account sub funds with fee' do
       subject { account.sub_funds("10".to_d, fee: '1'.to_d, reason: Account::WITHDRAW).last_version }
-      it { expect(subject.reason.withdraw?).to be_true }
+      it { expect(subject.reason.withdraw?).to eq(true) }
       it { expect(subject.locked).to be_d "0" }
       it { expect(subject.balance).to be_d "-10" }
       it { expect(subject.amount).to be_d "90" }
@@ -152,7 +151,7 @@ describe Account do
 
     context 'when account lock funds' do
       subject { account.lock_funds("10".to_d, reason: Account::WITHDRAW).last_version }
-      it { expect(subject.reason.withdraw?).to be_true }
+      it { expect(subject.reason.withdraw?).to eq(true) }
       it { expect(subject.locked).to be_d "10" }
       it { expect(subject.balance).to be_d "-10" }
       it { expect(subject.amount).to be_d "100.0" }
@@ -161,7 +160,7 @@ describe Account do
     context 'when account unlock funds' do
       let(:account) { create(:account, locked: "10".to_d) }
       subject { account.unlock_funds("10".to_d, reason: Account::WITHDRAW).last_version }
-      it { expect(subject.reason.withdraw?).to be_true }
+      it { expect(subject.reason.withdraw?).to eq(true) }
       it { expect(subject.locked).to be_d "-10" }
       it { expect(subject.balance).to be_d "10" }
       it { expect(subject.amount).to be_d "110" }
@@ -170,7 +169,7 @@ describe Account do
     context 'when account unlock and sub funds' do
       let(:account) { create(:account, balance: '10'.to_d, locked: "10".to_d) }
       subject { account.unlock_and_sub_funds("10".to_d, locked: "10".to_d, reason: Account::WITHDRAW).last_version }
-      it { expect(subject.reason.withdraw?).to be_true }
+      it { expect(subject.reason.withdraw?).to eq(true) }
       it { expect(subject.locked).to be_d "-10" }
       it { expect(subject.balance).to be_d "0" }
       it { expect(subject.amount).to be_d "10.0" }
@@ -181,7 +180,7 @@ describe Account do
     context 'when account unlock and sub funds with fee' do
       let(:account) { create(:account, balance: '10'.to_d, locked: "10".to_d) }
       subject { account.unlock_and_sub_funds("10".to_d, fee: '1'.to_d, locked: "10".to_d, reason: Account::WITHDRAW).last_version }
-      it { expect(subject.reason.withdraw?).to be_true }
+      it { expect(subject.reason.withdraw?).to eq(true) }
       it { expect(subject.locked).to be_d "-10" }
       it { expect(subject.balance).to be_d "0" }
       it { expect(subject.amount).to be_d "10.0" }
@@ -196,13 +195,12 @@ describe Account do
 
     context "account without any account versions" do
       it "returns true" do
-        expect(account.examine).to be_true
+        expect(account.examine).to eq(true)
       end
 
       it "returns false when account changed without versions" do
-        account.stubs(:member).returns(member)
         account.update_attribute(:balance, 5000.to_d)
-        expect(account.examine).to be_false
+        expect(account.examine).to eq(false)
       end
     end
 
@@ -218,18 +216,17 @@ describe Account do
       end
 
       it "returns true" do
-        expect(account.examine).to be_true
+        expect(account.examine).to eq(true)
       end
 
       it "returns false when account balance doesn't match versions" do
-        account.stubs(:member).returns(member)
         account.update_attribute(:balance, 5000.to_d)
-        expect(account.examine).to be_false
+        expect(account.examine).to eq(false)
       end
 
       it "returns false when account versions were changed" do
         account.versions.load.sample.update_attribute(:amount, 50.to_d)
-        expect(account.examine).to be_false
+        expect(account.examine).to eq(false)
       end
     end
   end
@@ -237,15 +234,15 @@ describe Account do
   describe "#change_balance_and_locked" do
     it "should update balance and locked funds in memory" do
       subject.change_balance_and_locked "-10".to_d, "10".to_d
-      subject.balance.should be_d('0')
-      subject.locked.should be_d('20')
+      expect(subject.balance).to be_d('0')
+      expect(subject.locked).to be_d('20')
     end
 
     it "should update balance and locked funds in db" do
       subject.change_balance_and_locked "-10".to_d, "10".to_d
       subject.reload
-      subject.balance.should be_d('0')
-      subject.locked.should be_d('20')
+      expect(subject.balance).to be_d('0')
+      expect(subject.locked).to be_d('20')
     end
   end
 
@@ -257,13 +254,13 @@ describe Account do
 
       v = AccountVersion.last
 
-      v.member_id.should == subject.member_id
-      v.account.should   == subject
-      v.fun.should       == 'unlock_and_sub_funds'
-      v.reason.should    == 'unknown'
-      v.amount.should    == subject.amount
-      v.balance.should   == '1.0'.to_d
-      v.locked.should    == '-2.0'.to_d
+      expect(v.member_id).to eq(subject.member_id)
+      expect(v.account).to eq(subject)
+      expect(v.fun).to eq('unlock_and_sub_funds')
+      expect(v.reason).to eq('unknown')
+      expect(v.amount).to eq(subject.amount)
+      expect(v.balance).to be_d(1)
+      expect(v.locked).to be_d(-2)
     end
 
     it "should retry the whole transaction on stale object error" do
@@ -280,29 +277,24 @@ describe Account do
       }.to change(AccountVersion, :count).by(1)
 
       v = AccountVersion.last
-      v.amount.should  == '14.0'.to_d
-      v.balance.should == '1.0'.to_d
-      v.locked.should  == '-2.0'.to_d
+      expect(v.amount).to be_d(19)
+      expect(v.balance).to be_d(1)
+      expect(v.locked).to be_d(-2)
     end
   end
 
   describe "concurrent lock_funds" do
     it "should raise error on the second lock_funds" do
       account1 = Account.find subject.id
-      account2 = Account.find subject.id
 
-      subject.reload.balance.should == BigDecimal.new('10')
+      expect(subject.balance).to be_d(10)
 
       expect do
-        ActiveRecord::Base.transaction do
-          account1.lock_funds 8, reason: Account::ORDER_SUBMIT
-        end
-        ActiveRecord::Base.transaction do
-          account2.lock_funds 8, reason: Account::ORDER_SUBMIT
-        end
-      end.to raise_error(ActiveRecord::RecordInvalid)
+        subject.lock_funds 8, reason: Account::ORDER_SUBMIT
+        account1.lock_funds 8, reason: Account::ORDER_SUBMIT
+      end.to raise_error(Account::AccountError)
 
-      subject.reload.balance.should == BigDecimal.new('2')
+      expect(subject.reload.balance).to be_d(2)
     end
   end
 
@@ -310,12 +302,10 @@ describe Account do
     let!(:account1) { create(:account, currency: YmlCurrency.first.code)}
     let!(:account2) { create(:account, currency: YmlCurrency.last.code)}
     let!(:account3) { create(:account, currency: YmlCurrency.all[1].code)}
-    before do
-      YmlCurrency.stubs(:ids).returns([Currency.first.id, YmlCurrency.last.id])
-    end
 
-    it "should only return the accoutns with currency enabled" do
-      Account.enabled.to_a.should == [account1, account2]
+    it "should only return the accounts with currency enabled" do
+      YmlCurrency.ids = [YmlCurrency.first.id, YmlCurrency.last.id]
+      expect(Account.enabled.to_a).to eq [account1, account2]
     end
 
   end

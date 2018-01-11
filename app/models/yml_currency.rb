@@ -17,11 +17,15 @@ class YmlCurrency < ActiveYamlBase
   end
 
   def self.codes
-    @keys ||= all.map &:code
+    @keys ||= all.map(&:code)
   end
 
   def self.ids
-    @ids ||= all.map &:id
+    @ids ||= all.map(&:id)
+  end
+
+  def self.ids=(values)
+    @ids = values
   end
 
   def self.assets(code)
