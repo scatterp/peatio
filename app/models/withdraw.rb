@@ -21,6 +21,8 @@
 #
 
 class Withdraw < ApplicationRecord
+  has_secure_token :sn
+
   STATES = [:submitting, :submitted, :rejected, :accepted, :suspect, :processing,
             :done, :canceled, :almost_done, :failed]
   COMPLETED_STATES = [:done, :rejected, :canceled, :almost_done, :failed]
@@ -48,7 +50,6 @@ class Withdraw < ApplicationRecord
   before_validation :fix_precision
   before_validation :calc_fee
   before_validation :set_account
-  after_create :generate_sn
 
   after_update :sync_update
   after_create :sync_create
@@ -83,13 +84,6 @@ class Withdraw < ApplicationRecord
 
   alias_attribute :withdraw_id, :sn
   alias_attribute :full_name, :member_name
-
-  def generate_sn
-    id_part = sprintf '%04d', id
-    date_part = created_at.localtime.strftime('%y%m%d%H%M')
-    self.sn = "#{date_part}#{id_part}"
-    update_column(:sn, sn)
-  end
 
   aasm :whiny_transitions => false do
     state :submitting,  initial: true
@@ -231,9 +225,7 @@ class Withdraw < ApplicationRecord
   end
 
   def fix_precision
-    if sum && currency_obj.precision
-      self.sum = sum.round(currency_obj.precision, BigDecimal::ROUND_DOWN)
-    end
+    self.sum = sum&.truncate(currency_obj.precision) if currency_obj.precision
   end
 
   def calc_fee

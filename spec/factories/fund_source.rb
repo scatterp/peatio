@@ -9,7 +9,7 @@ FactoryBot.define do
 
     trait :eur do
       extra 'bc'
-      uid '123412341234'
+      uid { SecureRandom.hex(16) }
       currency 'eur'
     end
 

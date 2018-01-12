@@ -167,7 +167,8 @@ class Account < ApplicationRecord
 
   def examine
     expected = 0
-    versions.find_each(batch_size: 100000) do |v|
+    versions.find_each do |v|
+      ap v
       expected += v.amount_change
       return false if expected != v.amount
     end

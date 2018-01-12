@@ -22,8 +22,9 @@ module Audit
   class TransferAuditLog < AuditLog
 
     def self.audit!(transfer, operator = nil)
+      old_state = transfer.aasm_state_before_last_save
       create(operator_id: operator.try(:id), auditable: transfer,
-             source_state: transfer.aasm_state_was, target_state: transfer.aasm_state)
+             source_state: old_state, target_state: transfer.aasm_state)
     end
 
   end

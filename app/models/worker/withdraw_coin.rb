@@ -5,11 +5,11 @@ module Worker
       payload.symbolize_keys!
 
       Withdraw.transaction do
-        withdraw = Withdraw.lock.find payload[:id]
+        withdraw = Withdraw.lock.find(payload[:id])
 
         return unless withdraw.processing?
 
-        withdraw.whodunnit('Worker::WithdrawCoin') do
+        PaperTrail.whodunnit('Worker::WithdrawCoin') do
           withdraw.call_rpc
           withdraw.save!
         end
@@ -29,7 +29,7 @@ module Worker
         CoinRPC[withdraw.currency].settxfee fee
         txid = CoinRPC[withdraw.currency].sendtoaddress withdraw.fund_uid, withdraw.amount.to_f
 
-        withdraw.whodunnit('Worker::WithdrawCoin') do
+        PaperTrail.whodunnit('Worker::WithdrawCoin') do
           withdraw.update_column :txid, txid
 
           # withdraw.succeed! will start another transaction, cause
