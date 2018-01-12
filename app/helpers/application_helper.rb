@@ -232,7 +232,7 @@ module ApplicationHelper
   end
 
   def format_currency(number, currency, n: nil)
-    currency_obj = Currency.find_by_code(currency.to_s)
+    currency_obj = YmlCurrency.find_by_code(currency.to_s)
     digit = n || currency_obj.decimal_digit
     decimal = (number || 0).to_d.round(0, digit)
     decimal = number_with_precision(decimal, precision: digit, delimiter: ',')

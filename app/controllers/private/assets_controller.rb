@@ -3,9 +3,9 @@ module Private
     skip_before_action :auth_member!, only: [:index]
 
     def index
-      # @cny_assets  = Currency.assets('cny')
-#      @cny_assets  = Currency.assets('usd')
-      @eur_assets  = Currency.assets('eur')
+      # @cny_assets  = YmlCurrency.assets('cny')
+#      @cny_assets  = YmlCurrency.assets('usd')
+      @eur_assets  = YmlCurrency.assets('eur')
       @btc_proof   = Proof.current :btc
       @ltc_proof   = Proof.current :ltc
       @ppc_proof   = Proof.current :ppc

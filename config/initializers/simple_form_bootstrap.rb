@@ -40,13 +40,14 @@ end
 
 module SimpleForm
   module ActionViewExtensions
-    module FormHelper
-      def simple_form_for_with_default_class(record, options = {}, &block)
+    module FormHelperPeatio
+      def simple_form_for(record, options = {}, &block)
         options[:html] ||= {}
         options[:html][:class] ||= 'form-horizontal'
-        simple_form_for_without_default_class(record, options, &block)
+        super(record, options, &block)
       end
-      alias_method_chain :simple_form_for, :default_class
     end
   end
 end
+
+SimpleForm::ActionViewExtensions::FormHelper.prepend(SimpleForm::ActionViewExtensions::FormHelperPeatio)

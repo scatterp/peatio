@@ -1,4 +1,4 @@
-class DeleteTableAccountVersions < ActiveRecord::Migration
+class DeleteTableAccountVersions < ActiveRecord::Migration[4.2]
   def up
     drop_table :account_versions
   end

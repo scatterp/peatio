@@ -185,7 +185,7 @@ class ApplicationController < ActionController::Base
       }
     }
 
-    gon.currencies = Currency.all.inject({}) do |memo, currency|
+    gon.currencies = YmlCurrency.all.inject({}) do |memo, currency|
       memo[currency.code] = {
         code: currency[:code],
         symbol: currency[:symbol],
@@ -193,7 +193,7 @@ class ApplicationController < ActionController::Base
       }
       memo
     end
-    #gon.fiat_currency = Currency.first.code
+    #gon.fiat_currency = YmlCurrency.first.code
     gon.fiat_currency = 'usd'
 
     gon.tickers = {}

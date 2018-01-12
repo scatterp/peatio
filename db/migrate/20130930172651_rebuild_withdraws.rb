@@ -1,4 +1,4 @@
-class RebuildWithdraws < ActiveRecord::Migration
+class RebuildWithdraws < ActiveRecord::Migration[4.2]
   def up
     change_table :withdraws do |t|
       t.rename :payment_way, :address_type

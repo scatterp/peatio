@@ -1,6 +1,6 @@
 module Private
   class TicketsController < BaseController
-    after_filter :mark_ticket_as_read, only: [:create, :show]
+    after_action :mark_ticket_as_read, only: [:create, :show]
 
     def index
       @tickets = current_user.tickets

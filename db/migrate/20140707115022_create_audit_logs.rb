@@ -1,4 +1,4 @@
-class CreateAuditLogs < ActiveRecord::Migration
+class CreateAuditLogs < ActiveRecord::Migration[4.2]
   def change
     create_table :audit_logs do |t|
       # Common Properties

@@ -1,4 +1,5 @@
-def time_to_milliseconds(t=Time.now)
+def time_to_milliseconds(t = nil)
+  t ||= Time.current
   (t.to_f*1000).to_i
 end
 

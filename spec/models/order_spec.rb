@@ -1,3 +1,36 @@
+# == Schema Information
+#
+# Table name: orders
+#
+#  id             :integer          not null, primary key
+#  bid            :integer
+#  ask            :integer
+#  currency       :integer
+#  price          :decimal(32, 16)
+#  volume         :decimal(32, 16)
+#  origin_volume  :decimal(32, 16)
+#  state          :integer
+#  done_at        :datetime
+#  type           :string(8)
+#  member_id      :integer
+#  created_at     :datetime
+#  updated_at     :datetime
+#  sn             :string
+#  source         :string           not null
+#  ord_type       :string(10)
+#  locked         :decimal(32, 16)
+#  origin_locked  :decimal(32, 16)
+#  funds_received :decimal(32, 16)  default(0.0)
+#  trades_count   :integer          default(0)
+#
+# Indexes
+#
+#  index_orders_on_currency_and_state   (currency,state)
+#  index_orders_on_member_id            (member_id)
+#  index_orders_on_member_id_and_state  (member_id,state)
+#  index_orders_on_state                (state)
+#
+
 require 'spec_helper'
 
 describe Order, 'validations' do
@@ -7,25 +40,27 @@ describe Order, 'validations' do
   it { should validate_presence_of(:locked) }
   it { should validate_presence_of(:origin_locked) }
 
+  let(:member) { create(:member) }
+
   context "limit order" do
     it "should make sure price is present" do
-      order = Order.new(currency: 'btceur', price: nil, ord_type: 'limit')
-      order.should_not be_valid
-      order.errors[:price].should == ["is not a number"]
+      order = Order.new(currency: 'btceur', price: nil, ord_type: 'limit', member: member)
+      expect(order.valid?).to be false
+      expect(order.errors[:price]).to eq ["is not a number"]
     end
 
     it "should make sure price is greater than zero" do
-      order = Order.new(currency: 'btceur', price: '0.0'.to_d, ord_type: 'limit')
-      order.should_not be_valid
-      order.errors[:price].should == ["must be greater than 0"]
+      order = Order.new(currency: 'btceur', price: '0.0'.to_d, ord_type: 'limit', member: member)
+      expect(order.valid?).to be false
+      expect(order.errors[:price]).to eq ["must be greater than 0"]
     end
   end
 
   context "market order" do
     it "should make sure price is not present" do
-      order = Order.new(currency: 'btceur', price: '0.0'.to_d, ord_type: 'market')
-      order.should_not be_valid
-      order.errors[:price].should == ['must not be present']
+      order = Order.new(currency: 'btceur', price: '0.0'.to_d, ord_type: 'market', member: member)
+      expect(order.valid?).to be false
+      expect(order.errors[:price]).to eq ['must not be present']
     end
   end
 end
@@ -47,8 +82,8 @@ describe Order, "#done" do
   let(:order) { order_bid }
   let(:order_bid) { create(:order_bid, price: "1.2".to_d, volume: "10.0".to_d) }
   let(:order_ask) { create(:order_ask, price: "1.2".to_d, volume: "10.0".to_d) }
-  let(:hold_account) { create(:account, member_id: 1, locked: "100.0".to_d, balance: "0.0".to_d) }
-  let(:expect_account) { create(:account, member_id: 2, locked: "0.0".to_d, balance: "0.0".to_d) }
+  let(:hold_account) { create(:account, locked: "100.0".to_d, balance: "0.0".to_d) }
+  let(:expect_account) { create(:account, locked: "0.0".to_d, balance: "0.0".to_d) }
 
   before do
     order_bid.stubs(:hold_account).returns(hold_account)
@@ -100,29 +135,30 @@ describe Order, "#done" do
   describe Order do
     describe "#state" do
       it "should be keep wait state" do
-        expect do
+        expect {
           order.strike(mock_trade("5.0", "0.8"))
-        end.to_not change{ order.state }.by(Order::WAIT)
+        }.to_not change{ order.state }
+        expect(order.state).to eq(Order::WAIT)
       end
 
       it "should be change to done state" do
-        expect do
-          order.strike(mock_trade("10.0", "1.2"))
-        end.to change{ order.state }.from(Order::WAIT).to(Order::DONE)
+        expect(order.state).to eq(Order::WAIT)
+        order.strike(mock_trade("10.0", "1.2"))
+        expect(order.state).to eq(Order::DONE)
       end
     end
 
     describe "#volume" do
-      it "should be change volume" do
+      it "should change volume" do
         expect do
           order.strike(mock_trade("4.0", "1.2"))
-        end.to change{ order.volume }.from("10.0".to_d).to("6.0".to_d)
+        end.to change{ order.volume }.from(10.0).to(6.0)
       end
 
-      it "should be don't change origin volume" do
+      it "should NOT change origin volume" do
         expect do
           order.strike(mock_trade("4.0", "1.2"))
-        end.to_not change{ order.origin_volume }.by("10.0".to_d)
+        end.to_not change{ order.origin_volume }
       end
     end
 
@@ -207,11 +243,11 @@ end
 
 describe Order, "#kind" do
   it "should be ask for ask order" do
-    OrderAsk.new.kind.should == 'ask'
+    expect(OrderAsk.new.kind).to eq 'ask'
   end
 
   it "should be bid for bid order" do
-    OrderBid.new.kind.should == 'bid'
+    expect(OrderBid.new.kind).to eq 'bid'
   end
 end
 
@@ -222,32 +258,32 @@ describe Order, "related accounts" do
   context OrderAsk do
     it "should hold btc and expect eur" do
       ask = create(:order_ask, member: alice)
-      ask.hold_account.should == alice.get_account(:btc)
-      ask.expect_account.should == alice.get_account(:eur)
+      expect(ask.hold_account).to eq alice.get_account(:btc)
+      expect(ask.expect_account).to eq alice.get_account(:eur)
     end
   end
 
   context OrderBid do
     it "should hold eur and expect btc" do
       bid = create(:order_bid, member: bob)
-      bid.hold_account.should == bob.get_account(:eur)
-      bid.expect_account.should == bob.get_account(:btc)
+      expect(bid.hold_account).to eq bob.get_account(:eur)
+      expect(bid.expect_account).to eq bob.get_account(:btc)
     end
   end
 end
 
 describe Order, "#avg_price" do
   it "should be zero if not filled yet" do
-    OrderAsk.new(locked: '1.0', origin_locked: '1.0', volume: '1.0', origin_volume: '1.0', funds_received: '0').avg_price.should == '0'.to_d
-    OrderBid.new(locked: '1.0', origin_locked: '1.0', volume: '1.0', origin_volume: '1.0', funds_received: '0').avg_price.should == '0'.to_d
+    expect(create(:order_ask, locked: '1.0', origin_locked: '1.0', volume: '1.0', origin_volume: '1.0', funds_received: '0').avg_price).to eq '0'.to_d
+    expect(create(:order_bid, locked: '1.0', origin_locked: '1.0', volume: '1.0', origin_volume: '1.0', funds_received: '0').avg_price).to eq '0'.to_d
   end
 
   it "should calculate average price of bid order" do
-    OrderBid.new(currency: 'btceur', locked: '10.0', origin_locked: '20.0', volume: '1.0', origin_volume: '3.0', funds_received: '2.0').avg_price.should == '5'.to_d
+    expect(create(:order_bid, currency: 'btceur', locked: '10.0', origin_locked: '20.0', volume: '1.0', origin_volume: '3.0', funds_received: '2.0').avg_price).to eq '5'.to_d
   end
 
   it "should calculate average price of ask order" do
-    OrderAsk.new(currency: 'btceur', locked: '1.0', origin_locked: '2.0', volume: '1.0', origin_volume: '2.0', funds_received: '10.0').avg_price.should == '10'.to_d
+    expect(create(:order_ask, currency: 'btceur', locked: '1.0', origin_locked: '2.0', volume: '1.0', origin_volume: '2.0', funds_received: '10.0').avg_price).to eq '10'.to_d
   end
 end
 
@@ -268,6 +304,6 @@ end
 describe Order, "#strike" do
   it "should raise error if order has been cancelled" do
     order = Order.new(state: Order::CANCEL)
-    expect { order.strike(mock('trade')) }.to raise_error
+    expect { order.strike(mock('trade')) }.to raise_error(RuntimeError)
   end
 end

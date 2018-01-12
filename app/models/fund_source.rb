@@ -1,4 +1,19 @@
-class FundSource < ActiveRecord::Base
+# == Schema Information
+#
+# Table name: fund_sources
+#
+#  id         :integer          not null, primary key
+#  extra      :string
+#  uid        :string
+#  is_locked  :boolean          default(FALSE)
+#  created_at :datetime
+#  updated_at :datetime
+#  deleted_at :datetime
+#  member_id  :integer
+#  currency   :integer
+#
+
+class FundSource < ApplicationRecord
   include Currencible
 
   attr_accessor :name

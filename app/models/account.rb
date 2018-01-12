@@ -1,4 +1,25 @@
-class Account < ActiveRecord::Base
+# == Schema Information
+#
+# Table name: accounts
+#
+#  id                              :integer          not null, primary key
+#  member_id                       :integer
+#  currency                        :integer
+#  balance                         :decimal(32, 16)
+#  locked                          :decimal(32, 16)
+#  created_at                      :datetime
+#  updated_at                      :datetime
+#  in                              :decimal(32, 16)
+#  out                             :decimal(32, 16)
+#  default_withdraw_fund_source_id :integer
+#
+# Indexes
+#
+#  index_accounts_on_member_id               (member_id)
+#  index_accounts_on_member_id_and_currency  (member_id,currency)
+#
+
+class Account < ApplicationRecord
   include Currencible
 
   FIX = :fix
@@ -25,12 +46,12 @@ class Account < ActiveRecord::Base
 
   # Suppose to use has_one here, but I want to store
   # relationship at account side. (Daniel)
-  belongs_to :default_withdraw_fund_source, class_name: 'FundSource'
+  belongs_to :default_withdraw_fund_source, class_name: FundSource.name, optional: true
 
   validates :member_id, uniqueness: { scope: :currency }
   validates_numericality_of :balance, :locked, greater_than_or_equal_to: ZERO
 
-  scope :enabled, -> { where("currency in (?)", Currency.ids) }
+  scope :enabled, -> { where("currency in (?)", YmlCurrency.ids) }
 
   after_commit :trigger, :sync_update
 
@@ -50,22 +71,33 @@ class Account < ActiveRecord::Base
   end
 
   def plus_funds(amount, fee: ZERO, reason: nil, ref: nil)
-    (amount <= ZERO or fee > amount) and raise AccountError, "cannot add funds (amount: #{amount})"
+    if (amount <= ZERO || fee > amount)
+      raise AccountError, "cannot add funds (amount: #{amount})"
+    end
     change_balance_and_locked amount, 0
   end
 
   def sub_funds(amount, fee: ZERO, reason: nil, ref: nil)
-    (amount <= ZERO or amount > self.balance) and raise AccountError, "cannot subtract funds (amount: #{amount})"
+    self.reload
+    if (amount <= ZERO || amount > self.balance)
+      raise AccountError, "cannot subtract funds (amount: #{amount})"
+    end
     change_balance_and_locked -amount, 0
   end
 
   def lock_funds(amount, reason: nil, ref: nil)
-    (amount <= ZERO or amount > self.balance) and raise AccountError, "cannot lock funds (amount: #{amount})"
+    self.reload
+    if (amount <= ZERO || amount > self.balance)
+      raise AccountError, "cannot lock funds #{currency}(amount: #{amount}; funds: #{self.balance})"
+    end
     change_balance_and_locked -amount, amount
   end
 
   def unlock_funds(amount, reason: nil, ref: nil)
-    (amount <= ZERO or amount > self.locked) and raise AccountError, "cannot unlock funds (amount: #{amount})"
+    self.reload
+    if (amount <= ZERO or amount > self.locked)
+      raise AccountError, "cannot unlock funds (amount: #{amount})"
+    end
     change_balance_and_locked amount, -amount
   end
 
@@ -135,7 +167,8 @@ class Account < ActiveRecord::Base
 
   def examine
     expected = 0
-    versions.find_each(batch_size: 100000) do |v|
+    versions.find_each do |v|
+      ap v
       expected += v.amount_change
       return false if expected != v.amount
     end
@@ -155,7 +188,8 @@ class Account < ActiveRecord::Base
   def change_balance_and_locked(delta_b, delta_l)
     self.balance += delta_b
     self.locked  += delta_l
-    self.class.connection.execute "update accounts set balance = balance + #{delta_b}, locked = locked + #{delta_l} where id = #{id}"
+    self.save
+    # self.class.connection.execute "update accounts set balance = balance + #{delta_b}, locked = locked + #{delta_l} where id = #{id}"
     add_to_transaction # so after_commit will be triggered
     self
   end

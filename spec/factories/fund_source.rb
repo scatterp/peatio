@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :fund_source do
     extra 'bitcoin'
     uid { Faker::Bitcoin.address }
@@ -9,7 +9,7 @@ FactoryGirl.define do
 
     trait :eur do
       extra 'bc'
-      uid '123412341234'
+      uid { SecureRandom.hex(16) }
       currency 'eur'
     end
 

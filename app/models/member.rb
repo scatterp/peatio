@@ -1,4 +1,31 @@
-class Member < ActiveRecord::Base
+# == Schema Information
+#
+# Table name: members
+#
+#  id           :integer          not null, primary key
+#  sn           :string           not null
+#  email        :string
+#  identity_id  :integer
+#  created_at   :datetime
+#  updated_at   :datetime
+#  state        :integer
+#  activated    :boolean
+#  country_code :integer
+#  phone_number :string
+#  display_name :string
+#  disabled     :boolean          default(FALSE)
+#  api_disabled :boolean          default(FALSE)
+#  nickname     :string
+#
+# Indexes
+#
+#  index_members_on_display_name  (display_name) UNIQUE
+#  index_members_on_email         (email) UNIQUE
+#
+
+class Member < ApplicationRecord
+  has_secure_token :sn
+
   acts_as_taggable
   acts_as_reader
 
@@ -25,14 +52,14 @@ class Member < ActiveRecord::Base
   delegate :full_name,  to: :id_document, allow_nil: true
   delegate :verified?,  to: :id_document, prefix: true, allow_nil: true
 
-  before_validation :sanitize, :generate_sn
+  before_validation :sanitize
 
-  validates :sn, presence: true
-  validates :display_name, uniqueness: true, allow_blank: true
-  validates :email, email: true, uniqueness: true, allow_nil: true
+  # validates :sn, presence: true
+  # validates :display_name, uniqueness: true, allow_blank: true
+  # validates :email, email: true, uniqueness: true, allow_nil: true
 
   before_create :build_default_id_document
-  after_create  :touch_accounts
+  # after_create  :touch_accounts
   after_update :resend_activation
   after_update :sync_update
 
@@ -50,28 +77,26 @@ class Member < ActiveRecord::Base
     end
 
     def admins
-      Figaro.env.admin.split(',')
+      ENV['ADMIN'].split(',')
     end
 
     def search(field: nil, term: nil)
-      result = case field
-               when 'email'
-                 where('members.email LIKE ?', "%#{term}%")
-               when 'phone_number'
-                 where('members.phone_number LIKE ?', "%#{term}%")
-               when 'name'
-                 joins(:id_document).where('id_documents.name LIKE ?', "%#{term}%")
-               when 'wallet_address'
-                 members = joins(:fund_sources).where('fund_sources.uid' => term)
-                 if members.empty?
-                  members = joins(:payment_addresses).where('payment_addresses.address' => term)
-                 end
-                 members
-               else
-                 all
-               end
-
-      result.order(:id).reverse_order
+      results =
+        case field.to_s
+        when 'email'
+          self.where('members.email LIKE ?', "%#{term}%")
+        when 'phone_number'
+          self.where('members.phone_number LIKE ?', "%#{term}%")
+        when 'name'
+          self.joins(:id_document).where('id_documents.name LIKE ?', "%#{term}%")
+        when 'wallet_address'
+          members = self.joins(:fund_sources).where('fund_sources.uid' => term)
+          members = self.joins(:payment_addresses).where('payment_addresses.address' => term) if members.empty?
+          members
+        else
+          self.all
+        end
+      results.order(id: :desc)
     end
 
     private
@@ -107,11 +132,11 @@ class Member < ActiveRecord::Base
   end
 
   def active!
-    update activated: true
+    self.update(activated: true)
   end
 
   def update_password(password)
-    identity.update password: password, password_confirmation: password
+    identity.update(password: password, password_confirmation: password)
     send_password_changed_notification
   end
 
@@ -145,25 +170,20 @@ class Member < ActiveRecord::Base
 
   def get_account(currency)
     account = accounts.with_currency(currency.to_sym).first
-
-    if account.nil?
-      touch_accounts
-      account = accounts.with_currency(currency.to_sym).first
-    end
-
+    account ||= self.accounts.create(currency: currency, balance: 0, locked: 0)
     account
   end
   alias :ac :get_account
 
   def touch_accounts
-    less = Currency.codes - self.accounts.map(&:currency).map(&:to_sym)
+    less = YmlCurrency.codes - self.accounts.map(&:currency).map(&:to_sym)
     less.each do |code|
       self.accounts.create(currency: code, balance: 0, locked: 0)
     end
   end
 
   def identity
-    authentication = authentications.find_by(provider: 'identity')
+    authentication = authentications.where(provider: 'identity').first
     authentication ? Identity.find(authentication.uid) : nil
   end
 
@@ -222,23 +242,16 @@ class Member < ActiveRecord::Base
   private
 
   def sanitize
-    self.email.try(:downcase!)
-  end
-
-  def generate_sn
-    self.sn and return
-    begin
-      self.sn = "PEA#{ROTP::Base32.random_base32(8).upcase}TIO"
-    end while Member.where(:sn => self.sn).any?
+    self.email = self.email.try(:downcase)
   end
 
   def build_default_id_document
-    build_id_document
+    self.build_id_document
     true
   end
 
   def resend_activation
-    self.send_activation if self.email_changed?
+    self.send_activation if self.saved_change_to_email?
   end
 
   def sync_update

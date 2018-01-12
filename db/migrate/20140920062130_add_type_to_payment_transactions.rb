@@ -1,4 +1,4 @@
-class AddTypeToPaymentTransactions < ActiveRecord::Migration
+class AddTypeToPaymentTransactions < ActiveRecord::Migration[4.2]
   def up
     add_column :payment_transactions, :type, :string, limit: 60
     PaymentTransaction.update_all type: 'PaymentTransaction::Default'

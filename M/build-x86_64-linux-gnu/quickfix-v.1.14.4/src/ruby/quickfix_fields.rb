@@ -1416,8 +1416,8 @@ module Quickfix
 		end
 	end
 
-	class Currency < Quickfix::StringField
-		def Currency.field
+	class YmlCurrency.< Quickfix::StringField
+		def YmlCurrency.field
 			return 15
 		end
 		def initialize(data = nil)
@@ -10087,8 +10087,8 @@ module Quickfix
 		end
 	end
 
-	class CurrencyRatio < Quickfix::DoubleField
-		def CurrencyRatio.field
+	class YmlCurrency.atio < Quickfix::DoubleField
+		def YmlCurrency.atio.field
 			return 1382
 		end
 		def initialize(data = nil)

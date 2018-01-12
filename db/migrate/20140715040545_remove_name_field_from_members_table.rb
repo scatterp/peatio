@@ -1,4 +1,4 @@
-class RemoveNameFieldFromMembersTable < ActiveRecord::Migration
+class RemoveNameFieldFromMembersTable < ActiveRecord::Migration[4.2]
   def up
     remove_column :members, :name
   end

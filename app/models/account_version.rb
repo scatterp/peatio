@@ -1,4 +1,31 @@
-class AccountVersion < ActiveRecord::Base
+# == Schema Information
+#
+# Table name: account_versions
+#
+#  id              :integer          not null, primary key
+#  member_id       :integer
+#  account_id      :integer
+#  reason          :integer
+#  balance         :decimal(32, 16)
+#  locked          :decimal(32, 16)
+#  amount          :decimal(32, 16)
+#  modifiable_type :string
+#  modifiable_id   :integer
+#  created_at      :datetime
+#  updated_at      :datetime
+#  currency        :integer
+#  fee             :decimal(32, 16)
+#  fun             :integer
+#
+# Indexes
+#
+#  index_account_versions_on_account_id                         (account_id)
+#  index_account_versions_on_account_id_and_reason              (account_id,reason)
+#  index_account_versions_on_member_id_and_reason               (member_id,reason)
+#  index_account_versions_on_modifiable_id_and_modifiable_type  (modifiable_id,modifiable_type)
+#
+
+class AccountVersion < ApplicationRecord
   include Currencible
 
   HISTORY = [Account::STRIKE_ADD, Account::STRIKE_SUB, Account::STRIKE_FEE, Account::DEPOSIT, Account::WITHDRAW, Account::FIX]
@@ -32,14 +59,14 @@ class AccountVersion < ActiveRecord::Base
   # created.
   #
   # TODO: find a more generic way to construct the sql
-  def self.optimistically_lock_account_and_create!(balance, locked, attrs)
+  def self.optimistically_lock_account_and_create!(balance, locked, attrs = {})
     attrs = attrs.symbolize_keys
 
     attrs[:created_at] = Time.now
     attrs[:updated_at] = attrs[:created_at]
     attrs[:fun]        = Account::FUNS[attrs[:fun]]
     attrs[:reason]     = REASON_CODES[attrs[:reason]]
-    attrs[:currency]   = Currency.enumerize[attrs[:currency]]
+    attrs[:currency]   = YmlCurrency.enumerize[attrs[:currency]]
 
     account_id = attrs[:account_id]
     raise ActiveRecord::ActiveRecordError, "account must be specified" unless account_id.present?

@@ -1,4 +1,31 @@
-class Trade < ActiveRecord::Base
+# == Schema Information
+#
+# Table name: trades
+#
+#  id            :integer          not null, primary key
+#  price         :decimal(32, 16)
+#  volume        :decimal(32, 16)
+#  ask_id        :integer
+#  bid_id        :integer
+#  trend         :integer
+#  currency      :integer
+#  created_at    :datetime
+#  updated_at    :datetime
+#  ask_member_id :integer
+#  bid_member_id :integer
+#  funds         :decimal(32, 16)
+#
+# Indexes
+#
+#  index_trades_on_ask_id         (ask_id)
+#  index_trades_on_ask_member_id  (ask_member_id)
+#  index_trades_on_bid_id         (bid_id)
+#  index_trades_on_bid_member_id  (bid_member_id)
+#  index_trades_on_created_at     (created_at)
+#  index_trades_on_currency       (currency)
+#
+
+class Trade < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   ZERO = '0.0'.to_d
 
@@ -6,12 +33,12 @@ class Trade < ActiveRecord::Base
   enumerize :trend, in: {:up => 1, :down => 0}
   enumerize :currency, in: Market.enumerize, scope: true
 
-  belongs_to :market, class_name: 'Market', foreign_key: 'currency'
-  belongs_to :ask, class_name: 'OrderAsk', foreign_key: 'ask_id'
-  belongs_to :bid, class_name: 'OrderBid', foreign_key: 'bid_id'
+  belongs_to :market, class_name: Market.name, foreign_key: 'currency'
+  belongs_to :ask, class_name: OrderAsk.name, foreign_key: 'ask_id'
+  belongs_to :bid, class_name: OrderBid.name, foreign_key: 'bid_id'
 
-  belongs_to :ask_member, class_name: 'Member', foreign_key: 'ask_member_id'
-  belongs_to :bid_member, class_name: 'Member', foreign_key: 'bid_member_id'
+  belongs_to :ask_member, class_name: Member.name, foreign_key: 'ask_member_id'
+  belongs_to :bid_member, class_name: Member.name, foreign_key: 'bid_member_id'
 
   validates_presence_of :price, :volume, :funds
 

@@ -3,7 +3,7 @@ module Deposits
     extend ActiveSupport::Concern
 
     included do
-      before_filter :fetch
+      before_action :fetch
     end
 
     def create

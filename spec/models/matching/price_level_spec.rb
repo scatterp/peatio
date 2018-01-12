@@ -15,11 +15,11 @@ describe Matching::PriceLevel do
 
   it "should remove order" do
     subject.remove o2
-    subject.orders.should == [o1, o3]
+    expect(subject.orders).to eq [o1, o3]
   end
 
   it "should find order by id" do
-    subject.find(o1.id).should == o1
-    subject.find(o2.id).should == o2
+    expect(subject.find(o1.id)).to eq o1
+    expect(subject.find(o2.id)).to eq o2
   end
 end

@@ -1,3 +1,30 @@
+# == Schema Information
+#
+# Table name: trades
+#
+#  id            :integer          not null, primary key
+#  price         :decimal(32, 16)
+#  volume        :decimal(32, 16)
+#  ask_id        :integer
+#  bid_id        :integer
+#  trend         :integer
+#  currency      :integer
+#  created_at    :datetime
+#  updated_at    :datetime
+#  ask_member_id :integer
+#  bid_member_id :integer
+#  funds         :decimal(32, 16)
+#
+# Indexes
+#
+#  index_trades_on_ask_id         (ask_id)
+#  index_trades_on_ask_member_id  (ask_member_id)
+#  index_trades_on_bid_id         (bid_id)
+#  index_trades_on_bid_member_id  (bid_member_id)
+#  index_trades_on_created_at     (created_at)
+#  index_trades_on_currency       (currency)
+#
+
 require 'spec_helper'
 
 describe Trade, ".latest_price" do
@@ -23,24 +50,24 @@ describe Trade, ".collect_side" do
 
   it "should add side attribute on trades" do
     results = Trade.for_member(ask.currency, member)
-    results.should have(2).trades
-    results.find {|t| t.id == trades.first.id }.side.should == 'ask'
-    results.find {|t| t.id == trades.last.id  }.side.should == 'bid'
+    expect(results).to have(2).trades
+    expect(results.find {|t| t.id == trades.first.id }.side).to eq 'ask'
+    expect(results.find {|t| t.id == trades.last.id  }.side).to eq 'bid'
   end
 
   it "should sort trades in reverse creation order" do
-    Trade.for_member(ask.currency, member, order: 'id desc').first.should == trades.last
+    expect(Trade.for_member(ask.currency, member, order: 'id desc').first).to eq trades.last
   end
 
   it "should return 1 trade" do
     results = Trade.for_member(ask.currency, member, limit: 1)
-    results.should have(1).trade
+    expect(results).to have(1).trade
   end
 
   it "should return trades from specified time" do
     results = Trade.for_member(ask.currency, member, time_to: 30.hours.ago)
-    results.should have(1).trade
-    results.first.should == trades.first
+    expect(results).to have(1).trade
+    expect(results.first).to eq trades.first
   end
 end
 
@@ -59,7 +86,7 @@ describe Trade, "#for_notify" do
 
   it "should use side as kind" do
     trade.side = 'ask'
-    trade.for_notify[:kind].should == 'ask'
+    expect(trade.for_notify[:kind]).to eq 'ask'
   end
 
 end

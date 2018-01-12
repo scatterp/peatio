@@ -1,4 +1,4 @@
-class AddSignupHistories < ActiveRecord::Migration
+class AddSignupHistories < ActiveRecord::Migration[4.2]
   def change
     create_table :signup_histories do |t|
       t.references :member, index: true

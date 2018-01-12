@@ -1,4 +1,17 @@
-class TwoFactor < ActiveRecord::Base
+# == Schema Information
+#
+# Table name: two_factors
+#
+#  id             :integer          not null, primary key
+#  member_id      :integer
+#  otp_secret     :string
+#  last_verify_at :datetime
+#  activated      :boolean
+#  type           :string
+#  refreshed_at   :datetime
+#
+
+class TwoFactor < ApplicationRecord
   belongs_to :member
 
   before_validation :gen_code, on: :create

@@ -1,4 +1,19 @@
-class Proof < ActiveRecord::Base
+# == Schema Information
+#
+# Table name: proofs
+#
+#  id         :integer          not null, primary key
+#  root       :string
+#  currency   :integer
+#  ready      :boolean          default(FALSE)
+#  created_at :datetime
+#  updated_at :datetime
+#  sum        :string
+#  addresses  :text
+#  balance    :string(30)
+#
+
+class Proof < ApplicationRecord
   include Currencible
 
   has_many :partial_trees
