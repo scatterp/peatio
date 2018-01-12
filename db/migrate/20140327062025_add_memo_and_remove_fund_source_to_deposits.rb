@@ -1,4 +1,4 @@
-class AddMemoAndRemoveFundSourceToDeposits < ActiveRecord::Migration
+class AddMemoAndRemoveFundSourceToDeposits < ActiveRecord::Migration[4.2]
   def change
     add_column :deposits, :memo, :string
     rename_column :deposits, :fund_source_uid, :fund_uid

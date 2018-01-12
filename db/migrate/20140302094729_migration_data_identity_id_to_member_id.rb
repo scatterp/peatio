@@ -1,4 +1,4 @@
-class MigrationDataIdentityIdToMemberId < ActiveRecord::Migration
+class MigrationDataIdentityIdToMemberId < ActiveRecord::Migration[4.2]
   def up
     execute <<-SQL
       DELETE FROM tokens WHERE type = 'ResetPin'

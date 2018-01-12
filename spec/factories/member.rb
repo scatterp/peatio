@@ -1,7 +1,9 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :member, aliases: [:author] do
     email { Faker::Internet.email }
-    phone_number { Faker::Number.number(12).to_s }
+    country_code 1
+    display_name { Faker::Name.name }
+    phone_number { Faker::Number.number(10).to_s }
 
     trait :activated do
       activated true

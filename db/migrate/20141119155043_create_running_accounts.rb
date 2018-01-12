@@ -1,4 +1,4 @@
-class CreateRunningAccounts < ActiveRecord::Migration
+class CreateRunningAccounts < ActiveRecord::Migration[4.2]
   def change
     create_table :running_accounts do |t|
       t.integer :category

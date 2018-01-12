@@ -1,7 +1,7 @@
 module EasyTable
   module Components
-    module Columns
-      def column_with_custom(title, label_or_opts = nil, opts = {}, &block)
+    module ColumnsCustom
+      def column(title, label_or_opts = nil, opts = {}, &block)
         if @options[:model]
           label_or_opts ||= {}
           label_or_opts.merge!({model: @options[:model]})
@@ -12,25 +12,24 @@ module EasyTable
           label_or_opts.merge!({scope: @options[:scope]})
         end
 
-        column_without_custom(title, label_or_opts, opts, &block)
+        super(title, label_or_opts, opts, &block)
       end
-
-      alias_method_chain :column, :custom  
     end
 
-    module Base
-      def translate_with_custom(key)
+    module BaseCustom
+      def translate(key)
         if @opts[:model]
           @opts[:model].human_attribute_name(@title)
         elsif @opts[:scope]
           I18n.t("easy_table.#{@opts[:scope]}.#{@title}")
         else
-          translate_without_custom(key)
+          super(key)
         end
       end
-
-      alias_method_chain :translate, :custom  
     end
   end
 end
+
+EasyTable::Components::Columns.prepend(EasyTable::Components::ColumnsCustom)
+EasyTable::Components::Base.prepend(EasyTable::Components::BaseCustom)
 

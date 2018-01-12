@@ -12,7 +12,7 @@ class CoinRPC
   end
 
   def self.[](currency)
-    c = Currency.find_by_code(currency.to_s)
+    c = YmlCurrency.find_by_code(currency.to_s)
     if c && c.rpc
       name = c[:handler] || 'BTC'
       "::CoinRPC::#{name}".constantize.new(c.rpc)

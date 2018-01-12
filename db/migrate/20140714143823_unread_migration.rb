@@ -1,9 +1,9 @@
-class UnreadMigration < ActiveRecord::Migration
+class UnreadMigration < ActiveRecord::Migration[4.2]
   def self.up
     create_table :read_marks, :force => true do |t|
       t.integer  :readable_id
       t.integer  :member_id,       :null => false
-      t.string   :readable_type, :null => false, :limit => 20
+      t.string   :readable_type,   :null => false
       t.datetime :timestamp
     end
 

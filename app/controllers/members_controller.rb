@@ -1,6 +1,6 @@
 class MembersController < ApplicationController
-  before_filter :auth_member!
-  before_filter :auth_no_initial!
+  before_action :auth_member!
+  before_action :auth_no_initial!
 
   def edit
     @member = current_user

@@ -1,4 +1,4 @@
-class AddFeeToWithdraws < ActiveRecord::Migration
+class AddFeeToWithdraws < ActiveRecord::Migration[4.2]
   def change
     add_column :withdraws, :member_id, :integer, :after => :account_id
     add_column :withdraws, :currency, :integer, :after => :member_id

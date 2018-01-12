@@ -1,4 +1,4 @@
-class AddAskMemberIdAndBidMemberIdToTrades < ActiveRecord::Migration
+class AddAskMemberIdAndBidMemberIdToTrades < ActiveRecord::Migration[4.2]
   def change
     add_column :trades, :ask_member_id, :integer
     add_column :trades, :bid_member_id, :integer

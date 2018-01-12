@@ -1,4 +1,4 @@
-class CreateTrades < ActiveRecord::Migration
+class CreateTrades < ActiveRecord::Migration[4.2]
   def change
     create_table :trades do |t|
       t.decimal :price, :precision => 32, :scale => 16

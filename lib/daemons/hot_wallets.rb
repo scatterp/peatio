@@ -15,7 +15,7 @@ Signal.trap("TERM") do
 end
 
 while($running) do
-  Currency.all.each do |currency|
+  YmlCurrency.all.each do |currency|
     currency.refresh_balance if currency.coin?
   end
 

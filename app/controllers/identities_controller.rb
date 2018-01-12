@@ -1,5 +1,5 @@
 class IdentitiesController < ApplicationController
-  before_filter :auth_anybody!, only: :new
+  before_action :auth_anybody!, only: :new
 
   def new
     @identity = env['omniauth.identity'] || Identity.new

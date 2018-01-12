@@ -1,3 +1,23 @@
+# == Schema Information
+#
+# Table name: id_documents
+#
+#  id                 :integer          not null, primary key
+#  id_document_type   :integer
+#  name               :string
+#  id_document_number :string
+#  member_id          :integer
+#  created_at         :datetime
+#  updated_at         :datetime
+#  birth_date         :date
+#  address            :text
+#  city               :string
+#  country            :string
+#  zipcode            :string
+#  id_bill_type       :integer
+#  aasm_state         :string
+#
+
 require 'spec_helper'
 
 describe IdDocument do

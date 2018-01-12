@@ -30,7 +30,7 @@ class SystemMailer < BaseMailer
     @base  = base
 
     @changes = {
-      assets: Currency.all.map {|c|
+      assets: YmlCurrency.all.map {|c|
         [ c,
           compare(@base['asset_stats'][c.code][1], @stats['asset_stats'][c.code][1]),
           compare(@base['asset_stats'][c.code][0], @stats['asset_stats'][c.code][0])

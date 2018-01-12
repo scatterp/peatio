@@ -1,19 +1,12 @@
-Rails.application.eager_load! if Rails.env.development?
-
+# Adds Admin Routes...
 class ActionDispatch::Routing::Mapper
   def draw(routes_name)
     instance_eval(File.read(Rails.root.join("config/routes/#{routes_name}.rb")))
   end
 end
 
-Peatio::Application.routes.draw do
+Rails.application.routes.draw do
   use_doorkeeper
-
-  root 'welcome#index'
-
-  if Rails.env.development?
-    mount MailsViewer::Engine => '/mails'
-  end
 
   get '/signin' => 'sessions#new', :as => :signin
   get '/privacy-policy' => 'statics#privacy', :as => :privacy
@@ -42,9 +35,9 @@ Peatio::Application.routes.draw do
     resources :activations, only: [:new, :edit, :update]
   end
 
-  get '/documents/api_v2'
-  get '/documents/websocket_api'
-  get '/documents/oauth'
+  # get '/documents/api_v2'
+  # get '/documents/websocket_api'
+  # get '/documents/oauth'
   resources :documents, only: [:show]
   resources :two_factors, only: [:show, :index, :update]
 
@@ -126,4 +119,5 @@ Peatio::Application.routes.draw do
 
   mount APIv2::Mount => APIv2::Mount::PREFIX
 
+  root 'welcome#index'
 end

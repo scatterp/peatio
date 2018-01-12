@@ -1,4 +1,4 @@
-class RebuildDeposits < ActiveRecord::Migration
+class RebuildDeposits < ActiveRecord::Migration[4.2]
   def change
     change_table :deposits do |t|
       t.integer :member_id, :after => :account_id

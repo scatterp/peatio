@@ -1,6 +1,6 @@
 module APIv2
   module Validations
-    class Range < ::Grape::Validations::Validator
+    class Range < ::Grape::Validations::Base
 
       def initialize(attrs, options, required, scope)
         @range    = options

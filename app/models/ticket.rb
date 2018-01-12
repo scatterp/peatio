@@ -1,4 +1,17 @@
-class Ticket < ActiveRecord::Base
+# == Schema Information
+#
+# Table name: tickets
+#
+#  id         :integer          not null, primary key
+#  title      :string
+#  content    :text
+#  aasm_state :string
+#  author_id  :integer
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+class Ticket < ApplicationRecord
   include AASM
   include AASM::Locking
   acts_as_readable on: :created_at
@@ -8,7 +21,7 @@ class Ticket < ActiveRecord::Base
   validates_with TicketValidator
 
   has_many :comments
-  belongs_to :author, class_name: 'Member', foreign_key: 'author_id'
+  belongs_to :author, class_name: Member.name, foreign_key: 'author_id', optional: true
 
   scope :open, -> { where(aasm_state: :open) }
   scope :close, -> { where(aasm_state: :closed) }

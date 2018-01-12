@@ -1,4 +1,4 @@
-class MigrateWithdrawAddresses < ActiveRecord::Migration
+class MigrateWithdrawAddresses < ActiveRecord::Migration[4.2]
   def up
     change_table :members do |t|
       t.remove :alipay

@@ -1,4 +1,4 @@
-class RemoveWithdrawsStateAndChannelId < ActiveRecord::Migration
+class RemoveWithdrawsStateAndChannelId < ActiveRecord::Migration[4.2]
   def change
     remove_column :withdraws, :channel_id
     remove_column :withdraws, :state

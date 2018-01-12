@@ -8,7 +8,7 @@ module APIv2
       end
 
       def apply_rules!
-        Rack::Attack.blacklist('block api access from other ip if trusted ip set ') do |req|
+        Rack::Attack.blocklist('block api access from other ip if trusted ip set ') do |req|
           req.env['api_v2.token'] && !req.env['api_v2.token'].allow_ip?(req.ip)
         end
 

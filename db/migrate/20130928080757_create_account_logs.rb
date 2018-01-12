@@ -1,4 +1,4 @@
-class CreateAccountLogs < ActiveRecord::Migration
+class CreateAccountLogs < ActiveRecord::Migration[4.2]
   def change
     create_table :account_logs do |t|
       t.integer :member_id

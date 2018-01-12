@@ -1,3 +1,30 @@
+# == Schema Information
+#
+# Table name: account_versions
+#
+#  id              :integer          not null, primary key
+#  member_id       :integer
+#  account_id      :integer
+#  reason          :integer
+#  balance         :decimal(32, 16)
+#  locked          :decimal(32, 16)
+#  amount          :decimal(32, 16)
+#  modifiable_type :string
+#  modifiable_id   :integer
+#  created_at      :datetime
+#  updated_at      :datetime
+#  currency        :integer
+#  fee             :decimal(32, 16)
+#  fun             :integer
+#
+# Indexes
+#
+#  index_account_versions_on_account_id                         (account_id)
+#  index_account_versions_on_account_id_and_reason              (account_id,reason)
+#  index_account_versions_on_member_id_and_reason               (member_id,reason)
+#  index_account_versions_on_modifiable_id_and_modifiable_type  (modifiable_id,modifiable_type)
+#
+
 require 'spec_helper'
 
 describe AccountVersion do

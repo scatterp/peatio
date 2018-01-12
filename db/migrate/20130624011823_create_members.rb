@@ -1,13 +1,14 @@
-class CreateMembers < ActiveRecord::Migration
+class CreateMembers < ActiveRecord::Migration[4.2]
   def change
     create_table :members do |t|
-      t.string :sn
+      t.string :sn, null: false
       t.string :name
       t.string :email
       t.string :pin_digest
       t.integer :identity_id
       t.timestamps
     end
+    add_index :members, :email, unique: true
 
     create_table :accounts do |t|
       t.integer :member_id

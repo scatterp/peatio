@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :satoshi_withdraw, class: Withdraws::Satoshi do
     sum { 10.to_d }
     currency :btc

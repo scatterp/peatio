@@ -1,4 +1,29 @@
-class PaymentTransaction < ActiveRecord::Base
+# == Schema Information
+#
+# Table name: payment_transactions
+#
+#  id            :integer          not null, primary key
+#  txid          :string
+#  amount        :decimal(32, 16)
+#  confirmations :integer
+#  address       :string
+#  state         :integer
+#  created_at    :datetime
+#  updated_at    :datetime
+#  receive_at    :datetime
+#  dont_at       :datetime
+#  currency      :integer
+#  aasm_state    :string
+#  type          :string(60)
+#  txout         :integer
+#
+# Indexes
+#
+#  index_payment_transactions_on_txid_and_txout  (txid,txout)
+#  index_payment_transactions_on_type            (type)
+#
+
+class PaymentTransaction < ApplicationRecord
   extend Enumerize
 
   include AASM
@@ -53,7 +78,7 @@ class PaymentTransaction < ActiveRecord::Base
   private
 
   def sync_update
-    if self.confirmations_changed?
+    if self.saved_change_to_confirmations?
       ::Pusher["private-#{deposit.member.sn}"].trigger_async('deposits', { type: 'update', id: self.deposit.id, attributes: {confirmations: self.confirmations}})
     end
   end

@@ -1,4 +1,4 @@
-class RemovePinDigestFromIdentities < ActiveRecord::Migration
+class RemovePinDigestFromIdentities < ActiveRecord::Migration[4.2]
   def up
     remove_column :identities, :pin_digest
   end
