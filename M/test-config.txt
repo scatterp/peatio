@@ -1,0 +1,6 @@
+config with Hitbtc - original 
+
+--title K.sh --port 3000 --user NULL --pass NULL --exchange HITBTC --currency BTC/USD --target REAL --apikey 147e4ff655c17f0c6cdfb7bccfa951fe --secret 9bf4d37c5c26dca4d0930d469db7e7e6 --passphrase NULL --username NULL --http http://api.hitbtc.com --wss wss://api.hitbtc.com:8080 --ws ws://api.hitbtc.com:80 --naked --debug --free
+
+config testting without connecting to the exchange
+--title K.sh-test --port 3000 --user NULL --pass NULL --exchange NULL --currency BTC/USD --target NULL --apikey NULL --secret NULL --passphrase NULL --username NULL --http NULL --wss NULL --ws NULL --colors --naked --free --debug

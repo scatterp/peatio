@@ -1,0 +1,5 @@
+require_relative 'peatio_api/core_ext'
+require_relative 'peatio_api/config'
+require_relative 'peatio_api/auth'
+require_relative 'peatio_api/client'
+require_relative 'peatio_api/streaming_client'

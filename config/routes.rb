@@ -16,6 +16,8 @@ Peatio::Application.routes.draw do
   end
 
   get '/signin' => 'sessions#new', :as => :signin
+  get '/privacy-policy' => 'statics#privacy', :as => :privacy
+  get '/terms-of-use' => 'statics#terms', :as => :terms
   get '/signup' => 'identities#new', :as => :signup
   get '/signout' => 'sessions#destroy', :as => :signout
   get '/auth/failure' => 'sessions#failure', :as => :failure
@@ -118,13 +120,10 @@ Peatio::Application.routes.draw do
       end
       resources :comments, only: [:create]
     end
-    post '/webhooks/tx' => 'webhooks#tx'
-    post '/webhooks/eth' => 'webhooks#eth'
-
   end
 
   draw :admin
-  post '/webhooks/tx' => 'webhooks#tx'
+
   mount APIv2::Mount => APIv2::Mount::PREFIX
 
 end

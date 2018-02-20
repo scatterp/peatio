@@ -1,6 +1,6 @@
 - controllers = ['settings', 'two_factors', 'identities', 'id_documents', 'dashboard', 'tickets']
 - dropdown_class = (controllers & controller_path.split('/')).empty? ? "" : 'active'
-li.dropdown.account-settings class = dropdown_class
+li.dropdown.account-settings class = ""
   a.dropdown-toggle href="#" data-toggle="dropdown"
     span = current_user.email || current_user.nickname
     - if current_user.unread_comments.count > 0
@@ -23,4 +23,3 @@ li.dropdown.account-settings class = dropdown_class
     li: a href = main_app.signout_path
       i.fa.fa-sign-out
       span = t('header.signout')
-

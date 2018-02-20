@@ -1,4 +1,16 @@
 footer
   .container
+    ul class='list-inline footer-menu'
+      li: a href='/' = 'Home'
+      li: a href='/privacy-policy' = 'Privacy Policy'
+      li: a href='/terms-of-use' = 'Terms of Use'
+  .container style='text-align: center'
+  	span id="siteseal"
+  	javascript:
+      document.write("<" + "script src='https://seal.godaddy.com/getSeal?sealID=dZ4KDMdeuUQRMtAVzklXPPOwmzML3tpZaL1gocP39fWgcS6O0ry2jnydpnsT'>" + "<" + "/script>");	
+  	javascript:
+      document.write("<" + "script src='https://cdn.ywxi.net/js/1.js'>" + "<" + "/script>");
+  .container
     .row.text-center
-      Copyright 2017
+      p: ul.list-inline
+        li: span class='footer-copyright' © 2017 Cryex24

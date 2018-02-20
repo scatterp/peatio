@@ -1,11 +1,12 @@
 #welcome-index {
   header {
-    overflow: hidden;
+    //overflow: hidden;
     position: relative;
-    color: rgba(83,102,120, 1.0);
+    //color: rgba(83,102,120, 1.0);
+    color: rgba(0,0,0, 0.9);
 
     .container {
-      padding-top: 60px;
+      //padding-top: 60px;
     }
 
     .ribbon a:hover {
@@ -36,8 +37,8 @@
       padding: 30px;
       padding-top: 14px;
       margin: 30px;
-      border-top: 1px dashed lighten($brand-primary, 20%);
-      border-bottom: 1px dashed lighten($brand-primary, 20%);
+      /*border-top: 1px dashed lighten($brand-primary, 20%);
+      border-bottom: 1px dashed lighten($brand-primary, 20%);*/
     }
 
     #getstart {

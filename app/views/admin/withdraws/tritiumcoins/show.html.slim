@@ -1,0 +1,30 @@
+.row
+  .col-xs-12
+    .panel.panel-primary
+      .panel-heading
+        span = t('.withdraw', sn: @tritiumcoin.id)
+      .panel-body
+        = description_for :withdraw do
+          = item_for @tritiumcoin, :id
+          = item_for @tritiumcoin, :created_at
+          = item_for @tritiumcoin, :aasm_state_text
+          hr.split
+          = item_for @tritiumcoin.member, :name
+          = item_for @tritiumcoin, :fund_extra
+          = item_for @tritiumcoin, :fund_uid do
+            span = @tritiumcoin.fund_uid.truncate(22)
+          = item_for @tritiumcoin, :amount
+          hr.split
+          = item_for @tritiumcoin, :remark
+          hr.split
+          ul.list-inline.pull-right
+            - if @tritiumcoin.may_reject?
+              li
+                = link_to t('.reject'), url_for([:admin, @tritiumcoin]), class: 'btn btn-danger', method: 'DELETE', confirm: t('.reject_confirm')
+            - if @tritiumcoin.may_process?
+              li
+                = link_to t('.process'), url_for([:admin, @tritiumcoin]), class: 'btn btn-primary', method: 'PATCH'
+
+  .col-xs-12
+    = render partial: 'shared/admin/member', locals: {member: @tritiumcoin.member}
+    = render partial: 'shared/admin/account', locals: {account: @tritiumcoin.account}

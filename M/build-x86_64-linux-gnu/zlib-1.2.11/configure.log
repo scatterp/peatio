@@ -1,0 +1,167 @@
+--------------------
+./configure --prefix=/home/deploy/test-site/K/build-x86_64-linux-gnu/local
+Mon Oct 16 15:57:31 EDT 2017
+Using x86_64-linux-gnu-ar
+Using x86_64-linux-gnu-ranlib
+Using x86_64-linux-gnu-nm
+=== ztest13974.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+x86_64-linux-gnu-gcc-6 -c ztest13974.c
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest13974.c ===
+int foo() { return 0; }
+===
+x86_64-linux-gnu-gcc-6 -c -O3 ztest13974.c
+
+Checking for shared library support...
+=== ztest13974.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+x86_64-linux-gnu-gcc-6 -w -c -O3 -fPIC ztest13974.c
+x86_64-linux-gnu-gcc-6 -shared -O3 -fPIC -o ztest13974.so ztest13974.o
+Building shared library libz.so.1.2.11 with x86_64-linux-gnu-gcc-6.
+
+=== ztest13974.c ===
+#include <stdio.h>
+#include <stdlib.h>
+size_t dummy = 0;
+===
+x86_64-linux-gnu-gcc-6 -c -O3 ztest13974.c
+Checking for size_t... Yes.
+
+
+=== ztest13974.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+x86_64-linux-gnu-gcc-6 -c -O3 -D_LARGEFILE64_SOURCE=1 ztest13974.c
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+
+=== ztest13974.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+x86_64-linux-gnu-gcc-6 -O3 -D_LARGEFILE64_SOURCE=1 -o ztest13974 ztest13974.c
+Checking for strerror... Yes.
+
+=== ztest13974.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+x86_64-linux-gnu-gcc-6 -c -O3 -D_LARGEFILE64_SOURCE=1 ztest13974.c
+Checking for unistd.h... Yes.
+
+=== ztest13974.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+x86_64-linux-gnu-gcc-6 -c -O3 -D_LARGEFILE64_SOURCE=1 ztest13974.c
+Checking for stdarg.h... Yes.
+
+=== ztest13974.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+x86_64-linux-gnu-gcc-6 -c -O3 -D_LARGEFILE64_SOURCE=1 ztest13974.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest13974.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+x86_64-linux-gnu-gcc-6 -O3 -D_LARGEFILE64_SOURCE=1 -o ztest13974 ztest13974.c
+Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest13974.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+x86_64-linux-gnu-gcc-6 -c -O3 -D_LARGEFILE64_SOURCE=1 ztest13974.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest13974.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+x86_64-linux-gnu-gcc-6 -c -O3 -D_LARGEFILE64_SOURCE=1 ztest13974.c
+Checking for attribute(visibility) support... Yes.
+
+ALL = static shared all64
+AR = x86_64-linux-gnu-ar
+ARFLAGS = rc
+CC = x86_64-linux-gnu-gcc-6
+CFLAGS = -O3 -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CPP = x86_64-linux-gnu-gcc-6 -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = x86_64-linux-gnu-gcc-6 -shared
+LDSHAREDLIBC = -lc
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = x86_64-linux-gnu-ranlib
+SFLAGS = -O3 -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.11
+STATICLIB = libz.a
+TEST = all teststatic testshared test64
+VER = 1.2.11
+Z_U4 =
+SRCDIR =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = ${exec_prefix}/lib
+mandir = ${prefix}/share/man
+prefix = /home/deploy/test-site/K/build-x86_64-linux-gnu/local
+sharedlibdir = ${libdir}
+uname = gnu
+--------------------
+
+

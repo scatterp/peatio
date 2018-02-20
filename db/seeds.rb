@@ -1,4 +1,5 @@
-ADMIN_EMAIL = 'admin@peatio.dev'
+#ADMIN_EMAIL = 'admin@coinagewallet.com'
+ADMIN_EMAIL = 'admin@coinxpro.com'
 ADMIN_PASSWORD = 'Pass@word8'
 
 admin_identity = Identity.find_or_create_by(email: ADMIN_EMAIL)

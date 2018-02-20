@@ -1,13 +1,23 @@
 - id: 1
+<<<<<<< 2/config/currencies.yml~
   key: renminbi
   code: cny
   symbol: "¥"
+=======
+  key: euro
+  code: eur
+  symbol: "€"
+>>>>>>> 3/config/currencies.yml~
   coin: false
   precision: 2
   assets:
     accounts:
       -
+<<<<<<< 2/config/currencies.yml~
         bank: '招商银行'
+=======
+        bank: 'Chase Bank'
+>>>>>>> 3/config/currencies.yml~
         address: '6225 0885 6022 3501'
         password: '111111'
         tel: '95555'

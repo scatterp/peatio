@@ -3,103 +3,160 @@
 # Never edit this file. It will be overwritten when translations are pulled from Transifex.
 #
 
-ru_RU:
+ru-RU:
   activerecord:
     models:
-      api_tokens: API токен
+      api_tokens: API Token
       trade: Торги
-      order: Ордера
+      order: Заказы
       order_bid: BID
       order_ask: ASK
       document: Документ
-      withdraw: Вывести
-      deposit: Пополнить
-      payment_transaction: Платеж
-      id_document: документ, удостоверяющий личность
-      statistic/orders_grid: Статистика ордеров
-      statistic/members_grid: Статистика участников
+      withdraw: Вывод
+      deposit: Депозит
+      payment_transaction: Оплата
+      id_document: ID Документа
+      statistic/orders_grid: Статистика заказов
+      statistic/trades_grid: Статистика торгов
+      statistic/members_grid: Статистика пользователей
       statistic/deposits_grid: Статистика депозитов
-      statistic/withdraws_grid: Статистика вывода
-      admin/deposits_grid: Зачисления
-      admin/withdraws_grid: Снятия
-      withdraws/satoshi: Вывод
+      statistic/withdraws_grid: Статистика выводов
+      admin/deposits_grid: Депозиты
+      admin/withdraws_grid: Выводы
+      deposits/bank: Депозитный банк
+      withdraws/bank: Вывод в банк
+      withdraws/satoshi: Вывод Bitcoin
+      withdraws/realpointcoin: Вывод RealPointCoin
+      withdraws/litecoin: Вывод Litecoin
+      withdraws/blackcoin: Вывод Blackcoin   
+      withdraws/peercoin: Вывод Peercoin   
+      withdraws/tritiumcoin: Вывод Tritium
     attributes:
       api_token:
         access_key: Ключ доступа
-        trusted_ip_list: белый список IP
-        ip_whitelist: белый список IP
+        trusted_ip_list: Белый список IP-адресов
+        ip_whitelist: Белый список IP-адресов
+        label: Label
         actions: Действия
       identity:
-        email: Электронная почта
-        login: Электронная почта или номер телефона
-        country: Страна
+        email:  Электронная почта
         password: Новый пароль
         password_confirmation: Подтвердите пароль
       document:
+        zh_cn_body: Содержание на китайском языке
+        zh_cn_title: Название на китайском языке
+        zh_cn_desc: Описание на китайском языке
+        zh_cn_keywords: Ключевое слово на китайском языке
+        en_body: Содержание на английском языке
+        en_title: Название на английском языке
+        en_desc: Описание на английском языке
+        en_keywords: Ключевое слово на английском языке
         key: Ключ
-        is_auth: Авторизован
+        is_auth: Is Auth
       fund_source:
         address: Адрес
         category: Категория
+        label: Label
       account:
         currency: Валюта
         currency_text: Валюта
+        balance_and_locked: Баланс/Заблокирован
         balance: Баланс
-        locked: З
+        locked: Заморожен
       deposit:
-        created_at: Подтвержден в
+        state: Состояние
+        tx_id: TxID
+        member_id: ID пользователя
+        created_at: Отправлено
         address: Адрес
         amount: Сумма
-        done_at: Завершен
+        done_at: Завершено
+        sn: SN
       withdraw:
-        created_at: Создан
-        done_at: Завершен
-        sum: Сумма
-        fee: Коммиссия
+        id: ID
+        sn: SN
+        withdraw_id: ID
+        created_at: Создано
+        done_at: Выполнено
+        sum: Sum
+        fee: Комиссия
         currency: Валюта
         amount: Сумма
         address: Адрес
         state: Статус
         state_text: Статус
+        tx_id: TxID
+        fund_source_id: Адрес для вывода
+        detail: Подробно
       account_version:
+        id: ID
+        locked: Заморожено
         amount: Сумма
+        balance: Баланс
         reason: Причина
         reason_text: Причина
+        modifiable_id: ID ССЫЛКА
+        modifiable_type: ССЫЛКА
+        created_at: Создано
         in: Доход
+        out: Расходы
         fee: Комиссия
       token/reset_password:
-        member: Участник
+        email: Вход в электронную почту
+        member: Пользователь
       trade:
+        bid: Bid
+        ask: Ask
         fee: Комиссия
-        order: Ордер
+        price: Цена исполнения
+        volume: Объем исполнения
+        category: Bid/Ask
+        order: Заказ
       order:
+        bid: Bid
+        ask: Ask
         price: Цена
-        total: Итого
+        total: Всего
         volume: Объем
         origin_volume: Объем
-        sum: Сумма
+        sum: Sum
+        category: Bid/Ask
+        kind: Вид
+        at: At
+        id: ID
+        state: Состояние
         operation: Операция
       payment_transaction:
-        at: Дата/время
-        txid: Номер перевода
+        at: Дата Время
+        txid: ID транзакций
         amount: Сумма
-        confirmations: Подтверждения
+        confirmations: Подтверждение
+        state: Состояние
         state_done: Выполнено
+        state_wait: Подождите
       member:
+        id: ID
         name: Настоящее имя
         display_name: Отображаемое имя
         email: Электронная почта
-        activated: Активирован
-        activated?: "Активирован ?"
-        id_document_verified?: "Удостоверение личности проверено ?"
+        created_at: Регистрация
+        sn: SN
+        id_document_number: Идентификационный номер документа
+        tag_list: Теги
+        activated: Активировано
+        activated?: "Активировано?"
+        id_document_verified?: "Подтвержден ли ID документа?"
+        two_factor_activated?: "Два фактора активированы?"
         phone_number: Номер телефона
       two_factor/sms:
         country: Страна
         phone_number: Номер телефона
-        otp: Проверочный код
+        otp: Код подтверждения
       withdraws/bank:
-        member_name: Участник
+        id: ID
+        member_name: Пользователь
         currency_obj_key_text: Валюта
+        state_and_actions: Состояние / Действие
         fund_source: Банк
         fund_extra: Банк
         fund_extra_text: Банк
@@ -107,145 +164,2361 @@ ru_RU:
         sum: Сумма
         fee: Комиссия
         amount: Сумма
-        created_at: Создан
+        remark: Примечание
+        created_at: Создано
       deposits/bank:
-        created_at: Создан
-        holder: Держатель
+        created_at: Создано
+        holder: Владелец
         fund_extra: Банк отправителя
         fund_uid: Счет отправителя
+        member_sn: SN пользователя
         member_name: Имя отправителя
         amount: Сумма
+        sn: SN
+        state_and_action: Состояние / Действие
+        label: Label
+        fund_source: Источник финансирования
       deposits/satoshi:
-        txid: Номер перевода
+        created_at: Создано
+        txid: ID транзакций
         amount: Сумма
         confirmations: Подтверждение
+        aasm_state_text: Состояние
+      deposits/realpointcoin:
+        created_at: Создано
+        txid: ID транзакций
+        amount: Сумма
+        confirmations: Подтверждение
+        aasm_state_text: Состояние
+      deposits/litecoin:
+        created_at: Создано
+        txid: ID транзакций
+        amount: Сумма
+        confirmations: Подтверждение
+        aasm_state_text: Состояние
+      deposits/peercoin:
+        created_at: Создано
+        txid: ID транзакций
+        amount: Сумма
+        confirmations: Подтверждение
+        aasm_state_text: Состояние
+      deposits/blackcoin:
+        created_at: Создано
+        txid: ID транзакций
+        amount: Сумма
+        confirmations: Подтверждение
+        aasm_state_text: Состояние
+      deposits/tritiumcoin:
+        created_at: Создано
+        txid: ID транзакций
+        amount: Сумма
+        confirmations: Подтверждение
+        aasm_state_text: Состояние
       withdraws/satoshi:
+        id: ID
+        member_name: Счет
         currency_obj_key_text: Валюта
+        state_and_actions: Состояние / Действие
+        fund_extra_text: Вывод Label
+        fund_extrat: Вывод Label
         fund_source: Банк
+        fund_uid: Счет
+        created_at: Создано
         sum: Сумма
         amount: Сумма
+        remark: Примечание
         fee: Комиссия
+      withdraws/realpointcoin:
+        id: ID
+        member_name: Счет
+        currency_obj_key_text: Валюта
+        state_and_actions: Состояние / Действие
+        fund_extra_text: Вывод Label
+        fund_extrat: Вывод Label
+        fund_source: Банк
+        fund_uid: Счет
+        created_at: Создано
+        sum: Сумма
+        amount: Сумма
+        remark: Примечание
+        fee: Комиссия
+      withdraws/litecoin:
+        id: ID
+        member_name: Счет
+        currency_obj_key_text: Валюта
+        state_and_actions: Состояние / Действие
+        fund_extra_text: Вывод Label
+        fund_extrat: Вывод Label
+        fund_source: Банк
+        fund_uid: Счет
+        created_at: Создано
+        sum: Сумма
+        amount: Сумма
+        remark: Примечание
+        fee: Комиссия
+      withdraws/peercoin:
+        id: ID
+        member_name: Счет
+        currency_obj_key_text: Валюта
+        state_and_actions: Состояние / Действие
+        fund_extra_text: Вывод Label
+        fund_extrat: Вывод Label
+        fund_source: Банк
+        fund_uid: Счет
+        created_at: Создано
+        sum: Сумма
+        amount: Сумма
+        remark: Примечание
+        fee: Комиссия
+      withdraws/blackcoin:
+        id: ID
+        member_name: Счет
+        currency_obj_key_text: Валюта
+        state_and_actions: Состояние / Действие
+        fund_extra_text: Вывод Label
+        fund_extrat: Вывод Label
+        fund_source: Банк
+        fund_uid: Счет
+        created_at: Создано
+        sum: Сумма
+        amount: Сумма
+        remark: Примечание
+        fee: Комиссия
+      withdraws/tritiumcoin:
+        id: ID
+        member_name: Счет
+        currency_obj_key_text: Валюта
+        state_and_actions: Состояние / Действие
+        fund_extra_text: Вывод Label
+        fund_extrat: Вывод Label
+        fund_source: Банк
+        fund_uid: Счет
+        created_at: Создано
+        sum: Сумма
+        amount: Сумма
+        remark: Примечание
+        fee: Комиссия
+    errors:
+      models:
+        order_bid:
+          attributes:
+            sum:
+              expensive: Дорогостоящий счет
+            price:
+              range: Недопустимый диапазон цен
+        order_ask:
+          attributes:
+            origin_volume:
+              expensive: Дорогостоящий счет
+            price:
+              range: Недопустимый диапазон цен
+        account:
+          attributes:
+            balance:
+              less: Баланс меньше
+        identity:
+          attributes:
+            email:
+              invalid: Неверный адрес электронной почты
+            password:
+              invalid: Неверный пароль
+            password_confirmation:
+              confirmation: Несовместимый с новым паролем, который Вы ввели, пожалуйста, введите его повторно.
+        token/reset_password:
+          attributes:
+            base:
+              too_soon: Слишком рано, пожалуйста, попробуйте позже.
+            email:
+              not-member: Неверный адрес электронной почты
+              match: Недействительный адрес электронной почты для входа
+            password:
+              invalid: Неверный пароль
+            member:
+              blank: Не существует!
+        activation:
+          attributes:
+            base:
+              too_soon:  Письмо с кодом активации было отправлено на Ваш адрес электронной почты менее, чем 5 минут назад.
+        fund_source:
+          attributes:
+            address:
+              satoshi_ismine: Адрес уже используется
+              satoshi_invalid: Неверный адрес
+        withdraw:
+          account_balance_is_poor: Недостаточно средств на счете
+          attributes:
+            password:
+              match: Недействительный
+            amount:
+              poor: Недостаточно
+              bank_min: Менее 5000.00
+        withdraws/satoshi:
+          attributes:
+            fund_uid:
+              blank: Пожалуйста, введите Ваш адрес для вывода средств
+              invalid: Недействительный адрес для вывода средств, пожалуйста, ознакомьтесь.
+              ismine: Пожалуйста, используйте новый адрес.
+        withdraws/realpointcoin:
+          attributes:
+            fund_uid:
+              blank: Пожалуйста, введите Ваш адрес для вывода средств
+              invalid: Недействительный адрес для вывода средств, пожалуйста, ознакомьтесь.
+              ismine: Пожалуйста, используйте новый адрес.
+        withdraws/litecoin:
+          attributes:
+            fund_uid:
+              blank: Пожалуйста, введите Ваш адрес для вывода средств
+              invalid: Недействительный адрес для вывода средств, пожалуйста, ознакомьтесь.
+              ismine: Пожалуйста, используйте новый адрес.
+        withdraws/peercoin:
+          attributes:
+            fund_uid:
+              blank: Пожалуйста, введите Ваш адрес для вывода средств
+              invalid: Недействительный адрес для вывода средств, пожалуйста, ознакомьтесь.
+              ismine: Пожалуйста, используйте новый адрес.
+        withdraws/blackcoin:
+          attributes:
+            fund_uid:
+              blank: Пожалуйста, введите Ваш адрес для вывода средств
+              invalid: Недействительный адрес для вывода средств, пожалуйста, ознакомьтесь.
+              ismine: Пожалуйста, используйте новый адрес.
+        withdraws/tritiumcoin:
+          attributes:
+            fund_uid:
+              blank: Пожалуйста, введите Ваш адрес для вывода средств
+              invalid: Недействительный адрес для вывода средств, пожалуйста, ознакомьтесь.
+              ismine: Пожалуйста, используйте новый адрес.
+        two_factor:
+          attributes:
+            otp:
+              invalid: Неверный пароль!Повторите ввод, пожалуйста.
+        application:
+          attributes:
+            redirect_uri:
+              fragment_present: не может содержать фрагмент.
+              invalid_uri: URI должен быть действительным.
+              relative_uri: URI должен быть точным.
+      messages:
+        invalid_email: Неверный адрес электронной почты
+        undef: Неизвестная причина
+        less: Недостаточный баланс
+        verify: Ошибка подтверждения
+        strength: Ненадежный пароль
+        password: Задайте пароль, состоящий как минимум из 6 символов, рекомендуем использовать прописные и строчные буквы и цифры.
+        orders:
+          price: предельная цена %{l} ~ %{h}
+          sum: предельная итоговая цена %{l} ~ %{h}
+          precision: минимальная точность %{p}
+  banks:
+    icbc: Индустриально - коммерческий Банк Китая
+    cbc: Строительный Банк Китая
+    bc: Банк Китая
+    bcm: Банк коммуникаций
+    abc: Сельскохозяйственный банк Китая
+    cmb: China Merchants Bank Ltd
+    cmbc: China Minsheng Banking Co., Ltd
+    cncb: China CITIC Bank
+    hxb: Hua Xia Bank Co., Ltd.
+    cib: Промышленный Банк Co., Ltd
+    spdb: Shanghai Pudong Development Bank
+    bob: Банк Пекина
+    ceb: China Everbright Bank CO.LTD
+    sdb: Shenzhen Development Bank
+    pab: Ping An Bank Co., Ltd.
+    gdb: Guangdong Development Bank
+    psbc: Почтово-сберегательный Банк Китая
   market:
     currency:
       btc: BTC
       cny: CNY
+      doge: DOGE
+      pts: PTS
+      ltc: LTC
+      usd: USD
+      eur: EUR
+      ppc: PPC
+      blk: BLK
+      rpt: RPT
+      trt: TRT
   currency:
     satoshi:
       key: BTC
       code: BTC
+      name: Bitcoin
+      format: '0,0.0000'
+    bitsharesx:
+      key: BTS
+      code: BTSX
+      name: BitsharesX
+      format: '0,0.0000'
     renminbi:
       key: CNY
       code: CNY
+      name:  Китайский Юань
+      format: '0,0.00'
+    dogecoin:
+      key: DOG
+      code: DOGE
+      name: Dogecoin
+      format: '0,0.0000'
+    protoshare:
+      key: PTS
+      code: PTS
+      name: Protoshare
+      format: '0,0.0000'
+    dolars:
+      key: USD
+      code: USD
+      name: Долар
+      format: '0,0.0000'
+    euros:
+      key: EUR
+      code: EUR
+      name: Евро
+      format: '0,0.0000'
+    litecoin:
+      key: LTC
+      code: LTC
+      name: Litecoin
+      format: '0,0.0000'
+    peercoin:
+      key: PPC
+      code: PPC
+      name: Peercoin
+      format: '0,0.0000'
+    blackcoin:
+      key: BLK
+      code: BLK
+      name: BlackCoin
+      format: '0,0.0000'
+    realpointcoin:
+      key: RPT
+      code: RPT
+      name: RealPointCoin
+      format: '0,0.0000'
+    tritiumcoin:
+      key: TRT
+      code: TRT
+      name: tritiumcoin
+      format: '0,0.0000'
   datagrid:
+    empty: данные не найдены
+    filters:
+      date:
+        range_separator: " to "
+      datetime:
+        range_separator: " to "
+    form:
+      submit: Поиск
     admin_deposits_grid:
       columns:
+        sn: SN
+        created_at: At
+        channel_key_text: Канал
+        fund_extra_text: Экстра
+        fund_uid: UID
+        txid: TXID
         amount: Сумма
         fee: Комиссия
-        member_name: Участник
+        currency_text: Валюта
+        aasm_state_text: Состояние
+        member_name: Пользователь
     bank_deposits_grid:
       columns:
+        sn: SN
+        created_at: At
+        channel_key_text: Категория
+        fund_extra_text: Банк
+        fund_uid: Счет
         amount: Сумма
         fee: Комиссия
+        aasm_state_text: Состояние
     coin_deposits_grid:
       columns:
+        sn: SN
+        txid: ID транзакций
+        created_at: At
         amount: Сумма
+        aasm_state_text: Состояние
+        confirmations: Подтвержение
     withdraws_grid:
       columns:
+        sn: SN
+        name: Имя
+        currency_text: Валюта
         amount: Сумма
         fee: Комиссия
+        created_at: Создано
+        done_at: Завершено
+        state_text: Состояние
+    members_grid:
+      columns:
+        sn: Серийный номер
+        email: Электронная почта
+        created_at: Создано
+        actions: Действия
     account_versions_grid:
       columns:
+        created_at: Создано
+        currency_text: Валюта
+        balance: Баланс
+        in: In
+        out: Out
         amount: Сумма
+        reason_text: Причина
+        modifiable_type: Ссылка
         fee: Комиссия
+      filters:
+        reason: Причина
+        currency: Валюта
+    statistic_members_grid:
+      columns:
+        sn: Серийный номер
+        id: ID
+        email: Электронная почта
+        created_at: Создано
+        activated: Активно
+        detail: Подробно
+        action: Действие
+      filters:
+        sn: Серийный номер
+        activated: Активно
+        created_at: Создано
+        email: Электронная почта
     statistic_orders_grid:
       columns:
-        member_id: Участник
+        id: Серийный номер
+        price: Цена
+        volume: Объем
+        created_at: Создано
+        state_text: Состояние
+        member_id: Пользователь
+      filters:
+        state: Состояние
+        currency: Валюта
+        created_at: Создано
+        type: Ask/Bid
     statistic_trades_grid:
       columns:
+        id: ID
+        price: Цена
+        volume: Объем
         strike_amount: Сумма
+        created_at: Создано
+      filters:
+        currency: Валюта
+        created_at: Создано
     statistic_deposits_grid:
       columns:
-        member: Участник
+        member: Пользователь
+        tx_id: TxID
         amount: Сумма
+        currency: Валюта
+        created_at: Создано
+        state_text: Состояние
+      filters:
+        currency: Валюта
+        state: Состояние
+        created_at: Создано
     statistic_withdraws_grid:
       columns:
-        member: Участник
+        member: Пользователь
+        address: Адрес
         amount: Сумма
-  deposits/bank:
+        currency: Валюта
+        created_at: Создано
+        state_text: Состояние
+      filters:
+        state: Состояние
+        created_at: Создано
+  deposit_channel:
+    bank:
+      key: Банковский перевод
+      title: Банковские перевод
+      intro: Рекомендуем банковские переводы для больших пополнений.
+      latency: 10 минут
+      transfer: Ручной
+      go: Депозит
+    satoshi:
+      key: Block Chain
+      title: Депозиты Bitcoin
+      intro: Депозит bitcoin из Вашего кошелька на счет CoinxPro.
+      latency: 1 подтверждение
+      transfer: Ручной
+      go: Депозит
+    litecoin:
+      key: Litecoin Chain
+      title: Депозиты Litecoin 
+      intro: Депозит litecoin из Вашего кошелька на счет CoinxPro.
+      latency: 1 подтверждение
+      transfer: Ручной
+      go: Депозит
+    peercoin:
+      key: Peercoin Chain
+      title: Депозиты Peercoin
+      intro: Депозит peercoin из Вашего кошелька на счет CoinxPro.
+      latency: 1 подтверждение
+      transfer: Ручной
+      go: Депозит
+    blackcoin:
+      key: Blackcoin Chain
+      title: Депозиты Blackcoin
+      intro: Депозит blackcoin из Вашего кошелька на счет CoinxPro.
+      latency: 1 подтверждение
+      transfer: Ручной
+      go: Депозит
+    realpointcoin:
+      key: RealPointCoin Chain
+      title: Депозиты RealPointCoin
+      intro: Депозит realpointcoin из Вашего кошелька на счет CoinxPro.
+      latency: 1 подтверждение
+      transfer: Ручной
+      go: Депозит
+    tritiumcoin:
+      key: Tritiumcoin Chain
+      title: Депозиты Tritium
+      intro: Депозит tritium из Вашего кошелька на счет CoinxPro
+      latency: 1 подтверждение
+      transfer: Ручной
+      go: Deposit
+    deposits/bank:
     aasm_state:
-      accepted: Одобрен
-      rejected: Отклонен
+      submitting: Отправка
+      cancelled: Отменено
+      submitted: Отправлено
+      accepted: Принято
+      rejected: Отклонено
+      checked: Проверено
+      warning: Предупреждение
   private:
+    deposits:
+      satoshis:
+        gen_address:
+          require_transaction: Новый адрес не может быть создан, если старый не был использован.
+      realpointcoins:
+        gen_address:
+          require_transaction: Новый адрес не может быть создан, если старый не был использован.
+      litecoins:
+        gen_address:
+          require_transaction: Новый адрес не может быть создан, если старый не был использован.
+      blackcoins:
+        gen_address:
+          require_transaction: Новый адрес не может быть создан, если старый не был использован.
+      peercoins:
+        gen_address:
+          require_transaction: Новый адрес не может быть создан, если старый не был использован.
+      tritiumcoins:
+        gen_address:
+          require_transaction: Новый адрес не может быть создан, если старый не был использован.
+      banks:
+        destroy:
+          notice: Запрос отозван успешно.
+        create:
+          notice: Запрос на пополнение успешно отправлен. Для завершения банковского перевода используйте информацию ниже.
+          submit: Отправить
+        new:
+          fund_source: Выберите источник финансирования
+          manage_fund_source: Управление источником средств
+          submit: Отправить
+        edit:
+          bank: Название банка получателя
+          branch: Отделение банка получения
+          hodler: Получатель
+          account: Счет получателя
     history:
+      transaction:
+        Deposit: Депозит
+        Withdraw: Вывод
       account:
-        fee: комиссия
+        currency: Валюта
+        buy: Купить
+        sell: Продать
+        filter_by_type: Фильтровать по типу
+        account_history: История счета
+        type: Тип
+        timestamp: Дата и время
+        fee: Комиссия
+        currency: Валюта
         amount: Сумма
+        txid: Txid
+      orders:
+        order_history: История заказов
+        id: ID
+        type: Тип
+        state: Состояние
+        market: Рынок
+        price: Цена
+        volume: Объем
+        average_price: Средняя цена
+        fullfilled_volume: Выполненный
+        timestamp: Создано
+      order:
+        ask: Продать
+        bid: Купить
+        wait: Открыть
+        cancel: Отменено
+        done: Выполнено
+      trades:
+        trade_history: История Торговли
+        side: Сторона
+        created_at: Время
+        base_currency: Базовая валюта
+        base_amount: Базовая сумма
+        quote_currency: Валюта котирования
+        quote_amount:  Сумма котирования
+        price: Цена
+      trade:
+        sell: Продать
+        buy: Купить
     trade:
       trades:
         orders:
-          title: Ордера
+          title: Заказы
+        trades:
+          title: Торги
+        charges:
+          title: Комиссии
+      orders:
+        index:
+          done: Выполнено
+          cancel: Отмена
+          confirm: 'Вы уверены что хотите отменить заказ #%{id}?'
+        destroy:
+          'true': "#%{id} заказ отменен успешно"
+          'false': "#%{id} Отменить отклонение заказа"
     withdraws:
+      update:
+        request_accepted: Запрос на вывод средств принят.
+      destroy:
+        request_canceled: Запрос на вывод средств отклонен.
       index:
         fee: Комиссия
+        total: Всего
+        withdraw_history: История выводов
+      create:
+        two_factors_error: Сбой двух факторной аутентификации.
+      banks:
+        update:
+          notice: Запрос на вывод средств с помощью банковского перевода был отправлен, мы обработаем ее как можно скорее
+          alert_two_factor: Ошибка двух факторной аутентификации
+        destroy:
+          notice: Запрос на вывод средств с помощью банковского перевода был отменен, замороженная сумма была возвращена на Ваш счет.
+        new:
+          fund_source: Выберите источник финансирования
+          manage_fund_source: Управление источником средств
+          submit: Отправить
+          allin: All-In
+        create:
+          notice: Запрос на вывод средств успешно отправлен. Для завершения банковского перевода используйте информацию ниже.
+      satoshis:
+        destroy:
+          notice: Вывод средств был отменен, замороженный баланс возвращен на Ваш счет.
+        update:
+          notice: Запрос на вывод средств успешно отправлен, мы обработаем его как можно скорее.
+          alert_two_factor: Ошибка двух факторной аутентификации.
+        new:
+          submit: Отправить
+          allin: All-In
+          fund_source_label: Label
+          manage_fund_source: Управление источником средств
+        create:
+          notice: Запрос на вывод средств успешно отправлен. Для завершения банковского перевода используйте информацию ниже.
+      realpointcoins:
+        destroy:
+          notice:  Вывод средств был отменен, замороженный баланс возвращен на Ваш счет.
+        update:
+          notice: Запрос на вывод средств успешно отправлен, мы обработаем его как можно скорее.
+          alert_two_factor: Ошибка двух факторной аутентификации.
+        new:
+          submit: Отправить
+          allin: All-In
+          fund_source_label: Label
+          manage_fund_source: Управление источником средств
+        create:
+          notice: Запрос на вывод средств успешно отправлен. Для завершения банковского перевода используйте информацию ниже.
+      litecoins:
+        destroy:
+          notice:  Вывод средств был отменен, замороженный баланс возвращен на Ваш счет.
+        update:
+          notice: Запрос на вывод средств успешно отправлен, мы обработаем его как можно скорее.
+          alert_two_factor: Ошибка двух факторной аутентификации.
+        new:
+          submit: Отправить
+          allin: All-In
+          fund_source_label: Label
+          manage_fund_source: Управление источником средств
+        create:
+          notice: Запрос на вывод средств успешно отправлен. Для завершения банковского перевода используйте информацию ниже.
+      blackcoins:
+        destroy:
+          notice:  Вывод средств был отменен, замороженный баланс возвращен на Ваш счет.
+        update:
+          notice: Запрос на вывод средств успешно отправлен, мы обработаем его как можно скорее.
+          alert_two_factor: Ошибка двух факторной аутентификации.
+        new:
+          submit: Отправить
+          allin: All-In
+          fund_source_label: Label
+          manage_fund_source: Управление источником средств
+        create:
+          notice: Запрос на вывод средств успешно отправлен. Для завершения банковского перевода используйте информацию ниже.
+      peercoins:
+        destroy:
+          notice:  Вывод средств был отменен, замороженный баланс возвращен на Ваш счет.
+        update:
+          notice: Запрос на вывод средств успешно отправлен, мы обработаем его как можно скорее.
+          alert_two_factor: Ошибка двух факторной аутентификации.
+        new:
+          submit: Отправить
+          allin: All-In
+          fund_source_label: Label
+          manage_fund_source: Управление источником средств
+        create:
+          notice: Запрос на вывод средств успешно отправлен. Для завершения банковского перевода используйте информацию ниже.
+      tritiumcoins:
+        destroy:
+          notice:  Вывод средств был отменен, замороженный баланс возвращен на Ваш счет.
+        update:
+          notice: Запрос на вывод средств успешно отправлен, мы обработаем его как можно скорее.
+          alert_two_factor: Ошибка двух факторной аутентификации.
+        new:
+          submit: Отправить
+          allin: All-In
+          fund_source_label: Label
+          manage_fund_source: Управление источником средств
+        create:
+          notice: Запрос на вывод средств успешно отправлен. Для завершения банковского перевода используйте информацию ниже.
+    tickets:
+      index:
+        new_ticket: Новая заявка
+      new:
+        intro: Если у вас возникли проблемы, начните новое обсуждение,чтобы наши сотрудники могли помочь Вам как можно скорее. Все обсуждения являются конфиденциальными между Вами и сотрудниками поддержки.
+      ticket_create_succ: Заявка создана успешно.
+      ticket_create_fail: Не удалось создать заявку, повторите попытку позже.
+      comment_succ: Комментарий успешно добавлен.
+      cooment_fail: Сбой комментария, повторите попытку позже.
+      me: мое
+      supporter: Поддержка
+      close: Закрыть заявку
+      close_succ: Заявка успешно закрыта
+      close_confirm: Вы действительно хотите закрыть эту заявку?
+      title_content_both_blank: Название и содержимое могут быть пустыми.
+      from: От
+      view_closed_tickets: Посмотреть закрытые заявки
+      view_open_tickets: Посмотреть открытые заявки
+    account_versions:
+      index:
+        description: Каждая сделка и каждая копейка дохода в Cryex24 хорошо задокументирована и исчерпывающая.
+    api_tokens:
+      user_tokens:
+        no_token: У Вас нет API токенов.
+        edit: Изменить
+        destroy: Уничтожить
+        destroy-confirm: Вы уверены?
+        create: Создать новый токен
+        http: HTTP API документация
+        websocket: Websocket API документация
+        more: 'Для получения дополнительной информации, пожалуйста, проверьте раздел API на github:'
+      oauth_tokens:
+        panel_title: Авторизации
+        title: Авторизованные приложения
+        oauth: OAuth Integration
+        intro: Управление всеми Вашими авторизованными приложениями.
+        no_token: Приложений нет.
+        unbind: Аннулировать
+        unbind-confirm: Вы уверены?
+        oauth_app_name: Имя
+        oauth_app_expire: Срок действия истекает
+        oauth_app_scope: Оптика
+      unbind:
+        success: Аннулирован успешно.
+        failed: Аннулирование не удалось.
+      new:
+        label_hint: Label поможет запомнить использование токена, по желанию.
+      create:
+        alert_two_factor: Сбой двух этапной аутентификации.
+        success: Токен API успешно создан.
+        failed: Не удалось создать API токен. Пожалуйста, повторите попытку позже или свяжитесь с администратором.
+        desc: Пожалуйста, скопируйте и вставьте ключи ниже в безопасное место и сохраните. Секретный ключ не будет отображаться снова.
+      edit:
+        access_key_hint: Создано %{created_at}
+        label_hint: Label поможет запомнить использование токена, по желанию.
+        ip_whitelist_hint: Разделяйте IP-адреса запятыми, оставьте это поле пустым, чтобы все IP-адреса были разрешены.
+      update:
+        alert_two_factor: Сбой двух этапной аутентификации.
+        success: Успешно сохранено.
+        failed: Не удалось сохранить токен. Пожалуйста, повторите попытку позже или свяжитесь с администратором.
+    destroy:
+        success: Токен успешно уничтожен.
+        failed: Не удалось уничтожить токен.
+    assets:
+      index:
+        liability-proof: Доказательство ответственности
+        btc-assets: Активы BTC 
+        ltc-assets: Активы LTC 
+        blk-assets: Активы BLK
+        ppc-assets: Активы PPC 
+        rpt-assets: Активы RPT 
+        trt-assets: Активы TRT 
+        cny-assets: Активы CNY 
+      liability_tabs:
+        verify-btc: Проверить мои активы BTC 
+        verify-ltc: Проверить мои активы LTC 
+        verify-blk: Проверить мои активы BLK 
+        verify-ppc: Проверить мои активы PPC 
+        verify-rpt: Проверить мои активы RPT 
+        verify-trt: Проверить мои активы TRT 
+        verify-cny: Проверить мои активы CNY 
+        btc-assets-total: 'Всего активов BTC обмена: '
+        ltc-assets-total: 'Всего активов LTC обмена: '
+        ppc-assets-total: 'Всего активов PPC обмена: '
+        blk-assets-total: 'Всего активов BLK обмена: '
+        rpt-assets-total: 'Всего активов RPT обмена: '
+        trt-assets-total: 'Всего активов TRT обмена: '
+        cny-assets-total: 'Всего активов CNY обмена: '
+      liability_proof:
+        title: Доказательство ответственности
+        intro: В качестве обмена, наша ответственность относятся к сумме денег (как криптовалюта, так и свободно конвертируемая валюта), которую наши пользователи доверяют нам. На этой странице мы представляем Вам наши обязательства. Мы также предлагаем Вам возможность убедиться, что баланс Вашего счета действительно является частью нашей ответственности.
+        how-to-verify: Как проверить является ли обмен платежеспособным?
+        how-to-verify-uri: http://coinxpro.com/documents/liability_proof
+      liability_data:
+        liability-proof-generating: Доказательство ответственности в процессе, пожалуйста, вернитесь через 30 минут.
+        root-json: Корневой узел
+        partial-tree: 'Мои %{currency} активы: '
+        get-partial-tree: Get my partial tree data
+        timestamp: Данные доказательства генерируются %{time}.
+        go-verify: Проверить
+      btc_assets:
+        title: Активы BTC
+        intro: Все биржевые активы BTC перечислены здесь.
+        total: Всего активов BTC 
+        address: Адрес
+      ltc_assets:
+        title: Активы LTC 
+        intro: Все биржевые активы LTC перечислены здесь.
+        total: Всего активов LTC 
+        address: Адрес
+      ppc_assets:
+        title: Активы PPC 
+        intro: Все биржевые активы PPC перечислены здесь.
+        total: Всего активов PPC
+        address: Адрес
+      blk_assets:
+        title: Активы BLK 
+        intro: Все биржевые активы BLK перечислены здесь.
+        total: Всего активов BLK 
+        address: Адрес
+      rpt_assets:
+        title: Активы RPT 
+        intro: Все биржевые активы RPT перечислены здесь.
+        total: Всего активов RPT 
+        address: Адрес
+      trt_assets:
+        title: Активы TRT 
+        intro: Все биржевые активы TRT перечислены здесь.
+        total: Всего активов TRT 
+        address: Адрес
+      cny_assets:
+        title: Активы CNY
+        intro: Все биржевые активы CNY перечислены здесь.
+        total: Всего активов CNY 
+        description: " <p>Для наблюдения вы можете запросить баланс нашего депозита account:</p> <p>Bank: %{bank}</p> <p>Счет： %{address}</p> <p>Inquiry Password： %{password}</p> <p>Inquiry Tel.： %{tel}</p>"
+      partial_tree:
+        success: 'Успешно! Данные подтверждения сгенерированны: %{timestamp}'
+    funds:
+      show:
+        account_history: История счета
+        cny_format: '0.00'
+        btc_format: '0.00000000'
+        ltc_format: '0.00000000'
+        ppc_format: '0.00000000'
+        blk_format: '0.00000000'
+        rpt_format: '0.00000000'
+        trt_format: '0.00000000'
+        reason:
+          cny:
+            strike_add: Плюс
+            strike_sub: Sub
+            deposit: Депозит
+            withdraw: Вывод
+            fix: Исправить
+          btc:
+            strike_add: Плюс
+            strike_sub: Sub
+            deposit: Депозит
+            withdraw: Вывод
+            fix: Исправить
+          ltc:
+            strike_add: Плюс
+            strike_sub: Sub
+            deposit: Депозит
+            withdraw: Вывод
+            fix: Исправить
+          ppc:
+            strike_add: Плюс
+            strike_sub: Sub
+            deposit: Депозит
+            withdraw: Вывод
+            fix: Исправить
+          blk:
+            strike_add: Плюс
+            strike_sub: Sub
+            deposit: Депозит
+            withdraw: Вывод
+            fix: Исправить
+          rpt:
+            strike_add: Плюс
+            strike_sub: Sub
+            deposit: Депозит
+            withdraw: Вывод
+            fix: Исправить
+          trt:
+            strike_add: Плюс
+            strike_sub: Sub
+            deposit: Депозит
+            withdraw: Вывод
+            fix: Исправить
+        ref:
+          system: Система
+          default: По умолчанию
+    id_documents:
+      edit:
+        state: Состояние
+        state_unverified: НЕПРОВЕРЕНО
+        state_verifying: ПРОВЕРКА
+        state_verified: ПРОВЕРЕНО
+        name: Настоящее имя
+        birth_date: Дата рождения
+        address: Адрес
+        city: Город
+        country: Страна
+        zipcode: Почтовый индекс
+        id_document_type: Тип документа
+        id_document_number: Номер документа
+        id_document_file: Фото документа
+        id_bill_type: Подтверждение адреса
+        id_bill_file: Подтверждение адреса фото
+      update:
+        notice: Подтверждение Вашего счета отправлено.
     markets:
+      show:
+        error: Ошибка
+        success: Успешно
+        analysis_panel: Анализ
+        help_panel: Помощь
+        done: ВЫПЛНЕНО
+        cancel: ОТМЕНИТЬ
+        cancel_confirm: Вы уверены,что хотите отменить заказ?
+        confirm: ПОДТВЕРДИТЬ
+        ask_order: 'ASK ##sn#'
+        bid_order: 'BID ##sn#'
+        my_active_order: Активный
+        my_done_order: Выполнено
+        trades: Торги
+        chat: Чат
+      market_list:
+        all: Все рынки
+        all_html: "<i class='fa fa-check'></i><span>Все рынки</span>"
+        cny_html: "<i class='fa fa-check'></i><span>Рынки CNY</span>"
+        btc_html: "<i class='fa fa-check'></i><span>Рынки BTC</span>"
+        usd_html: "<i class='fa fa-check'></i><span>Рынки USD</span>"
+        eur_html: "<i class='fa fa-check'></i><span>Рынки EUR</span>"
+        ltc_html: "<i class='fa fa-check'></i><span>Рынки LTC</span>"
+        ppc_html: "<i class='fa fa-check'></i><span>Рынки PPC</span>"
+        blk_html: "<i class='fa fa-check'></i><span>Рынки BLK</span>"
+        rpt_html: "<i class='fa fa-check'></i><span>Рынки RPT</span>"
+        trt_html: "<i class='fa fa-check'></i><span>Рынки TRT</span>"
+        price: Цена
+        change: "24ч %"
+      range_switch:
+        switch_1: 1м
+        switch_5: 5м
+        switch_15: 15м
+        switch_30: 30м
+        switch_60: 1ч
+        switch_120: 2ч
+        switch_240: 4ч
+        switch_360: 6ч
+        switch_720: 12ч
+        switch_1440: 1д
+        switch_4320: 3д
+        switch_10080: 1в
+      depths:
+        price: Цена
+        amount: Сумма
+        buy: Купить
+        sell: Продать
+        ask_orders: Продать
+        bid_orders: Купить
+      ticker:
+        last: Последняя цена
+        ask: ASK
+        bid: BID
+      account_balance:
+        title: Баланс счета
+        available: Доступно %{currency}
+      bid_entry:
+        action: "Купить %{currency}"
+        price: Цена
+        last_price: Последняя цена
+        amount: Сумма
+        total: Всего
+      ask_entry:
+        action: "Продать %{currency}"
+        price: Цена
+        last_price: Последняя цена
+        amount: Сумма
+        total: Всего
+      place_order:
+        price_high: ВЫСОКАЯ
+        price_low: НИЗКАЯ
+        full_bid: ПОЛНАЯ
+        full_ask: ПУСТАЯ
+      order_book:
+        title: Книга заказов
+        volume: Объем
+        price: Цена
+        amount: Сумма
+        ask: ASK
+        bid: BID
+        fade_toggle_depth: Глубина рынка
+      trade_state:
+        new: Новый
+        partial: Частично
+      market_trades:
+        all: Все
+        my: Мое
+        all_html: "<i class='fa fa-check'></i><span>Все</span>"
+        my_html: "<i class='fa fa-check'></i><span>Мое</span>"
+        time: Время
+        price: Цена
+        volume: Объем
+      header:
+        network: Состояние подключения
+        vol: 24ч Объем
+        high: Высоко
+        low: Низко
+        change: Изменить
+      settings:
+        sound: Звук
+        notification: Уведомление
+        funds: "Фонды"
+        signout: "Выйти"
+        settings: "Профиль"
+        history: "История"
+      account_summary:
+        title: Резюме
+        account: Счет
+        amount: Сумма
+        locked: Заморожено
+        view_all_accounts: "Просмотреть все"
+        hide_all_accounts: "Скрыть другие"
       my_orders:
-        orders_wait: Последние ордера
-        orders_done: Закрытые ордера
-        orders_cancel: Отмененные ордера
+        orders_wait: Последние заказы
+        orders_done: Выполненные заказы
+        orders_cancel: Отмененные заказы
+        no_open_orders: У Вас нет открытых заказов.
+        clear_all_html: "<i class='fa fa-trash'></i><span>Отменить Все</span>"
+        clear_bids_html: "<i class='fa fa-trash'></i><span>Отменить Bids</span>"
+        clear_asks_html: "<i class='fa fa-trash'></i><span>Отменить Asks</span>"
+        confirm_clear_all: Вы уверены что хотите отменить ВСЕ заказы?
+        confirm_clear_bids: Вы уверены что хотите отменить все BIDS?
+        confirm_clear_asks: Вы уверены что хотите отменить все ASKS?
+        price: Цена
+        volume: Объем
+        amount: Сумма
+        time: Место Время
+      mask:
+        warning: Пожалуйста <a class=text-up href='/'>Зарегистрируйтесь</a> или <a class=text-up href='/'>Войдите</a> для использоавния
+      klime_chart:
+        title: Candlestick Charts
       global:
-        global_orders_title: ОРДЕРА
+        global_orders_title: ЗАКАЗЫ
+        global_trades_title: ТОРГИ
+      chat:
+        title: Чат
+    settings:
+      success: Настройки успешно обновлены.
+      failure: Неверный пароль. Пожалуйста, попробуйте снова.
+      index:
+        safety_instruction: Для защиты Ваших bitcoins и личной информации мы настоятельно рекомендуем использовать двух факторную аутентификацию.
+        reset_password: Восстановить пароль
+        reauthenticate: Аутентификация
+        activated: На Ваш почтовый ящик отправлено письмо, пожалуйста, проверьте его для подтверждения как можно скорее. Если Вы не получили письмо, нажмите кнопку "отправить снова".
+        auth-activated: Пожалуйста, для начала проверьте свой адрес электронной почты.
+        auth-verified: Пожалуйста, для начала проверьте свою ученую запись.
+        email:
+          title: Подтверждение электронной почты
+          description: Ваш адрес электронной почты не был подтвержден, нажмите кнопку «Отправить письмо», чтобы завершить проверку.
+          description-activated: Ваш адрес электронной почты был успешно проверен, запомните и защитите этот адрес электронной почты, это единственное удостоверение для Вашей учетной записи.
+          resend: Отправить снова
+          activated: Проверено
+          go: Задать
+        phone_number:
+          title: Номер телефона
+          description: Предоставление номера телефона сделает Ваш счет более безопасным.Вы можете сбросить свой пароль и Ваши операции со счетом будут уведомлены.
+          go: Задать
+          verified: Проверено
+          hint: "Подтверждение номера %{hint}"
+        two_factor_auth:
+          title: Двух факторная аутентификация
+          description: Двух факторная аутентификация обеспечивает еще один уровень защиты вашего счета.
+          enable: Включить
+          disable: Отключить
+        verification:
+          title: Подтверждение счета
+          description: Для того, чтобы держать плохих парней подальше от Вашего счета, используйте как пароль, так и свой телефон.
+          go: Отправить
+          verified: Проверено
+        asset_passwords:
+          title: Пароль актива
+          description: Пароль актива будет необходим, когда вы снимаете деньги. Настоятельно рекомендуется не использовать тот же пароль, что и пароль к вашей учетной записи!
+          go: Задать
+        passwords:
+          title: Пароль
+          description:  Этот пароль необходим для входа в систему, пожалуйста, запомните его.
+          go: Изменить пароль
+          set: Задать
+        api_tokens:
+          title: Токены API
+          description: Создание и управление токенами API.
+          go: Создать
+        weibo:
+          title: Подключение к Weibo
+          description: После подключения к Weibo, Вы можете войти в систему через учетную запить Weibo.
+          bound_desc: Это было связано с %{nickname}.
+          bind: Подключить
+          unbind: Отключить
+    otps:
+      new:
+        step_1: Шаг 1
+        step_2: Шаг 2
+        step_3: Шаг 3
+        or: ИЛИ
+        download_app: Установите приложение Google Authenticator на свой смартфон и откройте его.
+        scan_qr_code: Сканируйте QR-код, приведенный ниже
+        enter_passphrase: Введите вручную следующий код из приложения
+        enter_passcode: Введите и отправьте код, сгенерированный приложением Google Authenticator.
+
+    shared:
+      balances:
+        locked: Заморожено
+        balance: Баланс
+        available: Доступно
+        title: "%{icon} %{c} Счет"
+        cny_format: '0.00'
+        btc_format: '0.00000000'
+        ltc_format: '0.00000000'
+        ppc_format: '0.00000000'
+        blk_format: '0.00000000'
+        rpt_format: '0.00000000'
+        trt_format: '0.00000000'
+        total: Всего
+  guides:
+    private:
+      settings:
+        panel: Настройки
+        index:
+          intro: Admin and revise your profile.
+      api_tokens:
+        panel: Токены API
+        index:
+          title: Мои токены
+          intro: Список всех Ваших API токенов. Пустой 'IP Whitelist' означает, что любому IP разрешено использовать токен.
+        new:
+          title: Создать токен API
+        create:
+          title: Создать токен API 
+        edit:
+          title: Изменить токен API 
+        update:
+          title: Изменить токен API 
+      tickets:
+        panel: Билеты
+      id_documents:
+        panel: Проверка подлинности настоящего имени
+        new:
+          title: Отправить информацию об аутентификации настоящего имени
+          intro: В соответствии с национальным законодательством, требуется проверка личности. Пожалуйста, подтвердите свой аккаунт, чтобы продолжить.
+    panels:
+      balance: Счет
+    verify:
+      google_auths:
+        panel: Двух факторная аутентификация
+        edit:
+          title: Отключить двух факторную аутентификацию
+          intro: Если у вас новый телефон, Вы можете отключить двух факторную аутентификацию в старом телефоне и включить двух факторную аутентификацию в новом.
+      sms_auths:
+        panel: Подтверждение номера телефона
+    reset_passwords:
+      panel: Пароль
+      new:
+        title: Сброс пароля
+        intro: Пожалуйста, введите свой адрес электронной почты, который подтвержден Вашей учетной записью, введите код подтверждения для отправки и введите свой почтовый ящик, следуйте инструкциям на экране, чтобы сбросить пароль.
+      create:
+        title: Сброс пароля
+        intro: Пожалуйста, введите свой адрес электронной почты, который подтвержден Вашей учетной записью, введите код подтверждения для отправки и введите свой почтовый ящик, следуйте инструкциям на экране, чтобы сбросить пароль.
+      edit:
+        title: Установка пароля
+      update:
+        title: Установка пароля
+    sessions:
+      panel: Войти
+      new:
+        title: Войти в мою учетную запись
+        intro: Войти в CoinxPro сейчас, чтобы начать обмен.
+      failure:
+        title: Вход в мою учетную запись
+        intro: Войти в CoinxPro сейчас, чтобы начать обмен.
+    identities:
+      panel: Создать ученую запись
+      new:
+        title: Создать мою учетную запись
+        intro: Это будет Ваш единственный ID на Cryex24, который необходим для обмена, ввода и вывода средств. Пожалуйста, заполните ее внимательно.
+      edit:
+        panel: Мой счет
+        title: Сброс пароля
+    two_factors:
+      panel: Двух факторная аутентификация
   simple_form:
-    labels:
+    placeholders:
+      deposit:
+        bank:
+          amount: Минимальная сумма 100
+      session:
+        email: Адрес электронной почты
+        password: Пароль
+      identity:
+        email: Например：xiaobai@example.com
+        password: Пожалуйста, задайте свой пароль для входа в систему
+        password_confirmation: Подтвердите пароль
+        edit:
+          password: Пожалуйста, задайте пароль для Вашего счета!
+      document:
+        key: Document link URL key
+        title: Название документа
+      order_bid:
+        origin_volume: Объем покупок
+        sum: Sum
+      order_ask:
+        origin_volume: Объем продаж
+        sum: Общий оборот
+      reset_password:
+        email: Например：xiaobai@example.com
+        password: Пожалуйста, введите Ваш пароль для входа в систему!
       withdraw:
+        bank:
+          sum: Минимальная сумма 100
+        satoshi:
+          sum: Минимальная сумма 0.001
+          fund_extra: Введите label для этого адреса (необязательно)
+        realpointcoin:
+          sum: Минимальная сумма 0.001
+          fund_extra: Введите label для этого адреса (необязательно)
+        litecoin:
+          sum: Минимальная сумма 0.001
+          fund_extra: Введите label для этого адреса (необязательно)
+        peercoin:
+          sum: Минимальная сумма 0.001
+          fund_extra: Введите label для этого адреса (необязательно)
+        blackcoin:
+          sum: Минимальная сумма 0.001
+          fund_extra: Введите label для этого адреса (необязательно)
+        tritiumcoin:
+          sum: Минимальная сумма 0.001
+          fund_extra: Введите label для этого адреса (необязательно)
+    hints:
+      deposit:
+        bank:
+          sum: "<a target='_баланс' href='#'>Структура сборов</a>"
+          member_name: "<span class='text-danger'>Имя банковского счета , для пополнения должно совпадать с Вашим настоящим именем, прошедшим аутентификацию</span>"
+          sn: "<span class='text-danger'>Пожалуйста, скопируйте SN в сообщении банковского перевода, иначе мы не сможем обработать ваш заказ быстро</span>"
+      two_factor:
+        otp_secret: Мы рекомендуем Вам создать резервную копию изображения QR-кода или зашифрованного текста, чтобы избежать неудобства в случае потери телефона.
+        otp: Ваш валидатор будет генерировать новый пароль каждые 30 секунд, пожалуйста, введите его своевременно.
+      identity:
+        password: Задайте пароль, состоящий как минимум из 6 символов, рекомендуем использовать прописные и строчные буквы и цифры.
+      reset_password:
+        password: Задайте пароль, состоящий как минимум из 6 символов, рекомендуем использовать прописные и строчные буквы и цифры.
+      id_document:
+        name: Пожалуйста, введите имя, соответствующее Вашим учетным данным.
+      withdraw:
+        bank:
+          member_name: "<span class='text-danger'>Имя банковского счета, для вывода средств, должно совпадать с Вашим настоящим именем, прошедшим аутентификацию</span>"
+          sum: "<a target='_Баланс' href='#'>Структура сборов</a>"
+          fund_extra: Если Ваш банк больше не находится в списке, обратитесь в службу поддержки клиентов
+        satoshi:
+          sum: "<a target='_Баланс' href='#'>Структура сборов</a>"
+        realpointcoin:
+          sum: "<a target='_Баланс' href='#'>Структура сборов</a>"
+        litecoin:
+          sum: "<a target='_Баланс' href='#'>Структура сборов</a>"
+        peercoin:
+          sum: "<a target='_Баланс' href='#'>Структура сборов</a>"
+        blackcoin:
+          sum: "<a target='_Баланс' href='#'>Структура сборов</a>"
+        tritiumcoin:
+          sum: "<a target='_Баланс' href='#'>Структура сборов</a>"
+    creating: Creating...
+    updating: Обновление...
+    buttons:
+      or: Или
+      cancel: Отмена
+    'yes': 'ДА'
+    'no': 'Нет'
+    required:
+      text: требуется
+      mark: "*"
+    error_notification:
+      default_message: 'Пожалуйста, ознакомьтесь с проблемами ниже:'
+    labels:
+      defaults:
+        title: Название
+      google_auth:
+        uri: QR-код
+        otp_secret: Зашифрованный текст
+        otp: Пароль для аутентификации
+      fund_source:
+        label: Label
+        address: Адрес
+        category: Категория
+      session:
+        email: Вход в электронную почту
+        password: Пароль для входа в систему
+        captcha: Защитный код
+      identity:
+        email: Войти в электронную почту
+        old_password: Исходный пароль
+        password: Новый пароль
+        password_confirmation: Подтвердите новый пароль
+      reset_password:
+        password: Новый пароль
+      ticket:
+        content: Подробнее
+      withdraw:
+        bank:
+          fund_extra: Банк
+          sum: Сумма
+          account_balance: Баланс счета
+          member_name: Имя владельца счета
         satoshi:
           fee: Комиссия
+          sum: Сумма
+          fund_uid: Bitcoin адрес
+          fund_extra: Label
+          account_balance: Баланс счета
+          member_name: Счет
+        realpointcoin:
+          fee: Комиссия
+          sum: Сумма
+          fund_uid: RealPointCoin адрес
+          fund_extra: Label
+          account_balance: Баланс счета
+          member_name: Счет
+        litecoin:
+          fee: Комиссия
+          sum: Сумма
+          fund_uid: Litecoin адрес
+          fund_extra: Label
+          account_balance: Баланс счета
+          member_name: Счет
+        peercoin:
+          fee: Комиссия
+          sum: Сумма
+          fund_uid: Peercoin адрес
+          fund_extra: Label
+          account_balance: Баланс счета
+          member_name: Счет
+        blackcoin:
+          fee: Комиссия
+          sum: Сумма
+          fund_uid: Blackcoin адрес
+          fund_extra: Label
+          account_balance: Баланс счета
+          member_name: Счет
+        tritiumcoin:
+          fee: Комиссия
+          sum: Сумма
+          fund_uid: Tritiumcoin адрес
+          fund_extra: Label
+          account_balance: Баланс счета
+          member_name: Счет
   admin:
+    deposits:
+      banks:
+        index:
+          oneday: Запросы за последние 24 часа
+          available: Все ожидающие запросы
+        show:
+          alert: Пополнение не доступно.
+          notice: Пополнение выполнено успешно.
+          deposit: Запрос на внесение депозита
+          accept: Принято
+          target_deposit: Банковский перевод
+          confirm: Подтвердить пополнение?
+        update:
+          blank_txid: TxID не может быть пустым
+      satoshis:
+        update:
+          notice: Депозит прошел успешно.
+        index:
+          accept: Принято
+          accept_confirm: Подтвердить депозит?
+      realpointcoins:
+        update:
+          notice: Депозит прошел успешно.
+        index:
+          accept: Принято
+          accept_confirm: Подтвердить депозит?
+      litecoins:
+        update:
+          notice: Депозит прошел успешно.
+        index:
+          accept: Accept
+          accept_confirm: Подтвердить депозит?
+      blackcoins:
+        update:
+          notice: Депозит прошел успешно.
+        index:
+          accept: Accept
+          accept_confirm: Подтвердить депозит?
+      peercoins:
+        update:
+          notice: Депозит прошел успешно.
+        index:
+          accept: Accept
+          accept_confirm: Подтвердить депозит?
+      tritiumcoins:
+        update:
+          notice: Депозит прошел успешно.
+        index:
+          accept: Accept
+          accept_confirm: Подтвердить депозит?
+    tickets:
+      view: Просмотр
+      close: Закрыть заявку
+      comments_count: Количество комментариев
+      replies: Ответы
+      open_tickets: Открытые заявки
+      closed_tickets: Закрытые заявки
     members:
       index:
-        members: Участник
+        search: Поиск
+        members: Пользователи
+        email: Электронная почта
+        name: Имя
+        phone: Номер телефона
+        wallet_address: Адрес кошелька
+      show:
+        member_title: Информация пользователя
+        actions_title: Действие
+        accounts_title: Информация о счете
+        account_versions_title: Отчеты
+    dashboard:
+      index:
+        accounts_title: Краткий отчет
+        daemons_title: Сводка системы
+    documents:
+      index:
+        new: Новый документ
     statistic:
+      filter: Фильтр
+      summary: Резюме
+      click-to-expand: Развернуть
+      members:
+        show:
+          table: Результаты
+      orders:
+        show:
+          avg: Средний
+          sum: Объем заказа
+          sum_strike: По объему
+          count: Подсчет
       trades:
         show:
-          volume_fee: Итого комиссия
+          count: Сделки
+          volume: Объем
+          amount: Общая сумма
+          min_price: Минимальная цена
+          max_price: Максимальная цена
+          avg_price: Средняя цена
+          amount_fee: Комиссия за сделку
+          volume_fee: Общая комиссия
+      deposits:
+        show:
+          count: Всего
+          amount: Общая сумма
       withdraws:
         show:
+          count: Всего
+          amount: Общая сумма
           fee: Комиссия
     withdraws:
-      satoshis:
+      banks:
+        index:
+          one: Заявки в ожидании на вывод средств
+          all: Заказы 24 часа
+          empty: Нет данных
         show:
-          process: Одобрен
+          process: Процесс
+          succeed: Успешно
+          reject: Отклонить
+          succeed_confirm: Подтвердить процесс?
+          reject_confirm: Подтвердить отклонение?
+          withdraw: Вывод
+          empty: Нет данных
+      satoshis:
+        index:
+          one: В ожидание на вывод
+          all: Последние 24 часа
+          empty: Нет данных
+        show:
+          process: Принято
+          succeed: Вывод
+          reject: Отклонить
+          succeed_confirm: Вывести средства?
+          reject_confirm: Отклонить вывод?
+          withdraw: Вывод
+        update:   
+          notice: Вывод средств осуществлен
+      realpointcoins:
+        index:
+          one: В ожидание на вывод средств
+          all: Последние 24 часа
+          empty: Нет данных
+        show:
+          process: Принято
+          succeed: Вывод
+          reject: Отклонить
+          succeed_confirm: Вывести средства?
+          reject_confirm: Отклонить вывод средств?
+          withdraw: Вывод
+        update:   
+          notice: Вывод средств осуществлен
+      litecoins:
+        index:
+          one: В ожидание на вывод средств
+          all: Last 24 hours
+          empty: Нет данных
+        show:
+          process: Принято
+          succeed: Вывод
+          reject: Отклонить
+          succeed_confirm: Вывести средства?
+          reject_confirm: Отклонить вывод средств?
+          withdraw: Вывод
+        update:
+          notice: Вывод средств осуществлен
+      peercoins:
+        index:
+          one: В ожидание на вывод средств
+          all: Last 24 hours
+          empty: Нет данных
+        show:
+          process: Принято
+          succeed: Вывод
+          reject: Отклонить
+          succeed_confirm: Вывести средства?
+          reject_confirm: Отклонить вывод средств?
+          withdraw: Вывод
+        update:
+          notice: Вывод средств осуществлен
+      blackcoins:
+        index:
+          one: В ожидание на вывод средств
+          all: Last 24 hours
+          empty: Нет данных
+        show:
+          process: Принято
+          succeed: Вывод
+          reject: Отклонить
+          succeed_confirm: Вывести средства?
+          reject_confirm: Отклонить вывод средств?
+          withdraw: Вывод
+        update:
+          notice: Вывод средств осуществлен
+      tritiumcoins:
+        index:
+          one: В ожидание на вывод средств
+          all: Last 24 hours
+          empty: Нет данных
+        show:
+          process: Принято
+          succeed: Вывод
+          reject: Отклонить
+          succeed_confirm: Вывести средства?
+          reject_confirm: Отклонить вывод средств?
+          withdraw: Вывод
+        update:
+          notice: Вывод средств осуществлен
   deposits/satoshi:
     aasm_state:
-      accepted: Одобрен
+      submitted: Отправлено
+      accepted: Принято
+      checked: Проверено
+      warning: Предупреждение
+  deposits/realpointcoin:
+    aasm_state:
+      submitted: Отправлено
+      accepted: Принято
+      checked: Проверено
+      warning: Предупреждение
+  deposits/litecoin:
+    aasm_state:
+      submitted: Отправлено
+      accepted: Принято
+      checked: Проверено
+      warning: Предупреждение
+  deposits/blackcoin:
+    aasm_state:
+      submitted: Отправлено
+      accepted: Принято
+      checked: Проверено
+      warning: Предупреждение
+  deposits/peercoin:
+    aasm_state:
+      submitted: Отправлено
+      accepted: Принято
+      checked: Проверено
+      warning: Предупреждение
+  deposits/tritiumcoin:
+    aasm_state:
+      submitted: Отправлено
+      accepted: Принято
+      checked: Проверено
+      warning: Предупреждение
+  doorkeeper:
+    scopes:
+      profile: Прочитайте Ваш основной профиль (например, имя, адрес электронной почты) и баланс счета
+      history: Прочитайте Вашу историю торговли
+      trade: Отправить и отменить заказы
+    authorizations:
+      new:
+        title: Авторизация приложения CoinxPro
+        authorize_html: Авторизовать <strong class='text-info'>%{name}</strong> чтобы использовать Ваш счет?
+        scopes: 'Это приложение будет иметь возможность:'
+        authorize: Авторизовать
+        deny: Запретить
+    errors:
+      messages:
+        invalid_request: В запросе отсутствует обязательный параметр, включает в себя не поддерживаемое значение параметра, или поврежден иным образом.
+        invalid_redirect_uri: Включенный uri перенаправления недействителен..
+        unauthorized_client: Клиенту не разрешено выполнять этот запрос с использованием этого метода.
+        access_denied: Владелец ресурса или сервер авторизации отклонил запрос.
+        invalid_scope: Запрашиваемая область недействительна, неизвестна или искажена.
+        server_error: Сервер авторизации столкнулся с непредвиденным условием, которое не позволяет ему выполнить запрос.
+        temporarily_unavailable: Сервер авторизации в настоящее время не может обработать запрос из-за временной перегрузки или обслуживания сервера.
+        credential_flow_not_configured: Поток с предоставлением клиенту пароля не удался из-за того, что Doorkeeper.configure.resource_owner_from_credentials был неконфигурированным.
+        resource_owner_authenticator_not_configured: Ошибка определения владельца ресурса из-за того, что Doorkeeper.configure.resource_owner_authenticator был неконфигурированным.
+        unsupported_response_type: Сервер авторизации не поддерживает этот тип ответа.
+        invalid_client: Ошибка аутентификации из-за неизвестного клиента, аутентификация клиента не включена, или метод проверки подлинности не поддерживается.
+        invalid_grant: Предоставленный грант авторизации является недействительным, истек срок действия, аннулирован, не совпадает с перенаправлением URI, используемый в запросе авторизации, или был выдан другому клиенту.
+        unsupported_grant_type: Тип гранта разрешения авторизации не поддерживается сервером авторизации.
+        invalid_resource_owner: Предоставленные учетные данные владельца ресурса не являются действительными, или владелец ресурса не может быть найден.
+        invalid_token:
+          revoked: Токен доступа был аннулирован
+          expired: Токен доступа устарел
+          unknown: Токен доступа недействителен
+    flash:
+      applications:
+        create:
+          notice: Приложение создано.
+        destroy:
+          notice: Приложение удалено.
+        update:
+          notice: Приложение обновлено.
+      authorized_applications:
+        destroy:
+          notice: Приложение аннулировано.
   easy_table:
     satoshi:
-      member_name: Участник
+      amount: Сумма
+      txid: TxId
+      created_at: Создано
+      confirmations: Подтверждения
+      member_name: Пользователь
+      state_and_actions: Состояние / Действия
+      currency_obj_key_text: Валюта
+    realpointcoin:
+      amount: Сумма
+      txid: TxId
+      created_at: Создано
+      confirmations: Подтверждения
+      member_name: Пользователь
+      state_and_actions: Состояние / Действия
+      currency_obj_key_text: Валюта
+    litecoin:
+      amount: Сумма
+      txid: TxId
+      created_at: Создано
+      confirmations: Подтверждения
+      member_name: Пользователь
+      state_and_actions: Состояние / Действия
+      currency_obj_key_text: Валюта
+    blackcoin:
+      amount: Сумма
+      txid: TxId
+      created_at: Создано
+      confirmations: Подтверждения
+      member_name: Пользователь
+      state_and_actions: Состояние / Действия
+      currency_obj_key_text: Валюта
+    peercoin:
+      amount: Сумма
+      txid: TxId
+      created_at: Создано
+      confirmations: Подтверждения
+      member_name: Пользователь
+      state_and_actions: Состояние / Действия
+      currency_obj_key_text: Валюта
+    tritiumcoin:
+      amount: Сумма
+      txid: TxId
+      created_at: Создано
+      confirmations: Подтверждения
+      member_name: Пользователь
+      state_and_actions: Состояние / Действия
+      currency_obj_key_text: Валюта
     bank:
-      member_name: Участник
+      sn: SN
+      amount: Сумма
+      created_at: At
+      fund_source: Источник финансирования
+      memo: Заметка
+      member_name: Пользователь
+      state_and_actions: Состояние / Действия
+      currency_obj_key_text: Валюта
   enumerize:
+    account_version:
+      reason:
+        fix: ИСПРАВИТЬ
+        unknown: НЕИЗВЕСТНО
+        strike_add: TRADE PLUS
+        strike_sub: TRADE SUB
+        strike_fee: ТОРГОВЫЙ СБОР
+        strike_unlock: РАЗБЛОКИРОВАТЬ ТОРГОВЛЮ
+        order_cancel: ОТМЕНИТЬ ЗАКАЗ
+        order_submit: ОТПРАВИТЬ ЗАКАЗ
+        deposit: ДЕПОЗИТ
+        withdraw: ВЫВОД
+        withdraw_lock: ЗАБЛОКИРОВАТЬ ВЫВОД СРЕДСТВ
+        withdraw_unlock: РАЗБЛОКИРОВАТЬ ВЫВОД СРЕДСТВ
+    state:
+      done: ВЫПОЛНЕНО
+      wait: Подождите
+      cancel: Отмена
     currency:
+      usd: USD
+      eur: EUR
       cny: CNY
       btc: BTC
+      ltc: LTC
+      ppc: PPC
+      blk: BLK
+      rpt: RPT
+      trt: TRT
+    order:
+      state:
+        done: ВЫПОЛНЕНО
+        wait: Подождите
+        cancel: Отмена
     deposit:
       aasm_state:
-        accepted: Одобрен
-        rejected: Отклонен
+        submitted: Отправлено
+        submitting: Отправка
+        accepted: Принято
+        cancelled: Отменено
+        rejected: Отклонено
+        checked: Проверено
+        warning: Предупреждение
     withdraw:
       state:
-        rejected: Отклонен
-        accepted: Одобрен
+        submitting: Отправка
+        submitted: Отправлено
+        rejected: Отклонено
+        accepted: Принято
+        suspect: Подозрительный
+        processing: Обработка
+        done: Выполнено
+        canceled: Отменено
+    fund_source:
+      category:
+        satoshi: Bitcoin
+        realpointcoin: RealPointCoin
+        litecoin: Litecoin
+        blackcoin: Blackcoin
+        peercoin: PeerCoin
+        tritiumcoin: Tritiumcoin
+        bank: Банк
+    id_document:
+      id_document_type:
+        id_card: Удостоверение личности
+        passport: Паспорт
+        driver_license: Водительские права
+      id_bill_type:
+        bank_statement: Выписка из банка
+        tax_bill: Налоговый счет
+  views:
+    pagination:
+      first: "&laquo; Первая"
+      last: Последняя &raquo;
+      previous: "&lsaquo; Предыдущая"
+      next: Следующая &rsaquo;
+      truncate: "..."
+
+  mailer:
+    dear_user: Уважаемый пользователь,
+    signature: Спасибо,<br/>Команда CoinxPro 
+    please_contact: Если это не Вы, пожалуйста <a href='mailto:%{contact_mail}'>свяжитсь с нами</a> как можно скорее.
+    footer: Это автоматически генерированное сообщение, пожалуйста, не отвечайте, если у вас есть какие-либо вопросы, пожалуйста, <a href="mailto:%{contact_mail}">свяжитесь с нами</a>.
+  comment_mailer:
+    admin_notification:
+      subject: "[CoinxPro] Пользователь ответил на заявку"
+      notification_content: Пользователь %{email} ответил на заявку, пожалуйста, перейдите по ссылке ниже, чтобы увидеть подробную информацию.
+    user_notification:
+      subject: "[CoinxPro] Ваша заявка получила новый ответ"
+      notification_content: 'Ваша заявка получила новый ответ, пожалуйста, перейдите по ссылке ниже, чтобы увидеть подробную информацию:'
+  deposit_mailer:
+    accepted:
+      subject: "[CoinxPro] Ваш депозит зачислен на Ваш счет"
+      content: Ваш %{currency} депозит был зачислен на Ваш счет.
+  member_mailer:
+    notify_signin:
+      subject: "[CoinxPro] Вы только что вошли в систему"
+      just_signed_in: Вы только что вошли в систему.
+    google_auth_activated:
+      subject: "[CoinxPro] Google Authenticator активирован"
+      google_auth_activated: Вы успешно активировали Google Authenticator.
+    google_auth_deactivated:
+      subject: "[CoinxPro] Google Authenticator деактивирован"
+      google_auth_deactivated: Вы успешно деактивировали Google Authenticator.
+    sms_auth_activated:
+      subject: "[CoinxPro] Аутентификация SMS активирована"
+      sms_auth_activated: Вы успешно активировали аутентификацию SMS
+    sms_auth_deactivated:
+      subject: "[CoinxPro] Аутентификация SMS деактивирована"
+      sms_auth_deactivated: Вы успешно деактивировали аутентификацию SMS
+    reset_password_done:
+      subject: "[CoinxPro] Ваш пароль изменен"
+      successful: Ваш пароль был успешно изменен.
+    phone_number_verified:
+      subject: "[CoinxPro] Ваш номер телефона проверяется"
+      verified: 'Ваш номер телефона проверен: %{phone_number}'
+  system_mailer:
+    daily_stats:
+      member_stats: Статистика пользователей
+      signup: Регистрация
+      activation: Активация
+      asset_stats: Изменения в активах
+      trade_stats: Изменения в сделках
+      asset_value_change_total: Всего изменено цифровых активов
+      trades_change_total: Всего изменено сделок
+  ticket_mailer:
+    admin_notification:
+      subject: "[CoinxPro] Пользователь создал новую заявку"
+      admin_notification_content: Пользователь %{email} создал новую заявку, пожалуйста перейдите по ссылке ниже, чтобы увидеть подробную информацию.
+    author_notification:
+      subject: "[CoinxPro] Благодарим за подачу заявки"
+      thanks_for_submit_ticket: Благодарим за подачу заявки, мы свяжемся с Вами как можно скорее.
+  token_mailer:
+    activation:
+      subject: "[CoinxPro] Активация счета"
+      click_to_verify: 'Спасибо за регистрацию на CoinxPro, пожалуйста, перейдите по этой ссылке, чтобы подтвердить Вашу электронную почту:'
+      unable_to_click: Скопируйте и откройте ссылку в Вашем браузере, если не получается нажать на нее.
+      link_expire: Ссылка действительна в течение 30 минут.
+    reset_password:
+      subject: "[CoinxPro] Пожалуйста, сбросьте Ваш пароль"
+      hi: Привет,
+      follow_the_link: 'Пожалуйста, перейдите по этой ссылке,чтобы сбросить пароль в течение 30 минут:'
+  withdraw_mailer:
+    submitted:
+      subject: "[CoinxPro] Ваш вывод в состоянии обновления"
+      content: Ваш запрос на вывод %{currency} был успешно отправлен, мы обработаем его как можно скорее. Пожалуйста, будьте терпеливы.  Свяжитесь с нами если у вас есть какие-либо вопросы.
+    processing:
+      subject: "[CoinxPro] Ваш вывод в состоянии обновления"
+      content: Ваш запрос на вывод %{currency} в процессе. Пожалуйста, будьте терпеливы.  Свяжитесь с нами если у вас есть какие-либо вопросы.
+    done:
+      subject: "[CoinxPro] Ваш вывод в состоянии обновления"
+      content: Ваш запрос на вывод %{currency} завершен. Пожалуйста, проверьте это.  Свяжитесь с нами если у вас есть какие-либо вопросы.
+    withdraw_state:
+      subject: "[CoinxPro] Ваш вывод в состоянии обновления"
+      your_state: 'Состояние вывода средств: '
+  'true': правда
+  'false': ложь
+  view_on_github: Посмотреть на Github
+  slogan: CRYPTO EXCHANGE WORLD
+  tags:
+    vip: VIP
+    hero: Hero Member
+    admin: Админ
+  trade:
+    markets: Рынки
+    realtime_price:
+      title: цена в реальном времени
+    account_balance:
+      title: Баланс
+  gon:
+    ask: Ask
+    bid: Bid
+    brand: Биржа CoinxPro 
+    notification:
+      title: Биржа CoinxPro
+      enabled: Уведомление включено.
+      new_trade: "%{kind} заказ#%{id} выполнен %{price} %{quote_unit} для %{volume} %{base_unit}。"
+  back: Назад
+  invalid_password: Неверный пароль
+  all: Все
+  date:
+    formats:
+      date-short: "%m-%d"
+      short: "%m-%d %H:%M"
+      default: "%m/%d/%Y %H:%M"
+  time:
+    formats:
+      date-short: "%m-%d"
+      short: "%m-%d %H:%M"
+      default: "%m/%d/%Y %H:%M"
+  sms:
+    verification_code: 'Код подтверждения Вашего номера телефона: %{code}.'
+    password_changed: Здравствуйте %{email}, Ваш пароль был успешно изменен.
+    deposit_done: Здравствуйте %{email}, запрос Вашего депозита завершен.
+    withdraw_done: Здравствуйте %{email}, запрос на вывод средств завершен.
+  header:
+    home: Главная
+    dashboard: Панель инструментов
+    admin: Администратор
+    market: Торговля
+    settings: Профиль
+    signin: Вход в систему
+    signout: Выход
+    signup: Зарегистрироваться
+    login_via_weibo: Войти через Weibo
+    funds: Фонды
+    getstart: Начать
+    assets: Платежеспособность
+    history: История
+    order_history: История заказов
+    trade_history: История торговли
+    account_history: История счета
+    my_profile: Мой профиль
+    tickets: Заявки
+    account_balance: Общие активы
+    back: Назад
+    total: Всего
+    deposit: Депозит
+    withdraw: Вывод
+  admin_header:
+    deposits: Депозиты
+    withdraws: Вывод
+    statistics: Статистика
+    id_documents: Учетные записи
+  footer:
+    about: About
+    privacy: Конфиденциальность
+    contact: Свяжитесь с нами
+    price: Цена
+    liability_proof: Доказательство ответственности
   actions:
-    member: Участник
+    go: Перейти
+    submit: Отправить
+    deposit: Депозит
+    select: Пожалуйста, выберите
+    unlock: Разблокировать
+    confirm: Подтвердить
+    back: Назад
+    block: посмотреть целиком
+    destroy: Удалить
+    destroy_confirm: Вы уверены, что хотите удалить это?
+    detail: Удалить
+    publish: Опубликовать
+    edit: Изменить
+    preview: Предварительный просмотр
+    close: Закрыть
+    cancel: Отмена
+    view: Просмотр
+    member: Пользователь
+    transact: Transact
+    reject: Отклонить
+    clipboard:
+      click: Нажмите, чтобы скопировать
+      done: Скопировано
+  chart:
+    open: Открыть
+    high: Высокая
+    low: Низкая
+    close: Закрыть
+    price: Цена
+    volume: Объем
+    candlestick: 'Candlestick'
+    line: 'Линия'
+    minute: м
+    hour: Час
+    day: День
+    week: Неделя
+    month: Месяц
+    year: Год
+    zoom: Увеличить
+    ask: ASK
+    bid: BID
+    depth: Глубина
+    depth_title: Глубина рынка
+  'yes': 'Да'
+  'no': 'Нет'
+  simple_captcha:
+    label: Обновите страницу, чтобы получить новую капчу.
+    placeholder: Тип символов в изображении
+  helpers:
+    action:
+      view: Просмотр
+      customer_service: свяжитесь с нами
+    submit:
+      order_ask:
+        create: ASK(Цена продажи)
+      order_bid:
+        create: BID(Цена покупки)
+      document:
+        create: Создать документ
+        update: Обновить документ
+        destroy: Удалить документ
+      member:
+        update: Открыть счет
+      identity:
+        save: Войти
+        create: Зарегистрироваться
+        destroy: Выйти
+        verify: Проверить
+        update: Изменить
+      two_factor:
+        create: Проверить
+        update: Активировать
+      reset_two_factor:
+        create: Сбросить двух факторную аутентификацию
+      reset_password:
+        update: Сбросить пароль для входа
+        create: Сбросить пароль для входа
+      fund_source:
+        create: Сохранить
+      deposit:
+        create: Депозит
+      id_document:
+        create: Отправить
+      withdraw:
+        create: Отправить
+      ticket:
+        create: Отправить
+  activations:
+    new:
+      notice: На Ваш ящик электронной почты отправлено письмо, проверьте его как можно скорее для подтверждения. Если вы не получили его, нажмите кнопку «отправить снова».
+      verified: Ваш адрес электронной почты успешно проверен.
+      login_required: Требуется войти!
+      tip: Ссылка активации была отправлена на %{email}
+      spam: Пожалуйста, проверьте папку со спамом.
+    edit:
+      notice: Аккаунт активирован! Пожалуйста, войдите в систему ниже.
+      alert: Ссылка активации устарела или недействительна.
+  authentications:
+    emails:
+      new:
+        title: Настройка электронной почты
+        setup_email: Пожалуйста, укажите свой адрес электронной почты.
+        warning: Пожалуйста, проверьте Ваш почтовый ящик после сохранения адреса электронной почты.
+        email_address: Адрес электронной почты
+        save: Сохранить
+    weibo:
+      destroy:
+        last_auth_alert: Вы не можете удалить последнюю аутентификацию
+        unbind_success: Отвязать от Weibo
+    identities:
+      new:
+        title: Установка пароля
+        save: Сохранить
+      create:
+        success: Пароль установлен успешно
+  forum:
+    index:
+      notice:
+        display_name: Пожалуйста, укажите отображаемое имя для форума.
+  identities:
+    new:
+      title: РЕГИСТРАЦИЯ
+      signin: Войти
+      password: Задайте пароль, состоящий как минимум из 6 символов, рекомендуем использовать прописные и строчные буквы и цифры.
+    update:
+      auth-error: Неверный исходный пароль, пожалуйста, повторите ввод.
+      auth-same: Новый пароль, который вы ввели, совпадает со старым паролем, пожалуйста, повторите ввод.
+      notice: Пароль учетной записи успешно обновлен.
   layouts:
     admin:
       menus:
         sections:
-          members: Участники
+          members: Пользователь
+          deposits: Депозиты
+          sites_statistics: Аналитика
+          operating: Операции
+        items:
+          operating:
+            proofs: Доказательство
+            deposits: Депозиты
+            documents: Документы
+            withdraws: Вывод средств
+            tickets: Заметки
+          deposits:
+            currency: Депозит
+    application:
+      close: Закрыть
+    meta:
+      page_title: coinxpro.com - The Cryptocurrency Exchange
+      page_description: coinxpro.com - The Cryptocurrency Exchange
+      page_keywords: Exchange,Cryptocurrency
+  members:
+    edit:
+      name: Пожалуйста, заполните заявку.
+  reset_passwords:
+    create:
+      success: На ваш почтовый ящик отправлено электронное письмо для сброса пароля. Если вы не получили сообщение, для начала проверьте папку "спам", или отправьте запрос еще раз.
+    edit:
+      password: Задайте пароль, состоящий как минимум из 6 символов, рекомендуем использовать прописные и строчные буквы и цифры.
+      invalid: Неверный запрос
+      submit: Сбросить пароль для входа в систему
+      alert: Недействительная ссылка для сброса пароля.
+    update:
+      success: Пароль для входа в систему был сброшен, пожалуйста, сохраните Ваш новый пароль.
+      invalid: Неверный запрос
+  sessions:
+    new:
+      reset_password: Забыли пароль?
+    new_with_two_factor_auth:
+      title: 2-этапная проверка
+      reset_two_factor: Потеряна двух этапная аутентификация устройства.
+    create_with_two_factor_auth:
+      session_expired: Время истекло. Попробуйте еще раз.
+    create:
+      error: Ваша учетная запись отключена, свяжитесь с администратором, если у вас есть какие-либо проблемы.
+    failure:
+      account_locked: Слишком много неудачных попыток входа. Для обеспечения безопасности Вашего счета мы заблокировали Вашу учетную запись. Чтобы разблокировать, восстановите свой пароль, нажав на кнопку «Забыли пароль». 
+      error:  Неверный ID или пароль. Повторите попытку.
+  shared:
+    admin:
+      member:
+        member_info: Информация пользователя
+        deactive_sms_two_factor: SMS TFA
+        deactive_app_two_factor: Google TFA
+        inactive: Неактивно
+        deactive: Выключено
+        are_you_sure: Вы уверены, что хотите выключить двух факторную аутентификацию?
+      account:
+        account_info: Информация Счета
+        payment_address: Адрес депозита
+    alert:
+      modern: Используйте более популярный браузер, для того, чтобы не повлиять на Ваш опыт торговли, мы рекомендуем Вам <a target='_blank' href='https://www.google.com/#q=google+chrome'>Google Chrome</a>。
+      pusher_unavailable: Сетевое подключение временно недоступно... <a href='#' class='alert-link'>Пожалуйста, обновите страницу</a>.
+    header:
+      balance: Баланс
+    header_account_balance:
+      locked: Заблокировано
+    market:
+      ticker:
+        ask_price: Ask(Цена продажи)
+        bid_price: Bid(Цена покупки)
+        high_price: Высокая
+        low_price: Низкая
+        volume: Объем
+        latest_price: Последняя
+    frame:
+      deposit_now: Сделать депозит сейчас
+  two_factors:
+    index:
+      verify: Проверка
+    update:
+      alert: Ошибка двух факторной проверки кода, пожалуйста, повторите ввод.
+    auth:
+      please_active_two_factor: Для начала установите Google Authenticator или номер мобильного телефона.
+      submit: Отправить
+      otp_placeholder: 6-значный пароль
+      google_app: Google Authenticator
+      sms: SMS проверка сообщений
+      send_code: Отправить код
+      send_code_alt: Отправить повторно через COUNT секунд
+      hints:
+        app: Google Authenticator будет генерировать новый пароль каждые 30 секунд, пожалуйста, введите его своевременно.
+        sms: Мы отправим Вам текстовое сообщение с кодом подтверждения.
+  verify:
+    google_auths:
+      edit:
+        submit: Отключить
+        warning: 'Совет: Если Вы потеряли двух факторную аутентификацию, по какой-либо причине,и не можете войти в свою учетную запись Cryex24, обратитесь в нашу онлайн-службу поддержки клиентов.'
+      show:
+        step-1: Шаг 1
+        step-2: Шаг 2
+        step-3: Шаг 3
+        or: ИЛИ
+        download-app: установите приложение Google Authenticator на свой смартфон и откройте его.
+        guide-link: "<a href='https://support.google.com/accounts/answer/1066447' target='_blank'>Installation Instructions</a>。"
+        scan-qr-code: Сканируйте QR-код с помощью приложения Google Authenticator или добавьте зашифрованный текст в валидатор вручную.
+        enter-passcode: Введите пароль, отображаемый на телефоне, чтобы активировать двух факторную аутентификацию.
+        submit: Включить
+        ios: Iphone iOS
+        android: Android
+        blackbery: Blackberry
+        notice:
+          already_activated: Google Authenticator уже установлен.
+          not_activated_yet: Google Authenticator еще не установлен.
+      update:
+        alert: Пароль для аутентификации неверен, пожалуйста, введите пароль еще раз.
+        notice: Двухфакторная аутентификация была успешно включена.
+        sms_two_factor_error: Неверный код подтверждения SMS. Повторите ввод.
+      destroy:
+        alert: Пароль для аутентификации неверен, пожалуйста, повторите ввод.
+        notice: Двух факторная аутентификация была успешно отключена.
+    sms_auths:
+      show:
+        title: Подтверждение номера телефона
+        description: Предоставление номера телефона сделает Вашу учетную запись более безопасной. you Вы можете сбросить Ваш пароль, и операции со счетом будут уведомлены.
+        warning: Будет невозможно восстановить пароль учетной записи, если не задан номер телефона.
+        phone_number: Номер телефона
+        send_code: Отправить код
+        send_code_alt: Отправить повторно через COUNT секунд
+        input_otp: Введите 6-значный код, который мы Вам отправили
+        submit: Сохранить
+        notice:
+          send_code_success: Код подтверждения отправлен успешно.
+          otp_success: Код проверен успешно.
+          already_activated: Ваш номер телефона активирован.
+        alert:
+          phone_number_error: Ошибка номера телефона
+  withdraw_channel:
+    bank:
+      key: Банковский перевод
+      title: Банковский перевод
+      intro: Банковский перевод депозита рекомендуется для больших пополнений.
+      latency: 30 минут
+      transfer: Ручной
+      go: Вывод
+    satoshi:
+      key: Blockchain
+      title: Bitcoin Blockchain
+      intro: Вывести Bitcoin на свой Bitcoin кошелек
+      latency: 30 минут
+      transfer: Ручной
+      go: Вывод 
+    litecoin:
+      key: Litecoin_Chain
+      title: Litecoin Blockchain
+      intro: Вывести Litecoin на свой Litecoin кошелек
+      latency: 30 минут
+      transfer: Ручной
+      go: Вывод
+    peercoin:
+      key: Peercoin_Chain
+      title: Peercoin Blockchain
+      intro: Вывести Peercoin на свой Peercoin кошелек
+      latency: 30 минут
+      transfer: Ручной
+      go: Вывод
+    blackcoin:
+      key: Blackcoin_Chain
+      title: Blackcoin Blockchain
+      intro: Вывести Blackcoin на свой Blackcoin кошелек
+      latency: 30 минут
+      transfer: Ручной
+      go: Вывод
+    realpointcoin:
+      key: Realpointcoin_Chain
+      title: Realpointcoin Blockchain
+      intro: Вывести Realpointcoin на свой Realpointcoin кошелек
+      latency: 30 минут
+      transfer: Ручной
+      go: Вывод
+    tritiumcoin:
+      key: Tritiumcoin_Chain
+      title: Tritium Blockchain
+      intro: Вывести Tritium на свой Tritium кошелек
+      latency: 30 минут
+      transfer: Ручной
+      go: Withdraw
+  withdraws:
+    invalid_address: Недействительный. Вы не можете вывести средства на этот адрес.
   withdraws/bank:
     aasm_state:
-      rejected: Отклонен
-      accepted: Одобрен
+      submitting: Отправка
+      submitted: Отправлено
+      rejected: Отклонено
+      accepted: Принято
+      suspect: Подозрительный
+      processing: Обработка
+      done: Выполнено
+      almost_done: Почти выполнено
+      canceled: Отменено
+      failed: Сбой
   withdraws/satoshi:
     aasm_state:
-      rejected: Отклонен
-      accepted: Одобрен
+      submitting: Отправка
+      submitted: Отправлено
+      rejected: Отклонено
+      accepted: Принято
+      suspect: Подозрительный
+      processing: Обработка
+      done: Выполнено
+      almost_done: Почти выполнено
+      canceled: Отменено
+      failed: Сбой
+  withdraws/realpointcoin:
+    aasm_state:
+      submitting: Отправка
+      submitted: Отправлено
+      rejected: Отклонено
+      accepted: Принято
+      suspect: Подозрительный
+      processing: Обработка
+      done: Выполнено
+      almost_done: Почти выполнено
+      canceled: Отменено
+      failed: Сбой
+  withdraws/litecoin:
+    aasm_state:
+      submitting: Отправка
+      submitted: Отправлено
+      rejected: Отклонено
+      accepted: Принято
+      suspect: Подозрительный
+      processing: Обработка
+      done: Выполнено
+      almost_done: Почти выполнено
+      canceled: Отменено
+      failed: Сбой
+  withdraws/blackcoin:
+    aasm_state:
+      submitting: Отправка
+      submitted: Отправлено
+      rejected: Отклонено
+      accepted: Принято
+      suspect: Подозрительный
+      processing: Обработка
+      done: Выполнено
+      almost_done: Почти выполнено
+      canceled: Отменено
+      failed: Сбой
+  withdraws/peercoin:
+    aasm_state:
+      submitting: Отправка
+      submitted: Отправлено
+      rejected: Отклонено
+      accepted: Принято
+      suspect: Подозрительный
+      processing: Обработка
+      done: Выполнено
+      almost_done: Почти выполнено
+      canceled: Отменено
+      failed: Сбой
+  withdraws/tritiumcoin:
+    aasm_state:
+      submitting: Отправка
+      submitted: Отправлено
+      rejected: Отклонено
+      accepted: Принято
+      suspect: Подозрительный
+      processing: Обработка
+      done: Выполнено
+      almost_done: Почти выполнено
+      canceled: Отменено
+      failed: Сбой

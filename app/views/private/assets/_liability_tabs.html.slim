@@ -1,7 +1,13 @@
 .tabbable
   ul.nav.nav-tabs
     li.active: a.btc-proof href="#btc-proof" data-toggle="tab" == t('.verify-btc')
+    li:        a.ltc-proof href="#ltc-proof" data-toggle="tab" == t('.verify-ltc')
+    li:        a.ppc-proof href="#ppc-proof" data-toggle="tab" == t('.verify-ppc')
+    li:        a.blk-proof href="#blk-proof" data-toggle="tab" == t('.verify-blk')
+    li:        a.rpt-proof href="#rpt-proof" data-toggle="tab" == t('.verify-rpt')
+    li:        a.trt-proof href="#trt-proof" data-toggle="tab" == t('.verify-trt')
     li:        a.cny-proof href="#cny-proof" data-toggle="tab" == t('.verify-cny')
+    li:        a.eur-proof href="#cny-proof" data-toggle="tab" == t('.verify-ngn')
 
   .tab-content
     #btc-proof.tab-pane.active: .trade-wrapper
@@ -12,10 +18,50 @@
           = @btc_proof.sum
       = render 'liability_data', account: @btc_account, proof: @btc_proof
 
+    #ltc-proof.tab-pane.active: .trade-wrapper
+      .assets
+        span.title = t('.ltc-assets-total')
+        span.currency
+          == t("currency.icon.ltc")
+          = @ltc_proof.sum
+      = render 'liability_data', account: @ltc_account, proof: @ltc_proof
+
+    #ppc-proof.tab-pane.active: .trade-wrapper
+      .assets
+        span.title = t('.ppc-assets-total')
+        span.currency
+          == t("currency.icon.ppc")
+          = @ppc_proof.sum
+      = render 'liability_data', account: @ppc_account, proof: @ppc_proof
+
+    #blk-proof.tab-pane.active: .trade-wrapper
+      .assets
+        span.title = t('.blk-assets-total')
+        span.currency
+          == t("currency.icon.blk")
+          = @blk_proof.sum
+      = render 'liability_data', account: @blk_account, proof: @blk_proof
+
+    #rpt-proof.tab-pane.active: .trade-wrapper
+      .assets
+        span.title = t('.rpt-assets-total')
+        span.currency
+          == t("currency.icon.rpt")
+          = @rpt_proof.sum
+      = render 'liability_data', account: @rpt_account, proof: @rpt_proof
+
+    #trt-proof.tab-pane.active: .trade-wrapper
+      .assets
+        span.title = t('.trt-assets-total')
+        span.currency
+          == t("currency.icon.trt")
+          = @trt_proof.sum
+      = render 'liability_data', account: @trt_account, proof: @trt_proof
+
     #cny-proof.tab-pane:        .trade-wrapper
       .assets
-        span.title = t('.cny-assets-total')
+        span.title = t('.eur-assets-total')
         span.currency
-          == t("currency.icon.cny")
-          = @cny_proof.sum
-      = render 'liability_data', account: @cny_account, proof: @cny_proof
+          == t("currency.icon.eur")
+          = @eur_proof.sum
+      = render 'liability_data', account: @eur_account, proof: @eur_proof

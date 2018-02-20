@@ -1,6 +1,6 @@
 language: ruby
 rvm:
-  - 2.2.1
+  - 2.2.2
 before_script:
   - "mysql -e 'create database peatio_test;'"
   - "cp ./.travis.database.yml ./config/database.yml"
@@ -9,10 +9,13 @@ before_script:
   - "cp ./.travis.markets.yml ./config/markets.yml"
   - "cp ./config/amqp.yml.example ./config/amqp.yml"
   - "mkdir -p ./tmp/cache"
+install:
+  - bundle install --without development --path vendor/bundle
 script:
-  - bundle exec rake db:schema:load
-  - bundle exec rake db:test:prepare
-  - bundle exec rake spec
+  - bundle exec rake db:setup
+  - bundle exec rake assets:precompile
+  - bundle exec rake daemons:start
+  - bundle exec rake daemons:status
 after_failure:
   - "mysql -e 'show databases;'"
   - "cat ./config/database.yml"

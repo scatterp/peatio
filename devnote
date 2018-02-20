@@ -1,0 +1,284 @@
+this is from the coinxpro merge
+
+(use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   Gemfile
+        modified:   Gemfile.lock
+        modified:   README.md
+        modified:   app/api/api_v2/entities/market.rb
+        modified:   app/api/api_v2/entities/order.rb
+        modified:   app/assets/javascripts/component_data/global.js.coffee
+        modified:   app/assets/javascripts/component_mixin/order_input.js.coffee
+        modified:   app/assets/javascripts/component_ui/account_balance.js.coffee
+        modified:   app/assets/javascripts/component_ui/account_summary.js.coffee
+        modified:   app/assets/javascripts/funds/controllers/withdraws_controller.js.coffee
+        modified:   app/assets/javascripts/funds/directives/accounts_directives.js.coffee
+        modified:   app/assets/javascripts/funds/models/withdraw.js.coffee
+        modified:   app/assets/javascripts/funds/services/fund_source_service.js.coffee
+        modified:   app/assets/stylesheets/application.css.scss
+        modified:   app/assets/stylesheets/features/_welcome.css.scss
+        modified:   app/assets/stylesheets/features/funds.css.scss
+        modified:   app/assets/stylesheets/layouts/_header.css.scss
+        modified:   app/assets/stylesheets/market.css.scss
+        modified:   app/assets/stylesheets/vars/_basic.css.scss
+        modified:   app/assets/stylesheets/vars/_bootstrap.css.scss
+        modified:   app/controllers/application_controller.rb
+        modified:   app/controllers/concerns/deposits/ctrl_bankable.rb
+        modified:   app/controllers/concerns/deposits/ctrl_coinable.rb
+        modified:   app/controllers/concerns/withdraws/withdrawable.rb
+        modified:   app/controllers/private/assets_controller.rb
+        modified:   app/controllers/private/fund_sources_controller.rb
+        modified:   app/controllers/sessions_controller.rb
+        modified:   app/controllers/welcome_controller.rb
+        modified:   app/helpers/application_helper.rb
+        modified:   app/helpers/mailer_helper.rb
+        modified:   app/models/account.rb
+        modified:   app/models/admin/ability.rb
+        modified:   app/models/concerns/fund_sourceable.rb
+        modified:   app/models/concerns/withdraws/coinable.rb
+        modified:   app/models/id_document.rb
+        modified:   app/models/market.rb
+        modified:   app/models/running_account.rb
+        modified:   app/models/withdraw.rb
+        modified:   app/models/worker/deposit_coin.rb
+        modified:   app/models/worker/deposit_coin_address.rb
+        modified:   app/models/worker/withdraw_coin.rb
+        modified:   app/services/coin_rpc.rb
+        modified:   app/views/documents/api_v2.en.html.slim
+        modified:   app/views/documents/api_v2.zh-CN.html.slim
+        modified:   app/views/documents/oauth.en.html.slim
+        modified:   app/views/documents/oauth.zh-CN.html.slim
+        modified:   app/views/documents/websocket_api.html.slim
+        modified:   app/views/identities/new.html.slim
+        modified:   app/views/layouts/api_v2.html.slim
+        modified:   app/views/layouts/application.html.slim
+        modified:   app/views/layouts/landing.html.slim
+        modified:   app/views/layouts/mailers/application.html.erb
+        modified:   app/views/layouts/mailers/system.html.erb
+        modified:   app/views/private/api_tokens/_user_tokens.html.slim
+        modified:   app/views/private/assets/_cny_assets.html.slim
+        modified:   app/views/private/assets/_liability_tabs.html.slim
+        modified:   app/views/private/assets/index.html.slim
+        modified:   app/views/private/funds/index.html.erb
+        modified:   app/views/private/markets/_ask_entry.html.slim
+        modified:   app/views/private/markets/_bid_entry.html.slim
+        modified:   app/views/private/markets/_header.html.slim
+        modified:   app/views/private/settings/index.html.slim
+        modified:   app/views/private/withdraws/satoshis/new.html.slim
+        modified:   app/views/sessions/new.html.slim
+        modified:   app/views/shared/_footer.html.slim
+        modified:   app/views/shared/_header.html.slim
+        modified:   app/views/shared/_header_profile_setting.html.slim
+        modified:   app/views/system_mailer/daily_stats.html.erb
+        modified:   app/views/welcome/index.html.slim
+        modified:   config/application.rb
+        modified:   config/application.yml.example
+        modified:   config/banks.yml.example
+        modified:   config/currencies.yml
+        modified:   config/currencies.yml.example
+        modified:   config/environment.rb
+        modified:   config/environments/production.rb
+        modified:   config/initializers/pusher.rb
+        modified:   config/locales/client.cs.yml
+        modified:   config/locales/client.de.yml
+        modified:   config/locales/client.el.yml
+        modified:   config/locales/client.en.yml
+        modified:   config/locales/client.it.yml
+        modified:   config/locales/client.ko.yml
+        modified:   config/locales/client.ru_RU.yml
+        modified:   config/locales/client.zh-CN.yml
+        modified:   config/locales/client.zh-TW.yml
+        modified:   config/locales/custom/client.en.yml
+        modified:   config/locales/server.cs.yml
+        modified:   config/locales/server.en.yml
+        modified:   config/locales/server.it.yml
+        modified:   config/locales/server.ko.yml
+        modified:   config/locales/server.ru_RU.yml
+        modified:   config/locales/server.zh-CN.yml
+        modified:   config/markets.yml.example
+        modified:   config/routes.rb
+        modified:   db/schema.rb
+        modified:   db/seeds.rb
+        modified:   doc/deploy-production-server.md
+        modified:   doc/setup-local-ubuntu.md
+        modified:   lib/benchmark/helpers.rb
+        modified:   lib/benchmark/sweat_factory.rb
+        modified:   lib/generators/deposit/deposit_generator.rb
+        modified:   lib/generators/withdraw/withdraw_generator.rb
+        modified:   lib/tasks/emu.rake
+        modified:   lib/tasks/order.rake
+        modified:   lib/tasks/replay.rake
+        modified:   lib/tasks/stats.rake
+        modified:   public/favicon.ico
+        modified:   public/icon-ltc.png
+        modified:   public/templates/funds/_coin_withdraw.html
+        modified:   public/templates/funds/deposit.html
+        modified:   public/templates/funds/deposit_btc.html
+        modified:   public/templates/funds/deposit_eur.html
+        modified:   public/templates/funds/withdraw.html
+        modified:   spec/api/api_v2/deposits_spec.rb
+        modified:   spec/api/api_v2/entities/member_spec.rb
+        modified:   spec/api/api_v2/entities/order_spec.rb
+        modified:   spec/api/api_v2/markets_spec.rb
+        modified:   spec/api/api_v2/members_spec.rb
+        modified:   spec/api/api_v2/order_books_spec.rb
+        modified:   spec/api/api_v2/orders_spec.rb
+        modified:   spec/api/api_v2/tickers_spec.rb
+        modified:   spec/api/api_v2/trades_spec.rb
+        modified:   spec/controllers/private/assets_controller_spec.rb
+        modified:   spec/controllers/private/fund_sources_controller_spec.rb
+        modified:   spec/controllers/private/markets_controller_spec.rb
+        modified:   spec/controllers/private/order_asks_controller_spec.rb
+        modified:   spec/controllers/private/order_bids_controller_spec.rb
+        modified:   spec/factories/account.rb
+        modified:   spec/factories/fund_source.rb
+        modified:   spec/factories/orders.rb
+        modified:   spec/factories/payment_addresses.rb
+        modified:   spec/factories/trade.rb
+        modified:   spec/factories/withdraw.rb
+        modified:   spec/features/admin/withdraw_spec.rb
+        modified:   spec/features/market_spec.rb
+        modified:   spec/features/market_trade_history_spec.rb
+        modified:   spec/features/withdraw_spec.rb
+        modified:   spec/fixtures/banks.yml
+        modified:   spec/fixtures/currencies.yml
+        modified:   spec/fixtures/deposit_channels.yml
+        modified:   spec/fixtures/markets.yml
+        modified:   spec/fixtures/withdraw_channels.yml
+        modified:   spec/mailers/member_mailer_spec.rb
+        modified:   spec/mailers/withdraw_mailer_spec.rb
+        modified:   spec/models/bank_spec.rb
+        modified:   spec/models/fund_source_spec.rb
+        modified:   spec/models/global_spec.rb
+        modified:   spec/models/market_spec.rb
+        modified:   spec/models/matching/engine_spec.rb
+        modified:   spec/models/matching/executor_spec.rb
+        modified:   spec/models/matching/order_book_manager_spec.rb
+        modified:   spec/models/matching/order_book_spec.rb
+        modified:   spec/models/order_ask_spec.rb
+        modified:   spec/models/order_bid_spec.rb
+        modified:   spec/models/order_spec.rb
+        modified:   spec/models/trade_spec.rb
+        modified:   spec/models/worker/matching_spec.rb
+        modified:   spec/models/worker/slave_book_spec.rb
+        modified:   spec/spec_helper.rb
+        modified:   spec/support/matching_helper.rb
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        app/assets/javascripts/grayscale.min.js
+        app/assets/javascripts/locales/ru.js.erb
+        app/assets/stylesheets/grayscale.min.css
+        app/controllers/admin/deposits/blackcoins_controller.rb
+        app/controllers/admin/deposits/litecoins_controller.rb
+        app/controllers/admin/deposits/peercoins_controller.rb
+        app/controllers/admin/deposits/realpointcoins_controller.rb
+        app/controllers/admin/deposits/tritiumcoins_controller.rb
+        app/controllers/admin/withdraws/blackcoins_controller.rb
+        app/controllers/admin/withdraws/litecoins_controller.rb
+        app/controllers/admin/withdraws/peercoins_controller.rb
+        app/controllers/admin/withdraws/realpointcoins_controller.rb
+        app/controllers/admin/withdraws/tritiumcoins_controller.rb
+        app/controllers/private/deposits/blackcoins_controller.rb
+        app/controllers/private/deposits/dolars_controller.rb
+        app/controllers/private/deposits/litecoins_controller.rb
+        app/controllers/private/deposits/peercoins_controller.rb
+        app/controllers/private/deposits/realpointcoins_controller.rb
+        app/controllers/private/deposits/tritiumcoins_controller.rb
+        app/controllers/private/withdraws/blackcoins_controller.rb
+        app/controllers/private/withdraws/litecoins_controller.rb
+        app/controllers/private/withdraws/peercoins_controller.rb
+        app/controllers/private/withdraws/realpointcoins_controller.rb
+        app/controllers/private/withdraws/tritiumcoins_controller.rb
+        app/controllers/statics_controller.rb
+        app/models/deposits/blackcoin.rb
+        app/models/deposits/litecoin.rb
+        app/models/deposits/peercoin.rb
+        app/models/deposits/realpointcoin.rb
+        app/models/deposits/tritiumcoin.rb
+        app/models/withdraws/blackcoin.rb
+        app/models/withdraws/litecoin.rb
+        app/models/withdraws/peercoin.rb
+        app/models/withdraws/realpointcoin.rb
+        app/models/withdraws/tritiumcoin.rb
+        app/views/admin/deposits/blackcoins/
+        app/views/admin/deposits/litecoins/
+        app/views/admin/deposits/peercoins/
+        app/views/admin/deposits/realpointcoins/
+        app/views/admin/deposits/tritiumcoins/
+        app/views/admin/withdraws/blackcoins/
+        app/views/admin/withdraws/litecoins/
+        app/views/admin/withdraws/peercoins/
+        app/views/admin/withdraws/realpointcoins/
+        app/views/admin/withdraws/tritiumcoins/
+        app/views/layouts/landing.html.slim.bak
+        app/views/private/assets/_blk_assets.html.slim
+        app/views/private/assets/_ltc_assets.html.slim
+        app/views/private/assets/_ppc_assets.html.slim
+        app/views/private/assets/_rpt_assets.html.slim
+        app/views/private/assets/_trt_assets.html.slim
+        app/views/private/withdraws/blackcoins/
+        app/views/private/withdraws/litecoins/
+        app/views/private/withdraws/peercoins/
+        app/views/private/withdraws/realpointcoins/
+        app/views/private/withdraws/tritiumcoins/
+        app/views/shared/_footer.html.slim.bak
+        app/views/statics/
+        config/client.en.yml
+        config/locales/client.ro.yml
+        config/locales/client.ru.yml
+        config/locales/custom/client.ru.yml
+        config/locales/custom/old1.client.ru_RU.yml
+        config/locales/custom/old1.server.ru_RU.yml
+        config/locales/custom/server.ru.yml
+        config/locales/server.ro.yml
+        config/locales/server.ru.yml
+        lib/generators/deposit/templates/locales/ru-RU.yml.erb
+        lib/generators/withdraw/templates/locales/ru-RU.yml.erb
+        public/back_2.jpg
+        public/coinswallet_.png
+        public/css/
+        public/favicon1.ico
+        public/icon-blk.png
+        public/icon-eur.png
+        public/icon-ltc1.png
+        public/icon-ppc.png
+        public/icon-rpt.png
+        public/icon-trt.png
+        public/icon-usd.png
+        public/languages/back_2.jpg
+        public/languages/backgr.png
+        public/languages/banners/
+        public/languages/big-logo.jpg
+        public/languages/big-logo.png
+        public/languages/coinswallet_.png
+        public/languages/coinxprov2.mp4
+        public/languages/coinxprov2poster.jpg
+        public/languages/index-icons/
+        public/languages/intro-bg.jpg
+        public/languages/intro-logo.png
+        public/languages/logo_new.png
+        public/languages/logo_new.png_
+        public/languages/ru.png
+        public/languages/site_logo.png
+        public/languages/video.mp4
+        public/old_favicon.ico
+        public/templates/funds/deposit_blk.html
+        public/templates/funds/deposit_cny.html
+        public/templates/funds/deposit_ltc.html
+        public/templates/funds/deposit_ppc.html
+        public/templates/funds/deposit_rpt.html
+        public/templates/funds/deposit_trt.html
+        public/templates/funds/deposit_usd.html
+        public/templates/funds/withdraw_blk.html
+        public/templates/funds/withdraw_cny.html
+        public/templates/funds/withdraw_ltc.html
+        public/templates/funds/withdraw_ppc.html
+        public/templates/funds/withdraw_rpt.html
+        public/templates/funds/withdraw_trt.html
+        public/templates/shared/aboutfee_dialog.html
+        restart_gs.sh
+
+

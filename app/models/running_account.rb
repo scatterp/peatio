@@ -12,6 +12,6 @@ class RunningAccount < ActiveRecord::Base
   enumerize :category, in: CATEGORY
 
   belongs_to :member
-  belongs_to :source, polymorphic: true
+  #belongs_to :source, polymorphic: true --WTF???
 
 end

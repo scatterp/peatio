@@ -1,10 +1,26 @@
+<<<<<<< 2/config/markets.yml~
 - id: btccny
+=======
+- id: btceur
+>>>>>>> 3/config/markets.yml~
   code: 3
+<<<<<<< 2/config/markets.yml~
   #name: BTC/CNY      # default name
+=======
+  #name: BTC/EUR      # default name
+>>>>>>> 3/config/markets.yml~
   base_unit: btc
+<<<<<<< 2/config/markets.yml~
   quote_unit: cny
+=======
+  quote_unit: eur
+>>>>>>> 3/config/markets.yml~
   #price_group_fixed: 1 # aggregate price levels in orderbook
+<<<<<<< 2/config/markets.yml~
   bid: {fee: 0, currency: cny, fixed: 2}
+=======
+  bid: {fee: 0, currency: eur, fixed: 2}
+>>>>>>> 3/config/markets.yml~
   ask: {fee: 0, currency: btc, fixed: 4}
   sort_order: 1
   #visible: false     # default to true

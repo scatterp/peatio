@@ -25,7 +25,7 @@
   .panel-body
     p 当用户想要授权您的应用访问貔貅时，应用生成如下地址交给用户访问(通过外置或者内嵌浏览器):
     pre: code
-      | GET https://peatio.com/oauth/authorize?client_id=&lt;your_client_id&gt;&redirect_uri=&lt;registered_rediret_uri&gt;&response_type=code&scope=&lt;scopes&gt;
+      | GET http://coinxpro.com/oauth/authorize?client_id=&lt;your_client_id&gt;&redirect_uri=&lt;registered_rediret_uri&gt;&response_type=code&scope=&lt;scopes&gt;
     p 'response_type'参数必须是'code'. 'redirect_uri'必须和您注册应用时提供的redirect_uri相同. 'scope'参数代表您的应用想要获得的授权。目前貔貅支持三种授权:
     ul
       li profile: 用户基本信息
@@ -43,7 +43,7 @@
   .panel-body
     p 获得auth code之后，表明用户已经同意了授权。应用通过如下请求获得访问令牌(user token), 也就是APIv2 access/secret key:
     pre: code
-      | POST https://peatio.com/oauth/token
+      | POST http://coinxpro.com/oauth/token
     pre: code
       | Params: client_id=&lt;your_client_id&gt;&client_secret=&lt;your_client_secret&gt;&code=&lt;auth_code&gt;&grant_type=authorization_code&redirect_uri=&lt;registered_rediret_uri&gt;
     p 'grant_type'参数必须是'authorization_code'.  'redirect_uri'必须和您注册应用时提供的redirect_uri相同。'code'参数传入上一步拿到的auth code.
@@ -64,7 +64,7 @@
       | {"error"=>{"code"=>2010, "message"=>"The access key xxxxx has expired."}}
     p 此时通过上一步获得refresh token可以获取新的user token:
     pre: code 
-      | POST https://peatio.com/oauth/token
+      | POST http://coinxpro.com/oauth/token
     pre: code 
       | Params: client_id=&lt;client_id&gt;&client_secret=&lt;client_secret&gt;&grant_type=refresh_token&refresh_token=&lt;refresh_token&gt;
 

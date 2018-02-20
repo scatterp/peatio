@@ -1,0 +1,26 @@
+PATH
+  remote: .
+  specs:
+    peatio_client (0.0.8)
+      faye-websocket (~> 0.9.2)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    eventmachine (1.0.7)
+    faye-websocket (0.9.2)
+      eventmachine (>= 0.12.0)
+      websocket-driver (>= 0.5.1)
+    minitest (5.5.1)
+    rake (10.3.1)
+    websocket-driver (0.5.3)
+      websocket-extensions (>= 0.1.0)
+    websocket-extensions (0.1.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  minitest (~> 5.5.1)
+  peatio_client!
+  rake

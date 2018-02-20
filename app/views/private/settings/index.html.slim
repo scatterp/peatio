@@ -14,7 +14,7 @@ table#setting_list.table
           span = t('.email.activated')
       - else
         = link_to t('.email.resend'), new_activation_path, class: 'btn btn-default btn-block'
-  tr
+  /tr
     td.col-xs-2.text-center.vertical-center: i.fa.fa-thumbs-o-up.fa-2x
     td.col-xs-15
       h4
@@ -28,7 +28,7 @@ table#setting_list.table
           span = t('.verification.verified')
       - else
         = link_to t('.verification.go'), edit_id_document_path, class: 'btn btn-default btn-block'
-  tr
+  /tr
     td.col-xs-2.text-center.vertical-center: i.fa.fa-mobile.fa-4x
     td.col-xs-15
       h4
@@ -88,7 +88,7 @@ table#setting_list.table
           = link_to t('.weibo.bind'), '/auth/weibo', class: 'btn btn-default btn-block'
 
 = content_for :guide_title do
-  h3
+  h3 style="font-size: 20px;"
     i.fa.fa-user
     span = current_user.email
 
@@ -101,3 +101,27 @@ table#setting_list.table
         = member_tag(key)
   p.text-warning
     == t('.safety_instruction')
+  /div id="coindesk-widget" data-size="mpu" data-align="left" style='padding-left: 5px'
+  div id="myticker_" style="display: none"
+    javascript:
+      function doIt(){
+      document.getElementById('myticker_').style.display = 'block';
+      }
+      var dellayMills = 3600;
+      function doItDelay() {
+      timeoutID = window.setTimeout(doIt, dellayMills);
+      }
+    iframe frameBorder="0" scrolling="no" allowtransparency="0" src="https://bitcoinaverage.com/en/widgets?widgetType=price&bgcolor=#FFFFFF&bwidth=1&bcolor=#CCCCCC&cstyle=round&fsize=16px&ffamily=arial&fcolor=#000000&bgTransparent=solid&chartStyle=none&lastUpdateTime=none&currency0=EUR&total=1" style="width:310px; height:65px; overflow:hidden; background-color:transparent !important;"
+    iframe frameBorder="0" scrolling="no" allowtransparency="0" src="https://bitcoinaverage.com/en/widgets?widgetType=conversion&bgcolor=#FFFFFF&bwidth=1&bcolor=#CCCCCC&cstyle=round&fsize=16px&ffamily=arial&fcolor=#000000&bgTransparent=solid&chartStyle=none&lastUpdateTime=none&currency0=EUR&total=1" style="width:310px; height:220px; overflow:hidden; background-color:transparent !important;" onload="doItDelay()"
+  /div class="btcwdgt-price" style="padding-left: 5px" bw-cur="eur"
+    javascript:
+      (function(b,i,t,C,O,I,N) {
+        window.addEventListener('load',function() {
+          if(b.getElementById(C))return;
+          I=b.createElement(i),N=b.getElementsByTagName(i)[0];
+          I.src=t;I.id=C;N.parentNode.insertBefore(I, N);
+        },false)
+      })(document,'script','https://widgets.bitcoin.com/widget.js','btcwdgt');
+    /javascript:
+      document.write("<" + "script src='https://widget.coindesk.com/bpiticker/coindesk-widget.min.js'>" + "<" + "/script>");
+    /p = 'test message here version 2'

@@ -1,4 +1,9 @@
 <ng-include src="'/templates/funds/_flash.html'"></ng-include>
 <ng-include ng-if="currency == 'cny'" src="'/templates/funds/deposit_cny.html'"></ng-include>
+<ng-include ng-if="currency == 'eur'" src="'/templates/funds/deposit_eur.html'"></ng-include>
 <ng-include ng-if="currency == 'btc'" src="'/templates/funds/withdraw_btc.html'"></ng-include>
-<ng-include ng-if="currency == 'eth'" src="'/templates/funds/withdraw_eth.html'"></ng-include>
+<ng-include ng-if="currency == 'ltc'" src="'/templates/funds/withdraw_ltc.html'"></ng-include>
+<ng-include ng-if="currency == 'ppc'" src="'/templates/funds/withdraw_ppc.html'"></ng-include>
+<ng-include ng-if="currency == 'blk'" src="'/templates/funds/withdraw_blk.html'"></ng-include>
+<ng-include ng-if="currency == 'rpt'" src="'/templates/funds/withdraw_rpt.html'"></ng-include>
+<ng-include ng-if="currency == 'trt'" src="'/templates/funds/withdraw_trt.html'"></ng-include>

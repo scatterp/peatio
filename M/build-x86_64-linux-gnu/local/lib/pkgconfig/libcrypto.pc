@@ -1,0 +1,12 @@
+prefix=/home/deploy/test-site/K/build-x86_64-linux-gnu/local
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+enginesdir=${libdir}/engines-1.1
+
+Name: OpenSSL-libcrypto
+Description: OpenSSL cryptography library
+Version: 1.1.0f
+Libs: -L${libdir} -lcrypto
+Libs.private: 
+Cflags: -I${includedir}

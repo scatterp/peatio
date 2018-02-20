@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+
+<html>
+<head>
+  <link href="doxygen.css" rel="stylesheet" type="text/css">
+
+  <title>Setting Up Your Project</title>
+</head>
+
+<body>
+  <div class='header'>
+    <div class='headerTitle'>
+      Setting Up Your Project
+    </div>
+  </div>
+
+  <div class='contents'>
+    <h1>Windows</h1>
+
+    <p>Open <b>project | properties</b> in Microsoft Visual
+    Studio.</p>
+
+    <ul>
+      <li><b>C/C++</b> | <b>Code Generation</b> | <b>Enable C++
+      Exceptions</b>, should be Yes.</li>
+
+      <li><b>C/C++</b> | <b>Code Generation</b> | <b>Runtime
+      Library</b>, should be set to <i>Multithreaded DLL</i> or
+      <i>Debug Multithreaded DLL</i>.</li>
+
+      <li><b>C/C++</b> | <b>General</b> | <b>Additional Include
+      Directories</b> add the root <i>quickfix</i> directory.</li>
+
+      <li><b>Linker</b> | <b>Input</b> | <b>Additional
+      Dependencies</b>, must contain <i>quickfix.lib</i> and
+      <i>ws2_32.lib</i>.</li>
+
+      <li><b>Linker</b> | <b>General</b> | <b>Additional Library
+      Directories</b>, add the <i>quickfix/lib</i> directory.</li>
+    </ul>
+
+    <h1>Linux/Solaris</h1>
+
+    <ul>
+      <li>Exceptions must be enabled with <b>-fexceptions</b></li>
+
+      <li>The <b>-finline-functions</b> optimization is
+      recommended.</li>
+
+      <li>Quickfix library must be linked in with
+      <b>-lquickfix</b></li>
+
+      <li>Quickfix makes use of pthreads and libxml. These must be
+      linked in with <b>-lpthread</b>, <b>-lxml2</b> and
+      <b>-lz</b></li>
+
+      <li>On Solaris you must link with <b>-lnsl</b> and
+      <b>-lsocket</b></li>
+
+      <li>GNU <tt>ld</tt> is a one-pass linker. Put more generally
+      useful libraries (libsocket) last on the command line.</li>
+    </ul>
+  </div>
+</body>
+</html>

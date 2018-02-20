@@ -1,0 +1,11 @@
+- unless @one_realpointcoins.empty?
+  .panel.panel-primary
+    .panel-heading: span = t('.one')
+    = render partial: 'table', locals: {realpointcoins: @one_realpointcoins}
+- unless @all_realpointcoins.empty?
+  .panel.panel-success
+    .panel-heading: span = t('.all')
+    = render partial: 'table', locals: {realpointcoins: @all_realpointcoins}
+
+- if @all_realpointcoins.empty? and @one_realpointcoins.empty?
+  h3.text-info.text-center = t('.empty')

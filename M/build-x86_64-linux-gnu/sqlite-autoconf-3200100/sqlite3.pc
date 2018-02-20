@@ -1,0 +1,13 @@
+# Package Information for pkg-config
+
+prefix=/home/deploy/test-site/K/build-x86_64-linux-gnu/local
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: SQLite
+Description: SQL database engine
+Version: 3.20.1
+Libs: -L${libdir} -lsqlite3
+Libs.private: -ldl -lpthread 
+Cflags: -I${includedir}

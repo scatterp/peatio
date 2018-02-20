@@ -9,7 +9,11 @@ header {
       margin-top: -1px;
   }
 
-  .navbar-brand { width: $brand-width; }
+  .navbar-brand { 
+    width: $brand-width;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
 
   .dropdown-menu li:hover .sub-menu {
       visibility: visible;
@@ -105,4 +109,213 @@ header #languages {
   width: 64px;
   min-width: 64px;
   li > a{ padding-top: 8px; }
+}
+.navbar {
+  min-height: 98px;
+  padding: 17px;
+  margin-bottom: 0px;
+}
+
+ul.nav.navbar-nav.navbar-right li {
+    border: 1px solid #00cee8;
+    border-radius: 4px;
+    padding: 0px;
+    margin-left: 20px;
+    /* width: 95px; */
+    text-align: center;
+    height: 37px;
+    margin-top: 9px;
+    margin: 8px;
+}
+.navbar-nav > li > a {
+  padding-top: 9px;
+  padding-bottom: 15px;
+}
+.navbar-nav > li > a > span {
+  text-transform: uppercase;
+  color: #439455;
+}
+.banner-text {
+  color: white;
+  top: 408px;
+  left: 25%;
+  font-size: 30px;
+  width: 684px;
+  text-align: left;
+  position: absolute;
+}
+.banner-pair {
+  position: absolute;
+  color: white;
+  bottom: 0px;
+  width: 100%;
+  height: 65px;
+  background-color: rgba(0, 206, 232, 0.27);
+  padding-top: 24px;
+  font-size: 16px;
+}
+.banner {
+  background-image: url('/languages/big-logo.jpg');
+  height: 623px;
+  background-position-x: center;
+  position: relative
+}
+.index-block1 {
+  height: 276px;
+  background-color: white;
+}
+.index-block1-head {
+  padding-top: 70px;
+  font-size: 30px;
+  font-family: "Open Sans";
+}
+.index-block1-dsc {
+  padding-top: 44px;
+  font-size: 22px;
+  font-family: "Open Sans";
+  width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+.index-block2{
+  height: 546px;
+  background-color: #00cee8;
+}
+.index-block2-head {
+  font-size: 40px;
+  font-family: "Open Sans";
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  padding-top: 62px;
+  padding-bottom: 75px;
+
+}
+.white {
+  color:white;
+}
+.index-block2-container {
+  width: 1185px;
+  margin: 0 auto;
+}
+.index-block2-item {
+  display: inline-block;
+  width: 350px;
+  height: 100px;
+  margin: 20px;
+}
+.index-block2-img {
+  float: left;
+  margin-top: 15px;
+  margin-right: 7px;
+  height: 100px;
+}
+.index-block2-header{
+  font-size: 15px;
+  text-align: left;
+  font-weight: bold;
+}
+.index-block2-dsc{
+  font-size: 15px;
+  padding-top: 10px;
+  text-align: left;
+}
+.banner2{
+  background: black;
+  width: 100%;
+}
+.index-block3{
+  background-color: white;
+  width: 100%;
+}
+.index-block3-title{
+  padding-top: 80px;
+  font-size: 40px;
+  font-family: "Open Sans";
+}
+.index-block3-btn {
+  background-color: #51d86f;
+  width: 205px;
+  height: 76px;
+  font-size: 24px;
+  font-family: "Open Sans";
+  color: white;
+  padding-top: 23px;
+  margin: 0 auto;
+  margin-top: 50px;
+  border-radius: 3px;
+}
+.index-block3-sep{
+  height: 50px;
+}
+.seperator-line{
+  background-color: #00cee8;
+  height:1px;
+  width:100%
+}
+body{
+  min-width: 1200px;
+}
+.ticker-pair {
+  display: inline-block;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.index_menu_item {
+  display: inline-block;
+  padding-left: 20px;
+  color: #00cee8;
+  font-size: 13px;
+}
+#index_menu {
+  text-transform: uppercase;
+  float: left;
+  //padding-left: 260px;
+  position: relative;
+  top: 14px;
+}
+header.navbar.navbar-default.navbar-static-top {
+  position: fixed !important;
+  width: 100%;
+}
+a.anchor {
+  display: block;
+  position: relative;
+  top: -109px;
+  visibility: hidden;
+}
+a.index_menu_item:hover {
+  color: #51d86f;
+  text-decoration: none;
+}
+.navbar-nav > li > a > span, .navbar-nav > li > a > i {
+  text-transform: uppercase;
+  color: #ffffff;
+  font-size: 14px;
+}
+.navbar-nav > li > a:hover > span {
+  text-transform: uppercase;
+  color: #ffffff;
+  font-size: 14px;
+}
+ul.dropdown-menu {
+  background-color: black;
+}
+.dropdown-menu a span, .dropdown-menu i {
+  color: #00cfea;
+}
+.index-block3-title a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+.dropdown-menu a:hover {
+  background: black !important;
+  border: none;
+}
+.panel-heading{
+  background-color: white !important;
+}
+.panel-body{
+  background-color: white !important;
 }

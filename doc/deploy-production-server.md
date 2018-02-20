@@ -1,7 +1,6 @@
 ### Introduction 
-   welcome to the most advanced peatio release available all code has been refactored for JRuby compatability and executes faster than
-   previous versions at every step FIX financial information exchange API has been added to bring the support of the entire financial
-   eco system allowing for trading clients banks etc to connect with the exchange. also various UI and visual fixes have been added
+   welcome to the most advanced peatio release available all code has been refactored and executes faster than
+   previous versions at every step various UI and visual fixes have been added
    (more to come) and a market making system which will provide a trading partner for your users.
    please feel free to post issues and they will be handled rapidly.
 
@@ -56,11 +55,10 @@ Installing [rbenv](https://github.com/sstephenson/rbenv) using a Installer
     echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
     exec $SHELL
 
-Install JRuby through rbenv:
+Install Ruby through rbenv:
 
-    sudo apt-get install default-jre  
-    rbenv install jruby-9.1.13.0
-    rbenv global jruby-9.1.13.0
+    rbenv install 2.2.2
+    rbenv global 2.2.2
 
 Install bundler
 
@@ -78,16 +76,15 @@ Install bundler
 
 ### 4. Install Redis
 
-sudo apt-get install redis-server
+    sudo apt install -y redis-server 
+
 
 ### 5. Install RabbitMQ
 
 Please follow instructions here: https://www.rabbitmq.com/install-debian.html
 
-    echo 'deb http://www.rabbitmq.com/debian/ testing main' |
-    sudo tee /etc/apt/sources.list.d/rabbitmq.list
-    wget -O- https://www.rabbitmq.com/rabbitmq-release-signing-key.asc |
-    sudo apt-key add -
+    echo 'deb http://www.rabbitmq.com/debian/ testing main' | sudo tee /etc/apt/sources.list.d/rabbitmq.list
+    wget -O- https://www.rabbitmq.com/rabbitmq-release-signing-key.asc | sudo apt-key add -
     sudo apt-get update
     sudo apt-get install rabbitmq-server
 
@@ -570,4 +567,3 @@ If you need installation or usage support contact me at [21.co/analpaper](https:
 To request new features open a [new issue](https://github.com/ctubio/Krypto-trading-bot/issues/new?title=Feature%20request) and explain your improvement as you consider.
 
 To report errors open a [new issue](https://github.com/ctubio/Krypto-trading-bot/issues/new?title=Error%20report) only after collecting all the relevant log messages (run `./K.sh` to see the output).
-

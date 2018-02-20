@@ -292,7 +292,11 @@ en:
   market:
     currency:
       btc: BTC
+<<<<<<< 2/config/locales/server.en.yml~
       cny: CNY
+=======
+      eur: EUR
+>>>>>>> 3/config/locales/server.en.yml~
       doge: DOGE
       pts: PTS
       ltc: LTC
@@ -312,10 +316,17 @@ en:
       code: BTSX
       name: BitsharesX
       format: '0,0.0000'
+<<<<<<< 2/config/locales/server.en.yml~
     renminbi:
       key: CNY
       code: CNY
       name: Chinese Yuan
+=======
+    euro:
+      key: EUR
+      code: EUR
+      name: European Euro
+>>>>>>> 3/config/locales/server.en.yml~
       format: '0,0.00'
     dogecoin:
       key: DOG
@@ -692,12 +703,24 @@ en:
       index:
         liability-proof: Proof of Liabilities
         btc-assets: BTC Assets
+<<<<<<< 2/config/locales/server.en.yml~
         cny-assets: CNY Assets
+=======
+        eur-assets: EUR Assets
+>>>>>>> 3/config/locales/server.en.yml~
       liability_tabs:
         verify-btc: Verify My BTC Assets
+<<<<<<< 2/config/locales/server.en.yml~
         verify-cny: Verify My CNY Assets
+=======
+        verify-eur: Verify My EUR Assets
+>>>>>>> 3/config/locales/server.en.yml~
         btc-assets-total: 'Total BTC assets of exchange: '
+<<<<<<< 2/config/locales/server.en.yml~
         cny-assets-total: 'Total CNY assets of exchange: '
+=======
+        eur-assets-total: 'Total EUR assets of exchange: '
+>>>>>>> 3/config/locales/server.en.yml~
       liability_proof:
         title: Proof of Liabilities
         intro: As an exchange, our liabilities refer to the sum of money (in both
@@ -719,10 +742,17 @@ en:
         intro: All of exchange's BTC assets are listed here.
         total: Total BTC Assets
         address: Address
+<<<<<<< 2/config/locales/server.en.yml~
       cny_assets:
         title: CNY Assets
         intro: All of exchange's CNY assets are listed here.
         total: Total CNY Assets
+=======
+      eur_assets:
+        title: EUR Assets
+        intro: All of exchange's EUR assets are listed here.
+        total: Total EUR Assets
+>>>>>>> 3/config/locales/server.en.yml~
         description: " <p>For supervision, you can inquiry the balance of our deposit
           account:</p> <p>Bank: %{bank}</p> <p>Account： %{address}</p> <p>Inquiry
           Password： %{password}</p> <p>Inquiry Tel.： %{tel}</p>"
@@ -731,10 +761,18 @@ en:
     funds:
       show:
         account_history: Account History
+<<<<<<< 2/config/locales/server.en.yml~
         cny_format: '0.00'
+=======
+        eur_format: '0.00'
+>>>>>>> 3/config/locales/server.en.yml~
         btc_format: '0.00000000'
         reason:
+<<<<<<< 2/config/locales/server.en.yml~
           cny:
+=======
+          eur:
+>>>>>>> 3/config/locales/server.en.yml~
             strike_add: Plus
             strike_sub: Sub
             deposit: Deposit
@@ -787,7 +825,11 @@ en:
       market_list:
         all: All Markets
         all_html: "<i class='fa fa-check'></i><span>All Markets</span>"
+<<<<<<< 2/config/locales/server.en.yml~
         cny_html: "<i class='fa fa-check'></i><span>CNY Markets</span>"
+=======
+        eur_html: "<i class='fa fa-check'></i><span>EUR Markets</span>"
+>>>>>>> 3/config/locales/server.en.yml~
         btc_html: "<i class='fa fa-check'></i><span>BTC Markets</span>"
         price: Price
         change: "24h %"
@@ -978,7 +1020,11 @@ en:
         balance: Balance
         available: Available
         title: "%{icon} %{c} Account"
+<<<<<<< 2/config/locales/server.en.yml~
         cny_format: '0.00'
+=======
+        eur_format: '0.00'
+>>>>>>> 3/config/locales/server.en.yml~
         btc_format: '0.00000000'
         total: Total
   guides:
@@ -1371,7 +1417,11 @@ en:
       wait: Wait
       cancel: Cancel
     currency:
+<<<<<<< 2/config/locales/server.en.yml~
       cny: CNY
+=======
+      eur: EUR
+>>>>>>> 3/config/locales/server.en.yml~
       btc: BTC
     order:
       state:

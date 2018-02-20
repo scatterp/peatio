@@ -1,0 +1,2619 @@
+es:
+  activerecord:
+    models:
+      api_tokens: TOKEN API
+      trade: Trades
+      order: Ordenes
+      order_bid: VENTAS
+      order_ask: COMPRAS
+      document: Documento
+      withdraw: Retiro
+      deposit: Depósito
+      payment_transaction: Pago
+      id_document: ID Documento
+      statistic/orders_grid: Estadísticas de ordenes
+      statistic/trades_grid: Estadísticas de Trading
+      statistic/members_grid: Estadísticas de miembros
+      statistic/deposits_grid: Estadísticas de depósitos
+      statistic/withdraws_grid: Estadísticas de retiros
+      admin/deposits_grid: Depósitos
+      admin/withdraws_grid: Retiros
+      deposits/bank: Depósitos Bancarios
+      withdraws/bank: Retiros Bancarios
+      withdraws/satoshi: Retiros
+      withdraws/realpointcoin: Retiros RealPointCoin
+      withdraws/litecoin: Retiros Litecoin
+      withdraws/blackcoin: Retiros Blackcoin
+      withdraws/peercoin: Retiros Peercoin
+      withdraws/tritiumcoin: Retiros Tritium
+    attributes:
+      api_token:
+        access_key: Llave de acceso
+        trusted_ip_list: IP permitidos
+        ip_whitelist: IP permitidos
+        label: Nombre
+        actions: Acciones
+      identity:
+        email: Correo electrónico
+        password: Nueva contraseña
+        password_confirmation: Confirmar contraseña
+      document:
+        zh_cn_body: Chinese content
+        zh_cn_title: Chinese title
+        zh_cn_desc: Chinese description
+        zh_cn_keywords: Chinese keyword
+        en_body: English content
+        en_title: English title
+        en_desc: English description
+        en_keywords: English keyword
+        es_body: Contenido en español
+        es_title: Título en español
+        es_desc: Descripción en español
+        es_keywords: Palabra clave en español
+        key: Clave
+        is_auth: Autentificado
+      fund_source:
+        address: Dirección
+        category: Categoría
+        label: Nombre
+      account:
+        currency: Divisa
+        currency_text: Divisa
+        balance_and_locked: Balance / Congelado
+        balance: Balance
+        locked: Congelado
+      deposit:
+        state: Estado
+        tx_id: TxID
+        member_id: Identificación de usuario
+        created_at: Enviado a
+        address: Dirección
+        amount: Monto
+        done_at: Completado
+        sn: SN
+      withdraw:
+        id: ID
+        sn: SN
+        withdraw_id: ID
+        created_at: Creado en
+        done_at: Hecho
+        sum: Suma
+        fee: Comisión
+        currency: Divisa
+        amount: Monto
+        address: Dirección
+        state: Estado
+        state_text: Estado
+        tx_id: ID de la transacción
+        fund_source_id: Dirección de Retiro
+        detail: Detalles
+      account_version:
+        id: ID
+        locked: Congelado
+        amount: Monto
+        balance: Balance
+        reason: Razón
+        reason_text: Razón
+        modifiable_id: ID del enlace
+        modifiable_type: Enlace
+        created_at: Creado en
+        in: Ingresos
+        out: Gastos
+        fee: Comisión
+      token/reset_password:
+        email: Iniciar con correo electrónico
+        member: Usuario
+      trade:
+        bid: Venta
+        ask: Compra
+        fee: Comisión
+        price: Precio final
+        volume: Volumen Final
+        category: Venta/Compra
+        order: Orden
+      order:
+        bid: Venta
+        ask: Compra
+        price: Precio
+        total: Total
+        volume: Volumen
+        origin_volume: Volumen
+        sum: Suma
+        category: Venta/Compra
+        kind: Tipo
+        at: De
+        id: ID
+        state: Estado
+        operation: Operación
+      payment_transaction:
+        at: Fecha
+        txid: ID de Transacción
+        amount: Monto
+        confirmations: Confirmaciones
+        state: Estado
+        state_done: Hecho
+        state_wait: En espera
+      member:
+        id: ID
+        name: Nombre Real
+        display_name: Nombre a mostrar
+        email: Correo electrónico
+        created_at: Registrarse en
+        sn: SN
+        id_document_number: Número de documento de Identificación
+        tag_list: Tags
+        activated: Activado
+        activated?: "¿Activado?"
+        id_document_verified?: "¿Número de identificación verificado?"
+        two_factor_activated?: "¿Doble factor activado?"
+        phone_number: Número telefónico
+      two_factor/sms:
+        country: País
+        phone_number: Número telefónico
+        otp: Código de verificación
+      withdraws/bank:
+        id: ID
+        member_name: Miembro
+        currency_obj_key_text: Divisa
+        state_and_actions: Estado
+        fund_source: Banco
+        fund_extra: Banco
+        fund_extra_text: Banco
+        fund_uid: Cuenta Bancaria
+        sum: Monto
+        fee: Comisión
+        amount: Monto
+        remark: Observación
+        created_at: Creado en
+      deposits/bank:
+        created_at: Creado en
+        holder: Poseedor
+        fund_extra: Banco Remitente
+        fund_uid: Cuenta Remitente
+        member_sn: Usuario SN
+        member_name: Nombre del Remitente
+        amount: Monto
+        sn: SN
+        state_and_action: Estado/Acción
+        label: Nombre
+        fund_source: Fuente de los Fondos
+      deposits/satoshi:
+        created_at: Creado en
+        txid: ID de la Transacción
+        amount: Monto
+        confirmations: Confirmación
+        aasm_state_text: Estado
+      deposits/realpointcoin:
+        created_at: Creado en
+        txid: ID de la transacción
+        amount: Monto
+        confirmations: Confirmación
+        aasm_state_text: Estado
+      deposits/litecoin:
+        created_at: Creado en
+        txid: ID de la transacción
+        amount: Monto
+        confirmations: Confirmación
+        aasm_state_text: Estado
+      deposits/peercoin:
+        created_at: Creado en
+        txid: ID de la transacción
+        amount: Monto
+        confirmations: Confirmación
+        aasm_state_text: Estado
+      deposits/blackcoin:
+        created_at: Creado en
+        txid: ID de la transacción
+        amount: Monto
+        confirmations: Confirmación
+        aasm_state_text: Estado
+      deposits/tritiumcoin:
+        created_at: Creado en
+        txid: ID de la transacción
+        amount: Monto
+        confirmations: Confirmación
+        aasm_state_text: Estado
+      withdraws/satoshi:
+        id: ID
+        member_name: Cuenta
+        currency_obj_key_text: criptomoneda
+        state_and_actions: Estado
+        fund_extra_text: Nombre de Retiro
+        fund_extrat: Nombre de Retiro
+        fund_source: Banco
+        fund_uid: Cuenta
+        created_at: Creado en
+        sum: Monto
+        amount: Monto
+        remark: Observación
+        fee: Comisión
+      withdraws/realpointcoin:
+        id: ID
+        member_name: Cuenta
+        currency_obj_key_text: criptomoneda
+        state_and_actions: Estado
+        fund_extra_text: Nombre de Retiro
+        fund_extrat: Nombre de Retiro
+        fund_source: Banco
+        fund_uid: Cuenta
+        created_at: Creado en
+        sum: Monto
+        amount: Monto
+        remark: Observación
+        fee: Comisión
+      withdraws/litecoin:
+        id: ID
+        member_name: Cuenta
+        currency_obj_key_text: criptomoneda
+        state_and_actions: Estado
+        fund_extra_text: Nombre de Retiro
+        fund_extrat: Nombre de Retiro
+        fund_source: Banco
+        fund_uid: Cuenta
+        created_at: Creado en
+        sum: Monto
+        amount: Monto
+        remark: Observación
+        fee: Comisión
+      withdraws/peercoin:
+        id: ID
+        member_name: Cuenta
+        currency_obj_key_text: criptomoneda
+        state_and_actions: Estado
+        fund_extra_text: Nombre de Retiro
+        fund_extrat: Nombre de Retiro
+        fund_source: Banco
+        fund_uid: Cuenta
+        created_at: Creado en
+        sum: Monto
+        amount: Monto
+        remark: Observación
+        fee: Comisión
+      withdraws/blackcoin:
+        id: ID
+        member_name: Cuenta
+        currency_obj_key_text: criptomoneda
+        state_and_actions: Estado
+        fund_extra_text: Nombre de Retiro
+        fund_extrat: Nombre de Retiro
+        fund_source: Banco
+        fund_uid: Cuenta
+        created_at: Creado en
+        sum: Monto
+        amount: Monto
+        remark: Observación
+        fee: Comisión
+      withdraws/tritiumcoin:
+        id: ID
+        member_name: Cuenta
+        currency_obj_key_text: criptomoneda
+        state_and_actions: Estado
+        fund_extra_text: Nombre de Retiro
+        fund_extrat: Nombre de Retiro
+        fund_source: Banco
+        fund_uid: Cuenta
+        created_at: Creado en
+        sum: Monto
+        amount: Monto
+        remark: Observación
+        fee: Comisión
+    errors:
+      models:
+        order_bid:
+          attributes:
+            sum:
+              expensive: Costos de la cuenta
+            price:
+              range: Rango de precio invalido
+        order_ask:
+          attributes:
+            origin_volume:
+              expensive: Costos de la cuenta
+            price:
+              range: Rango de precio invalido
+        account:
+          attributes:
+            balance:
+              less: Saldo minimo
+        identity:
+          attributes:
+            email:
+              invalid: correo electrónico invalido
+            password:
+              invalid: Contraseña inválida
+            password_confirmation:
+              confirmation: Su contraseña es incorrecta, vuelva a ingresar.
+        token/reset_password:
+          attributes:
+            base:
+              too_soon: Visita demasiado pronto, intente más tarde.
+            email:
+              not-member: Correo electrónico inválido
+              match: Correo Electrónico de inicio inválido
+            password:
+              invalid: Contraseña inválida
+            member:
+              blank: ¡No existe!
+        activation:
+          attributes:
+            base:
+              too_soon: Se ha enviado un correo electrónico de activación a tu dirección de correo electrónico.
+        fund_source:
+          attributes:
+            address:
+              satoshi_ismine: Dirección usada
+              satoshi_invalid: Dirección Invalida
+        withdraw:
+          account_balance_is_poor: Su balance es insuficiente
+          attributes:
+            password:
+              match: inválido
+            amount:
+              poor: insuficiente
+              bank_min: Menos 5000.00
+        withdraws/satoshi:
+          attributes:
+            fund_uid:
+              blank: Ingrese su dirección de retiro.
+              invalid: Dirección de retiro invalido, revisar por favor.
+              ismine: Por favor use una nueva dirección.
+        withdraws/realpointcoin:
+          attributes:
+            fund_uid:
+              blank: Ingrese su dirección de retiro.
+              invalid: Dirección de retiro invalido, revisar por favor.
+              ismine: Por favor use una nueva dirección.
+        withdraws/litecoin:
+          attributes:
+            fund_uid:
+              blank: Ingrese su dirección de retiro.
+              invalid: Dirección de retiro invalido, revisar por favor.
+              ismine: Por favor use una nueva dirección.
+        withdraws/peercoin:
+          attributes:
+            fund_uid:
+              blank: Ingrese su dirección de retiro.
+              invalid: Dirección de retiro invalido, revisar por favor.
+              ismine: Por favor use una nueva dirección.
+        withdraws/blackcoin:
+          attributes:
+            fund_uid:
+              blank: Ingrese su dirección de retiro.
+              invalid: Dirección de retiro invalido, revisar por favor.
+              ismine: Por favor use una nueva dirección.
+        withdraws/tritiumcoin:
+          attributes:
+            fund_uid:
+              blank: Ingrese su dirección de retiro.
+              invalid: Dirección de retiro invalido, revisar por favor.
+              ismine: Por favor use una nueva dirección.
+        two_factor:
+          attributes:
+            otp:
+              invalid: Contraseña incorrecta, vuelva a ingresar.
+        application:
+          attributes:
+            redirect_uri:
+              fragment_present: No puede contener un fragmento.
+              invalid_uri: Debe ser un URI válido.
+              relative_uri: Debe ser un URI absoluto.
+      messages:
+        invalid_email: Dirección de correo electrónico invalida
+        undef: Razón desconocida
+        less: Balance menor
+        verify: Error en verificación
+        strength: Es una contraseña invalida.
+        password: Introduzca una contraseña de al menos 6 caracteres que contenga letras mayúsculas, minúsculas y números.
+        orders:
+          price: Precio límite %{l} ~ %{h}
+          sum: Precio límite total %{l} ~ %{h}
+          precision: Precisión mínima %{p}
+  banks:
+    icbc: Banco de Crédito del Perú
+    cbc: Interbank
+    bc: Scotiabank
+    bcm: BBVA
+    abc: Banco Falabella
+    cmb: BanBif
+    cmbc: Banco Ripley
+    cncb: China CITIC Bank
+    hxb: Hua Xia Bank Co., Ltd.
+    cib: Industrial Bank Co., Ltd
+    spdb: Shanghai Pudong Development Bank
+    bob: Bank of Beijing
+    ceb: China Everbright Bank CO.LTD
+    sdb: Shenzhen Development Bank
+    pab: Ping An Bank Co., Ltd.
+    gdb: Guangdong Development Bank
+    psbc: Postal Savings Bank of China
+  market:
+    currency:
+      eur: EUR
+      btc: BTC
+      cny: CNY
+      doge: DOGE
+      pts: PTS
+      ltc: LTC
+      usd: USD
+      eur: EUR
+      ppc: PPC
+      blk: BLK
+      rpt: RPT
+      trt: TRT
+      bcc: BCC
+      eth: ETH
+      zec: ZEC
+      bts: BTS
+      etc: ETC
+  currency:
+    satoshi:
+      key: BTC
+      code: BTC
+      name: Bitcoin
+      format: '0,0.0000'
+    bitsharesx:
+      key: BTS
+      code: BTSX
+      name: BitsharesX
+      format: '0,0.0000'
+    etc:
+      key: ETC
+      code: ETC
+      name: ETC
+      format: '0,0.0000'
+    renminbi:
+      key: CNY
+      code: CNY
+      name: Chinese Yuan
+    euro:
+      key: EUR
+      code: EUR
+      name: European Euro
+      format: '0,0.00'
+    dogecoin:
+      key: DOG
+      code: DOGE
+      name: Dogecoin
+      format: '0,0.0000'
+    bcc:
+      key: BCC
+      code: BCC
+      name: BCC
+      format: '0,0.0000'
+    zec:
+      key: ZEC
+      code: ZEC
+      name: ZEC
+      format: '0,0.0000'
+    bts:
+      key: BTS
+      code: BTS
+      name: BTS
+      format: '0,0.0000'
+    ether:
+      key: ETH
+      code: ETH
+      name: Ethereum
+      format: '0,0.0000'
+    protoshare:
+      key: PTS
+      code: PTS
+      name: Protoshare
+      format: '0,0.0000'
+    dolars:
+      key: USD
+      code: USD
+      name: Dolar
+      format: '0,0.0000'
+    euros:
+      key: EUR
+      code: EUR
+      name: Euro
+      format: '0,0.0000'
+    litecoin:
+      key: LTC
+      code: LTC
+      name: Litecoin
+      format: '0,0.0000'
+    peercoin:
+      key: PPC
+      code: PPC
+      name: Peercoin
+      format: '0,0.0000'
+    blackcoin:
+      key: BLK
+      code: BLK
+      name: BlackCoin
+      format: '0,0.0000'
+    realpointcoin:
+      key: RPT
+      code: RPT
+      name: RealPointCoin
+      format: '0,0.0000'
+    tritiumcoin:
+      key: TRT
+      code: TRT
+      name: Tritiumcoin
+      format: '0,0.0000'
+
+
+
+  datagrid:
+    empty: Datos no encontrados
+    filters:
+      date:
+        range_separator: " para "
+      datetime:
+        range_separator: " para "
+    form:
+      submit: Buscar
+    admin_deposits_grid:
+      columns:
+        sn: SN
+        created_at: En
+        channel_key_text: Canal
+        fund_extra_text: Extra
+        fund_uid: UID
+        txid: ID de transacción
+        amount: Monto
+        fee: Comisión
+        currency_text: Divisa
+        aasm_state_text: Estado
+        member_name: Usuarios
+    bank_deposits_grid:
+      columns:
+        sn: SN
+        created_at: En
+        channel_key_text: Categoría
+        fund_extra_text: Banco
+        fund_uid: Cuenta
+        amount: Monto
+        fee: Comision
+        aasm_state_text: Estado
+    coin_deposits_grid:
+      columns:
+        sn: SN
+        txid: ID de transacción
+        created_at: En
+        amount: Monto
+        aasm_state_text: Estado
+        confirmations: Confirmación
+    withdraws_grid:
+      columns:
+        sn: SN
+        name: Nombre
+        currency_text: Divisa
+        amount: Monto
+        fee: Comisión
+        created_at: Creado en
+        done_at: Completado en
+        state_text: Estado
+    members_grid:
+      columns:
+        sn: Número de Serie
+        email: Correo Electrónico
+        created_at: Creado en
+        actions: Acción
+    account_versions_grid:
+      columns:
+        created_at: Creado en
+        currency_text: Divisa
+        balance: Balance
+        in: Entra
+        out: Sale
+        amount: Monto
+        reason_text: Razón
+        modifiable_type: Enlace
+        fee: Comisión
+      filters:
+        reason: Razón
+        currency: Divisa
+    statistic_members_grid:
+      columns:
+        sn: Número de Serie
+        id: ID
+        email: Correo Electrónico
+        created_at: Creado en
+        activated: Activo
+        detail: Detalles
+        action: Acción
+      filters:
+        sn: Número de Serie
+        activated: Acción
+        created_at: Creado en
+        email: Correo electrónico
+    statistic_orders_grid:
+      columns:
+        id: Numero de Serie
+        price: Precio
+        volume: Volumen
+        created_at: Creado en
+        state_text: Estado
+        member_id: Usuario
+      filters:
+        state: Estado
+        currency: Divisa
+        created_at: Creado en
+        type: Compra/Venta
+    statistic_trades_grid:
+      columns:
+        id: ID
+        price: Precio
+        volume: Volumen
+        strike_amount: Monto
+        created_at: Creado en
+      filters:
+        currency: Divisa
+        created_at: Creado en
+    statistic_deposits_grid:
+      columns:
+        member: Miembro
+        tx_id: Id de transacción
+        amount: Monto
+        currency: Divisa
+        created_at: Creado en
+        state_text: Estado
+      filters:
+        currency: Divisa
+        state: Estado
+        created_at: Creado en
+    statistic_withdraws_grid:
+      columns:
+        member: Miembro
+        address: Dirección
+        amount: Monto
+        currency: Divisa
+        created_at: Creado en
+        state_text: Estado
+      filters:
+        state: Estado
+        created_at: Creado en
+  deposit_channel:
+    bank:
+      key: Transferencia Bancaria
+      title: Transferencia Bancaria
+      intro: Depósitos de transferencia bancaria, recomendamos para grandes recargas
+      latency: 10 minutos
+      transfer: Manual
+      go: Depósito
+    satoshi:
+      key: BlockChain
+      title: Depósitos en Bitcoin
+      intro: Deposite Bitcoin de su wallet personal a su cuenta en LatinBit
+      latency: 1 confirmación
+      transfer: Manual
+      go: Deposite
+    ether:
+      key: ethereum
+      title: Depósitos en ethereum
+      intro: Deposite ethereum de su wallet personal a su cuenta en LatinBit
+      latency: 1 confirmación
+      transfer: Manual
+      go: Deposite
+    litecoin:
+      key: Litecoin Chain
+      title: Depósitos en Litecoin
+      intro: Deposite Litecoin de su wallet personal a su cuenta en LatinBit
+      latency: 1 confirmación
+      transfer: Manual
+      go: Deposite
+    peercoin:
+      key: Peercoin Chain
+      title: Depósitos en Peercoin
+      intro: Deposite Peercoin de su wallet personal a su cuenta en LatinBit
+      latency: 1 confirmación
+      transfer: Manual
+      go: Deposite
+    blackcoin:
+      key: Blackcoin Chain
+      title: Depósitos en Blackcoin
+      intro: Deposite BlackCoin de su wallet personal a su cuenta en LatinBit
+      latency: 1 confirmación
+      transfer: Manual
+      go: Deposite
+    realpointcoin:
+      key: RealPointCoin Chain
+      title: Depósitos en RealPointCoin
+      intro: Deposite RealPointCoin de su wallet personal a su cuenta en LatinBit
+      latency: 1 confirmación
+      transfer: Manual
+      go: Deposite
+    tritiumcoin:
+      key: Tritiumcoin Chain
+      title: Depósitos en Tritium
+      intro: Deposite Tritium de su wallet personal a su cuenta en LatinBit
+      latency: 1 confirmación
+      transfer: Manual
+      go: Deposite
+  deposits/bank:
+    aasm_state:
+      submitting: Enviando
+      cancelled: Cancelado
+      submitted: Enviado
+      accepted: Aceptado
+      rejected: Rechazado
+      checked: Revisado
+      warning: Alerta
+  private:
+    deposits:
+      satoshis:
+        gen_address:
+          require_transaction: No puede generar nueva dirección si no se ha utilizado.
+      realpointcoins:
+        gen_address:
+          require_transaction: No puede generar nueva dirección si no se ha utilizado.
+      litecoins:
+        gen_address:
+          require_transaction: No puede generar nueva dirección si no se ha utilizado.
+      blackcoins:
+        gen_address:
+          require_transaction: No puede generar nueva dirección si no se ha utilizado.
+      peercoins:
+        gen_address:
+          require_transaction: No puede generar nueva dirección si no se ha utilizado.
+      tritiumcoins:
+        gen_address:
+          require_transaction: No puede generar nueva dirección si no se ha utilizado.
+      banks:
+        destroy:
+          notice: La solicitud de revocación ha sido exitosa.
+        create:
+          notice: Solicitud de recarga enviada correctamente. Use la información a continuación para completar la transferencia bancaria.
+          submit: Enviar
+        new:
+          fund_source: Seleccionar Fuente del Fondo
+          manage_fund_source: Manejar Fuente de Fondos
+          submit: Enviar
+        edit:
+          bank: Nombre del banco receptor
+          branch: Recibir de una sucursal bancaria
+          hodler: Recibir titular
+          account: Recibir monto
+    history:
+      transaction:
+        Deposit: Depósito
+        Retirar: Retiro
+      account:
+        currency: Criptomonedas
+        buy: Compra
+        sell: Venta
+        filter_by_type: Filtrar por tipo
+        account_history: Historial de la cuenta
+        type: Tipo
+        timestamp: Fecha y Hora
+        fee: Comisión
+        currency: Criptomonedas
+        amount: Monto
+        txid: ID de transacción
+      orders:
+        order_history: Historial de ordenes
+        id: ID
+        type: Tipo
+        state: Estado
+        market: Mercado
+        price: Precio
+        volume: Volumen
+        average_price: Precio promedio 
+        fullfilled_volume: Completado
+        timestamp: Fecha y hora
+      order:
+        ask: Venta
+        bid: Compra
+        wait: Pendiente
+        cancel: Cancelado
+        done: Completado
+      trades:
+        trade_history: Historial de Trading
+        side: Operación
+        created_at: Fecha y hora
+        base_currency: Criptomoneda base
+        base_amount: Monto
+        quote_currency: Moneda
+        quote_amount: Monto total
+        price: Precio
+      trade:
+        sell: Venta
+        buy: Compra
+    trade:
+      trades:
+        orders:
+          title: Ordenes
+        trades:
+          title: Trades
+        charges:
+          title: Cargos
+      orders:
+        index:
+          done: Completado
+          cancel: Cancelado
+          confirm: '¿Está seguro de cancelar la orden #%{id}?'
+        destroy:
+          'true': "#%{id} La cancelación de la orden ha sido exitosa"
+          'false': "#%{id} La cancelación de la orden ha sido cancelada"
+    withdraws:
+      update:
+        request_accepted: Solicitud de retiro aceptada
+      destroy:
+        request_canceled: Solicitud de retiro rechazada
+      index:
+        fee: Comisión
+        total: Total
+        withdraw_history: Historial de retiros.
+      create:
+        two_factors_error: Autentificación de segundo factor falló.
+      banks:
+        update:
+          notice: La solicitud de retiro de transferencia bancaria ha sido enviada, lo haremos procesar lo antes posible.
+          alert_two_factor: Segundo error de autentificación
+        destroy:
+          notice: Se ha cancelado la transferencia bancaria y se ha devuelto la cantidad a su cuenta
+        new:
+          fund_source: Seleccione la Fuente del Fondo
+          manage_fund_source: Administrar fuente de fondos
+          submit: Enviar
+          allin: La totalidad
+        create:
+          notice: Solicitud de retiro enviado con éxito. Usa la información a continuación para completar la transferencia bancaria.
+      satoshis:
+        destroy:
+          notice: El retiro ha sido cancelado, el saldo congelado ha regresado a su cuenta
+        update:
+          notice: La solicitud de retiro se envió correctamente, la procesaremos lo antes posible
+          alert_two_factor: Error en segundo factor de autentificación
+        new:
+          submit: Enviar
+          allin: La totalidad
+          fund_source_label: Nombre
+          manage_fund_source: Administrar fuente de fondos
+        create:
+          notice: Solicitud de retiro enviado con éxito. Use la información a continuación para completar la transferencia bancaria.
+      realpointcoins:
+        destroy:
+          notice: El retiro ha sido cancelado, el saldo congelado ha regresado a su cuenta
+        update:
+          notice: La solicitud de retiro se envió correctamente, la procesaremos lo antes posible
+          alert_two_factor: Error en segundo factor de autentificación
+        new:
+          submit: Enviar
+          allin: La totalidad
+          fund_source_label: Nombre
+          manage_fund_source: Administrar fuente de fondos
+        create:
+          notice: Solicitud de retiro enviado con éxito. Use la información a continuación para completar la transferencia bancaria.
+      litecoins:
+        destroy:
+          notice: El retiro ha sido cancelado, el saldo congelado ha regresado a su cuenta
+        update:
+          notice: La solicitud de retiro se envió correctamente, la procesaremos lo antes posible
+          alert_two_factor: Error en segundo factor de autentificación
+        new:
+          submit: Enviar
+          allin: La totalidad
+          fund_source_label: Nombre
+          manage_fund_source: Administrar fuente de fondos
+        create:
+          notice: Solicitud de retiro enviado con éxito. Use la información a continuación para completar la transferencia bancaria.
+      blackcoins:
+        destroy:
+          notice: El retiro ha sido cancelado, el saldo congelado ha regresado a su cuenta
+        update:
+          notice: La solicitud de retiro se envió correctamente, la procesaremos lo antes posible
+          alert_two_factor: Error en segundo factor de autentificación
+        new:
+          submit: Enviar
+          allin: La totalidad
+          fund_source_label: Nombre
+          manage_fund_source: Administrar fuente de fondos
+        create:
+          notice: Solicitud de retiro enviado con éxito. Use la información a continuación para completar la transferencia bancaria.
+      peercoins:
+        destroy:
+          notice: El retiro ha sido cancelado, el saldo congelado ha regresado a su cuenta
+        update:
+          notice: La solicitud de retiro se envió correctamente, la procesaremos lo antes posible
+          alert_two_factor: Error en segundo factor de autentificación
+        new:
+          submit: Enviar
+          allin: La totalidad
+          fund_source_label: Nombre
+          manage_fund_source: Administrar fuente de fondos
+        create:
+          notice: Solicitud de retiro enviado con éxito. Use la información a continuación para completar la transferencia bancaria.
+      tritiumcoins:
+        destroy:
+          notice: El retiro ha sido cancelado, el saldo congelado ha regresado a su cuenta
+        update:
+          notice: La solicitud de retiro se envió correctamente, la procesaremos lo antes posible
+          alert_two_factor: Error en segundo factor de autentificación
+        new:
+          submit: Enviar
+          allin: La totalidad
+          fund_source_label: Nombre
+          manage_fund_source: Administrar fuente de fondos
+        create:
+          notice: Solicitud de retiro enviado con éxito. Use la información a continuación para completar la transferencia bancaria.
+    tickets:
+      index:
+        new_ticket: Nuevo ticket
+      new:
+        intro: Si tiene algún problema, genere un ticket para que nuestro personal puede ayudarlo lo antes posible. Todas los tickets son privados entre usted y el personal de apoyo.
+      ticket_create_succ: Ticket creado exitosamente.
+      ticket_create_fail: Fallo al crear Ticket, por favor intente nuevamente.
+      comment_succ: Comentario exitoso
+      cooment_fail: Comentario fallido, por favor intentar más tarde
+      me: yo
+      supporter: Soporte
+      close: Cerrar Ticket
+      close_succ: El cierre del Ticket ha sido exitoso
+      close_confirm: ¿Esta seguro de cerrar este ticket?
+      title_content_both_blank: El título y el contenido podrían estar vacíos.
+      from: De
+      view_closed_tickets: Ver tickets cerrados
+      view_open_tickets: Ver tickets abiertos
+    account_versions:
+      index:
+        description: Cada transacción y cada ingreso en LatinBit se encuentran minuciosamente documentados.
+    api_tokens:
+      user_tokens:
+        no_token: No tienes token API.
+        edit: Editar
+        destroy: Anular
+        destroy-confirm: ¿Esta seguro?
+        create: Crear nuevo token
+        http: Documentación HTTP API
+        websocket: Documentación Websocket API
+        more: 'Para obtener más información, consulte la sección de API'
+      oauth_tokens:
+        panel_title: Autorizaciones
+        title: Aplicaciones autorizadas
+        oauth: Integración OAuth
+        intro: Administre todas sus aplicaciones autorizadas
+        no_token: Ninguna aplicación.
+        unbind: Anular
+        unbind-confirm: ¿Esta seguro?
+        oauth_app_name: Nombre
+        oauth_app_expire: Expira en
+        oauth_app_scope: Alcances
+      unbind:
+        success: Anulación exitosa.
+        failed: Anulación fallida.
+      new:
+        label_hint: El nombre te ayudára a recordar el uso del token (opcional).
+      create:
+        alert_two_factor: La autenticación de dos pasos falló.
+        success: Token API fue creado exitosamente.
+        failed: Error al crear token API. Por favor intente más tarde o contactese con el administrador.
+        desc: Copie y pegue las claves a continuación en un lugar seguro y guárdelas. La clave secreta nunca se volverá a mostrar.
+      edit:
+        access_key_hint: Creado en  %{created_at}
+        label_hint: El nombre te ayudára a recordar el uso del token (opcional).
+        ip_whitelist_hint: Separar el IP por comas, dejar este campo en blanco significa que todos los IP están permitidos.
+      update:
+        alert_two_factor: Autentificación falló.
+        success: Envio exitoso.
+        failed: Error al guardar el token.Por favor intente nuevamente más tarde o contacte al administrador.
+      destroy:
+        success: El token ha sido exitosamente eliminado.
+        failed: Fallo la cancelación del token.
+    assets:
+      index:
+        liability-proof: Prueba de pasivos
+        btc-assets: BTC Activos
+        ltc-assets: LTC Activos
+        blk-assets: BLK Activos
+        ppc-assets: PPC Activos
+        rpt-assets: RPT Activos
+        trt-assets: TRT Activos
+        cny-assets: CNY Activos
+        eur-assets: EUR Activos
+      liability_tabs:
+        verify-btc: Verificar mis BTC activos
+        verify-ltc: Verificar mis LTC activos
+        verify-blk: Verificar mis BLK activos
+        verify-ppc: Verificar mis PPC activos
+        verify-rpt: Verificar mis RPT activos
+        verify-trt: Verificar mis TRT activos
+        verify-cny: Verificar mis CNY activos
+        verify-eur: Verificar mis BTC activos
+        btc-assets-total: 'Total BTC activos para intercambio: '
+        ltc-assets-total: 'Total LTC activos para intercambio: '
+        ppc-assets-total: 'Total PPC activos para intercambio: '
+        blk-assets-total: 'Total BLK activos para intercambio: '
+        rpt-assets-total: 'Total RPT activos para intercambio: '
+        trt-assets-total: 'Total TRT activos para intercambio: '
+        cny-assets-total: 'Total CNY activos para intercambio: '
+        eur-assets-total: 'Total EUR activos para intercambio: '
+      liability_proof:
+        title: Prueba de pasivos
+        intro: Como una exchange, nuestros pasivos se refieren a todo el dinero (tanto en criptomonedas y monedas fiduciarias) que nuestros usuarios nos confían. En esta página, te presentamos nuestros pasivos. Y garantizamos que la forma de verificación del saldo en cuenta sea efectiva, todo ello es parte de nuestras responsabilidades.
+        how-to-verify: ¿Como verificar que una Exchange es solvente?
+        how-to-verify-uri: https://latinbit.pe
+      liability_data:
+        liability-proof-generating: Generación de prueba de veracidad en proceso, por favor regrese después de 30 minutos.
+        root-json: Nodo raiz
+        partial-tree: 'Mis %{currency} Activos: '
+        get-partial-tree: Obtener mis datos parciales
+        timestamp: Los datos de prueba se generan en %{time}.
+        go-verify: Verificado
+      btc_assets:
+        title: BTC Activos
+        intro: Todos los activos de cambio de BTC se enumeran aquí.
+        total: Total de activos de BTC
+        address: Dirección
+      ltc_assets:
+        title: LTC Activos
+        intro: Todos los activos de cambio de LTC se enumeran aquí.
+        total: Total de activos de LTC
+        address: Dirección
+      ppc_assets:
+        title: PPC Activos
+        intro: Todos los activos de cambio de PPC se enumeran aquí.
+        total: Total de activos de PPC
+        address: Dirección
+      blk_assets:
+        title: BLK Activos
+        intro: Todos los activos de cambio de BLK se enumeran aquí.
+        total: Total de activos de BLK
+        address: Dirección
+      rpt_assets:
+        title: RPT Activos
+        intro: Todos los activos de cambio de RPT se enumeran aquí.
+        total: Total de activos de RPT
+        address: Dirección
+      trt_assets:
+        title: TRT Activos
+        intro: Todos los activos de cambio de TRT se enumeran aquí.
+        total: Total de activos de TRT
+        address: Dirección
+      cny_assets:
+        title: CNY Activos
+        intro: Todos los activos de cambio de CNY se enumeran aquí.
+        total: Total de activos de CNY
+        address: Dirección
+      eur_assets:
+        title: EUR Activos
+        intro: Todos los activos de cambio de EUR se enumeran aquí.
+        total: Total de activos de EUR
+        description: " <p>Para supervición, puede consultar el saldo de su cuenta de depósito:</p> <p>Banco: %{bank}</p> <p>Cuenta： %{address}</p> <p>Contraseña de consulta： %{password}</p> <p>Consulta de tel.： %{tel}</p>"
+      partial_tree:
+        success: '¡Éxito! Datos de verificación generados en: %{timestamp}'
+    funds:
+      show:
+        account_history: Historial de la Cuenta
+        eur_format: '0.00'
+        cny_format: '0.00'
+        eur_format: '0.00'
+        btc_format: '0.00000000'
+        ltc_format: '0.00000000'
+        ppc_format: '0.00000000'
+        blk_format: '0.00000000'
+        rpt_format: '0.00000000'
+        trt_format: '0.00000000'
+        reason:
+          cny:
+            strike_add: Adicionar
+            strike_sub: Sustraer
+            deposit: Depositar
+            withdraw: Retirar
+            fix: Arreglar
+          eur:
+            strike_add: Adicionar
+            strike_sub: Sustraer
+            deposit: Depositar
+            withdraw: Retirar
+            fix: Arreglar
+          btc:
+            strike_add: Adicionar
+            strike_sub: Sustraer
+            deposit: Depositar
+            withdraw: Retirar
+            fix: Arreglar
+          ltc:
+            strike_add: Adicionar
+            strike_sub: Sustraer
+            deposit: Depositar
+            withdraw: Retirar
+            fix: Arreglar
+          ppc:
+            strike_add: Adicionar
+            strike_sub: Sustraer
+            deposit: Depositar
+            withdraw: Retirar
+            fix: Arreglar
+          blk:
+            strike_add: Adicionar
+            strike_sub: Sustraer
+            deposit: Depositar
+            withdraw: Retirar
+            fix: Arreglar
+          rpt:
+            strike_add: Adicionar
+            strike_sub: Sustraer
+            deposit: Depositar
+            withdraw: Retirar
+            fix: Arreglar
+          trt:
+            strike_add: Adicionar
+            strike_sub: Sustraer
+            deposit: Depositar
+            withdraw: Retirar
+            fix: Arreglar
+        ref:
+          system: Sistema
+          default: Defecto
+    id_documents:
+      edit:
+        state: Estado
+        state_unverified: Sin confirmar
+        state_verifying: Verificando
+        state_verified: Verificado
+        name: Nombre real
+        birth_date: Fecha de nacimiento
+        address: Dirección
+        city: Ciudad
+        country: Pais
+        zipcode: Código postal
+        id_document_type: Tipo de Documento
+        id_document_number: Número de Documento
+        id_document_file: Foto de documento (Max. 1MB)
+        id_bill_type: Verificación de residencia
+        id_bill_file: Foto de verificación de residencia (Max. 1MB)
+      update:
+        notice: La verificación de su cuenta ha sido enviada.
+    markets:
+      show:
+        error: Falló
+        success: Exitoso
+        analysis_panel: Análisis
+        help_panel: Ayuda
+        done: Completado
+        cancel: Cancelado
+        cancel_confirm: ¿Esta seguro de cancelar su orden?
+        confirm: Confirmado
+        ask_order: 'Compra ##sn#'
+        bid_order: 'Venta ##sn#'
+        my_active_order: Activo
+        my_done_order: Realizado
+        trades: Trading
+        chat: Canales de Chat
+      market_list:
+        all: Mercados
+        all_html: "<i class='fa fa-check'></i><span>Mercados</span>"
+        cny_html: "<i class='fa fa-check'></i><span>Mercado CNY</span>"
+        btc_html: "<i class='fa fa-check'></i><span>Mercado BTC</span>"
+        usd_html: "<i class='fa fa-check'></i><span>Mercado USD</span>"
+        eur_html: "<i class='fa fa-check'></i><span>Mercado EUR</span>"
+        ltc_html: "<i class='fa fa-check'></i><span>Mercado LTC</span>"
+        ppc_html: "<i class='fa fa-check'></i><span>Mercado PPC</span>"
+        blk_html: "<i class='fa fa-check'></i><span>Mercado BLK</span>"
+        rpt_html: "<i class='fa fa-check'></i><span>Mercado RPT</span>"
+        trt_html: "<i class='fa fa-check'></i><span>Mercado TRT</span>"
+        price: Precio
+        change: "24h %"
+      range_switch:
+        switch_1: 1m
+        switch_5: 5m
+        switch_15: 15m
+        switch_30: 30m
+        switch_60: 1h
+        switch_120: 2h
+        switch_240: 4h
+        switch_360: 6h
+        switch_720: 12h
+        switch_1440: 1d
+        switch_4320: 3d
+        switch_10080: 1w
+      depths:
+        price: Precio
+        amount: Cantidad
+        buy: Comprar
+        sell: Vender
+        ask_orders: Vender
+        bid_orders: Comprar
+      ticker:
+        last: Último precio
+        ask: Mejor venta
+        bid: Mejor compra
+      account_balance:
+        title: Balance de Cuentas
+        available: Disponible %{currency}
+      bid_entry:
+        action: "Comprar %{currency}"
+        price: Precio
+        last_price: Precio final
+        amount: Cantidad
+        total: Total
+        fee: Comisión
+      ask_entry:
+        action: "Vender %{currency}"
+        price: Precio
+        last_price: precio final
+        amount: Cantidad
+        total: Total
+        fee: Comisión
+      place_order:
+        price_high: Maximo
+        price_low: Mínimo
+        full_bid: Maximo
+        full_ask: Mínimo
+      order_book:
+        title: Libro de ordenes
+        volume: Volumen
+        price: Precio
+        amount: Cantidad
+        ask: Venden
+        bid: Compran
+        fade_toggle_depth: Profundidad de mercado
+      trade_state:
+        new: Nuevo
+        partial: Parcial
+      market_trades:
+        all: Total
+        my: Propio
+        all_html: "<i class='fa fa-check'></i><span>Todo</span>"
+        my_html: "<i class='fa fa-check'></i><span>Propio</span>"
+        time: Hora
+        price: Precio
+        volume: Volumen
+      header:
+        network: Estado de Conexión
+        vol: 24h Volumen
+        high: Maximo
+        low: Mínimo
+        change: Variación
+      settings:
+        sound: Sonido
+        notification: Notificar
+        funds: "Fondos"
+        signout: "Desconectar"
+        settings: "Perfil"
+        history: "Historial"
+      account_summary:
+        title: Resumen
+        account: Cuenta
+        amount: Saldo total
+        locked: Saldo en operaciones
+        view_all_accounts: "Ver"
+        hide_all_accounts: "Ocultar"
+      my_orders:
+        orders_wait: Últimas ordenes
+        orders_done: Ordenes completadas
+        orders_cancel: Cancelar ordenes
+        no_open_orders: Tu no tienes ordenes abiertas
+        clear_all_html: "<i class='fa fa-trash'></i><span>Cancelar todo</span>"
+        clear_bids_html: "<i class='fa fa-trash'></i><span>Cancelar Ventas</span>"
+        clear_asks_html: "<i class='fa fa-trash'></i><span>Cancelar compras</span>"
+        confirm_clear_all: ¿Estas seguro de cancelar las ordenes?
+        confirm_clear_bids: ¿Estas seguro de cancelar todas las Ventas?
+        confirm_clear_asks: ¿Estás seguro de cancelar todas las Compras?
+        price: Precio
+        volume: Volumen
+        amount: Cantidad
+        time: lugar y fecha
+      mask:
+        warning: Por favor <a class=text-up href='/'>Registrate</a> o <a class=text-up href='/'>Iniciar Cesion</a> para operar
+      klime_chart:
+        title: Gráficos de velas
+      global:
+        global_orders_title: ORDENES
+        global_trades_title: TRADES
+      chat:
+        title: Canal de chat
+    settings:
+      success: Configuraciones actualizadas con éxito.
+      failure: Código de acceso inválido Por favor intente de nuevo
+      index:
+        safety_instruction: Para proteger sus bitcoins y su información personal, le sugerimos encarecidamente que utilice la Autenticación de dos factores.
+        reset_password: Colocar su contraseña
+        reauthenticate: Autentificación
+        activated: Se ha enviado un correo electrónico a su buzón, por favor verifíquelo tan pronto como sea posible. Si no lo recibió, haga clic en el botón "Enviar de nuevo"
+        auth-activated: Por favor,primero confirme su dirección de correo electrónico.
+        auth-verified: Por favor, verifique su cuenta primero.
+        email:
+          title: Verificación de correo electrónico
+          description: Su correo electrónico no ha sido verificado, click en el boton "Enviar de nuevo" para completar la verificación.
+          description-activated: Tu dirección de correo electrónico ha sido verificada exitosamente. Recuerde y proteja esta dirección de correo electrónico, es el certificado único para su cuenta
+          resend: Enviar de nuevo.
+          activated: Verificado
+          go: listo
+        phone_number:
+          title: Número de teléfono
+          description: Proporcionar un número de teléfono hará que su cuenta sea más segura. Puede restablecer rápidamente su contraseña y las operaciones de su cuenta serán notificadas.
+          go: Configurar
+          verified: Verificado
+          hint: "Número Verificado %{hint}"
+        two_factor_auth:
+          title: Doble factor de autentificación
+          description: El Doble factor de autentificación proporciona otra capa de seguridad a tu cuenta. (Recomendado)
+          enable: Habilitar
+          disable: Inhabilitar
+        verification:
+          title: Verificar cuenta
+          description: Brindandonos sus datos y documentos correctos, nos ayudará a brindarle mayor seguridad para su cuenta, cumplimos con las leyes nacionales e internacionales.
+          go: Enviar
+          verified: Verificado
+        asset_passwords:
+          title: Activar contraseña
+          description: La contraseña será necesaria cuando retire su dinero. Se recomienda encarecidamente que no utilice la misma contraseña que su contraseña de la cuenta!
+          go: Configurar
+        passwords:
+          title: Contraseña
+          description: Esta contraseña es necesaria para iniciar sesión, por favor recuérdela.
+          go: Cambia la contraseña
+          set: Configurar
+        api_tokens:
+          title: TOKEN API
+          description: Crea y administra tus tokens API.
+          go: Configurar
+        weibo:
+          title: Conéctate a Weibo
+          description: Después de conectarse a Weibo, puede iniciar sesión a través de la cuenta de Weibo.
+          bound_desc: Ha sido conectado con %{nickname}.
+          bind: Conectado
+          unbind: Desconectado
+    otps:
+      new:
+        step_1: Paso 1
+        step_2: Paso 2
+        step_3: Paso 3
+        or: o
+        download_app: Instala la aplicación Google Authenticator en tu teléfono inteligente y ábrela.
+        scan_qr_code: Escanee el código QR a continuación
+        enter_passphrase: Ingrese manualmente la siguiente clave en la aplicación
+        enter_passcode: Ingrese y envíe el código de acceso generado por la aplicación Google Authenticator.
+    shared:
+      balances:
+        locked: Congelado
+        balance: Balance
+        available: Disponible
+        title: "%{icon} %{c} Cuenta"
+        cny_format: '0.00'
+        eur_format: '0.00'
+        eur_format: '0.00'
+        btc_format: '0.00000000'
+        ltc_format: '0.00000000'
+        ppc_format: '0.00000000'
+        blk_format: '0.00000000'
+        rpt_format: '0.00000000'
+        trt_format: '0.00000000'
+        total: Total
+  guides:
+    private:
+      settings:
+        panel: CONFIGURACIÓN
+        index:
+          intro: Administra y revisa tu perfil
+      api_tokens:
+        panel: TOKEN API
+        index:
+          title: Mis Tokens
+          intro: Esta es una lista de todos tus tokens API. Si usted no especifica las IP´s permitidas, cualquiera que conozca sus credenciales podra usar el API, se recomienda edite el token y limite las IP´s.
+        new:
+          title: Crear Token API
+        create:
+          title: Crear Token API
+        edit:
+          title: Editar Token API
+        update:
+          title: Editar Token API
+      tickets:
+        panel: Tickets
+      id_documents:
+        panel: Autenticación de nombre real
+        new:
+          title: Enviar información de autenticación de nombre real
+          intro: En línea con las leyes nacionales, se requiere verificación de identidad. por favor verifique su cuenta para continuar.
+    panels:
+      balance: Cuenta
+    verify:
+      google_auths:
+        panel: Doble factor de autentificación
+        edit:
+          title: Deshabilitar doble factor de autentificación
+          intro: Si tiene un teléfono nuevo, puede desactivar la Autenticación de dos factores en el teléfono anterior y habilitar la Autenticación de dos factores con la nueva linea.
+      sms_auths:
+        panel: Verificar número telefónico
+    reset_passwords:
+      panel: Contraseña
+      new:
+        title: Restablecer la contraseña
+        intro: Por favor ingrese su dirección de correo electrónico para verificar su cuenta, ingresa el código de verificación enviado a tu correo, sigue las instrucciones para restablecer su contraseña.
+      create:
+        title: Restablecer la contraseña
+        intro: Por favor ingrese su dirección de correo electrónico para verificar su cuenta, ingresa el código de verificación enviado a tu correo, sigue las instrucciones para restablecer su contraseña.
+      edit:
+        title: Configurar la clave
+      update:
+        title: Configurar la clave
+    sessions:
+      panel: Iniciar sesión
+      new:
+        title: Inicia sesión en mi cuenta
+        intro: Inicie sesión en LatinBit para que pueda empezar.
+      failure:
+        title: Inicia sesión en mi cuenta
+        intro: Inicie sesión en LatinBit para que pueda empezar.
+    identities:
+      panel: Crear cuenta
+      new:
+        title: Crear mi cuenta
+        intro: Esta será su única identificación en LatinBit que es necesaria para hacer sus operaciones de depósito y retiro. por favor llénelo con cuidado.
+      edit:
+        panel: Mi cuenta
+        title: Restablecer Contraseña
+    two_factors:
+      panel: Doble factor de autentificación
+  simple_form:
+    placeholders:
+      deposit:
+        bank:
+          amount: Monto mínimo 100
+      session:
+        email: Correo electronico
+        password: contraseña
+      identity:
+        email: Ejemplo： nombre@ejemplo.com
+        password: Por favor, configure su contraseña de inicio de sesión
+        password_confirmation: Confirmar la contraseña
+        edit:
+          password: ¡Configura la contraseña de tu cuenta!
+      document:
+        key: Enlace de documento clave de URL
+        title: Nombre de documento
+      order_bid:
+        origin_volume: volumen a comprar
+        sum: Total
+      order_ask:
+        origin_volume: volumen a vender
+        sum: Facturación total
+      reset_password:
+        email: Por ejemplo： nombre@ejemplo.com
+        password: ¡Por favor, configure su contraseña de inicio de sesión!
+      withdraw:
+        bank:
+          sum: Monto mínimo 100
+        satoshi:
+          sum: Monto mínimo 0.001
+          fund_extra: Ingrese una etiqueta para esta dirección(opcional)
+        realpointcoin:
+          sum: Monto mínimo 0.001
+          fund_extra: Ingrese una etiqueta para esta dirección(opcional)
+        litecoin:
+          sum: Monto mínimo 0.001
+          fund_extra: Ingrese una etiqueta para esta dirección(opcional)
+        peercoin:
+          sum: Monto mínimo 0.001
+          fund_extra: Ingrese una etiqueta para esta dirección(opcional)
+        blackcoin:
+          sum: Monto mínimo 0.001
+          fund_extra: Ingrese una etiqueta para esta dirección(opcional)
+        tritiumcoin:
+          sum: Monto mínimo 0.001
+          fund_extra: Ingrese una etiqueta para esta dirección(opcional)
+    hints:
+      deposit:
+        bank:
+          sum: "<a target='_balance' href='#'>Estructura de comisión</a>"
+          member_name: "<span class='text-danger'>El nombre de la cuenta bancaria de recarga debe coincidir con el nombre real</span>"
+          sn: "<span class='text-danger'>Copie el numero de transacción en el mensaje de su transferencia bancaria; de lo contrario, no podremos procesar su pedido rápidamente.</span>"
+      two_factor:
+        otp_secret: Le recomendamos que haga una copia de seguridad de la imagen del código QR o del texto cifrado para evitar que accidentalmente pierdas el teléfono y evitar molestias.
+        otp: Su validador volverá a generar una nueva contraseña cada treinta segundos, por favor ingreselo a tiempo.
+      identity:
+        password: Establezca una contraseña que tenga al menos 6 caracteres y que contenga letras mayúsculas, minúsculas y números.
+      reset_password:
+        password: Establezca una contraseña que tenga al menos 6 caracteres y que contenga letras mayúsculas, minúsculas y números.
+      id_document:
+        name: Por favor, complete el nombre que sea consistente con sus credenciales.
+      withdraw:
+        bank:
+          member_name: "<span class='text-danger'>la cuenta bancaria de retiro debe coincidir con su nombre utilizado para la autenticación</span>"
+          sum: "<a target='_balance' href='#'>Estructura de comisión</a>"
+          fund_extra: Si su banco ya no se encuentra en la lista, comuníquese con el servicio al cliente
+        satoshi:
+          sum: "<a target='_balance' href='#'>Estructura de comisión</a>"
+        realpointcoin:
+          sum: "<a target='_balance' href='#'>Estructura de comisión</a>"
+        litecoin:
+          sum: "<a target='_balance' href='#'>Estructura de comisión</a>"
+        peercoin:
+          sum: "<a target='_balance' href='#'>Estructura de comisión</a>"
+        blackcoin:
+          sum: "<a target='_balance' href='#'>Estructura de comisión</a>"
+        tritiumcoin:
+          sum: "<a target='_balance' href='#'>Estructura de comisión</a>"
+    creating: Creando...
+    updating: Actualizando...
+    buttons:
+      or: O
+      cancel: Cancelar
+    'yes': 'Si'
+    'no': 'No'
+    required:
+      text: necesario
+      mark: "*"
+    error_notification:
+      default_message: 'Por favor revise los problemas a continuación:'
+    labels:
+      defaults:
+        title: Titulo
+      google_auth:
+        uri: código QR 
+        otp_secret: Texto cifrado
+        otp: Contraseña del autenticador
+      fund_source:
+        label: Nombre
+        address: Dirección
+        category: Categoria
+      session:
+        email: Correo electrónico
+        password: Contraseña
+        captcha: Captcha
+      identity:
+        email: Correo electrónico
+        old_password: Contraseña original
+        password: Nueva contraseña
+        password_confirmation: Confirmar nueva contraseña
+      reset_password:
+        password: Nueva contraseña
+      ticket:
+        content: Más detalles
+      withdraw:
+        bank:
+          fund_extra: Banco
+          sum: Cantidad
+          account_balance: Balance de la cuenta
+          member_name: Nombre del titular de la cuenta
+        satoshi:
+          fee: Comisión
+          sum: Cantidad
+          fund_uid: Dirección de Bitcoin
+          fund_extra: Nombre
+          account_balance: Saldo de la cuenta
+          member_name: cuenta
+        realpointcoin:
+          fee: Comisión
+          sum: Monto
+          fund_uid: Dirección de RealPointCoin
+          fund_extra: Nombre
+          account_balance: Balance de cuenta
+          member_name: Cuenta
+        litecoin:
+          fee: Comisión
+          sum: Monto
+          fund_uid: Direccion de Litecoin
+          fund_extra: Nombre
+          account_balance: Balance de cuenta
+          member_name: Cuenta
+        peercoin:
+          fee: Comisión
+          sum: Monto
+          fund_uid: Dirección de Peercoin
+          fund_extra: Nombre
+          account_balance: Balance de cuenta
+          member_name: Cuenta
+        blackcoin:
+          fee: Comisión
+          sum: Monto
+          fund_uid: Dirección de Blackcoin
+          fund_extra: Nombre
+          account_balance: Balance de cuenta
+          member_name: Cuenta
+        tritiumcoin:
+          fee: Comisión
+          sum: Monto
+          fund_uid: Dirección de Tritiumcoin
+          fund_extra: Nombre
+          account_balance: Balance de la cuenta
+          member_name: Cuenta
+  admin:
+    deposits:
+      banks:
+        index:
+          oneday: Solicitudes en las últimas 24 horas
+          available: Todas las solicitudes pendientes
+        show:
+          alert: La recarga no puede ser ubicada.
+          notice: La recarga ha sido exitosa.
+          deposit: Solicitud de deposito
+          accept: Aceptado
+          target_deposit: Transferecia bancaria
+          confirm: ¿Confirmar recarga?
+        update:
+          blank_txid: ID de transacción no puede estar en blanco
+      satoshis:
+        update:
+          notice: El depósito fue exitoso.
+        index:
+          accept: Aceptado
+          accept_confirm: Confirmar depósito?
+      realpointcoins:
+        update:
+          notice: El  deposito fue exitoso.
+        index:
+          accept: Aceptado
+          accept_confirm: Confirmar depósito?
+      litecoins:
+        update:
+          notice: El  deposito fue exitoso.
+        index:
+          accept: Aceptado
+          accept_confirm: Confirmar depósito?
+      blackcoins:
+        update:
+          notice: El  deposito fue exitoso.
+        index:
+          accept: Aceptado
+          accept_confirm: Confirmar depósito?
+      peercoins:
+        update:
+          notice: El  deposito fue exitoso.
+        index:
+          accept: Aceptado
+          accept_confirm: Confirmar depósito?
+      tritiumcoins:
+        update:
+          notice: El  deposito fue exitoso.
+        index:
+          accept: Aceptado
+          accept_confirm: ¿confirmar depósito?
+    tickets:
+      view: Ver
+      close: Cerrar Ticket
+      comments_count: sus comentarios cuentan
+      replies: Respuestas
+      open_tickets: Tickets abiertos
+      closed_tickets: Cerrar Tickets
+    members:
+      index:
+        search: Buscar
+        members: Miembros
+        email: Correo electronico
+        name: Nombre
+        phone: Número telefónico
+        wallet_address: Dirección de tu billetera
+      show:
+        member_title: Usar información
+        actions_title: Acción
+        accounts_title: Información de la cuenta
+        account_versions_title: Archivos
+    dashboard:
+      index:
+        accounts_title: Resumen de la cuenta
+        daemons_title: Resumen del sistema
+    documents:
+      index:
+        new: Nuevo Documento
+    statistic:
+      filter: Filtro
+      summary: Resumen
+      click-to-expand: Expandir
+      members:
+        show:
+          table: Resultados
+      orders:
+        show:
+          avg: Promedio
+          sum: Volumen de las órdenes
+          sum_strike: Por volumen
+          count: Contar
+      trades:
+        show:
+          count: Transacciones
+          volume: Volumen
+          amount: Cantidad total
+          min_price: Precio mínimo
+          max_price: Precio máximo
+          avg_price: Precio promedio
+          amount_fee: Tarifa de transacción
+          volume_fee: Costo Total
+      deposits:
+        show:
+          count: Total
+          amount: Monto total
+      withdraws:
+        show:
+          count: Total
+          amount: Monto total
+          fee: Comisión
+    withdraws:
+      banks:
+        index:
+          one: Pendientes de retiro de pedidos
+          all: Pedidos en veinticuatro horas
+          empty: Sin datos
+        show:
+          process: Procesando
+          succeed: Con éxito
+          reject: Rechazar
+          succeed_confirm: Confirmar proceso
+          reject_confirm: ¿Confirmar rechazo?
+          withdraw: Retirar
+          empty: Sin datos
+      satoshis:
+        index:
+          one: Retiros pendientes
+          all: Últimas 24 horas
+          empty: Sin datos
+        show:
+          process: Aceptado
+          succeed: Retirar
+          reject: Rechazar
+          succeed_confirm: Retiro de proceso?
+          reject_confirm: Rechazar extracción?
+          withdraw: Retiros
+        update:
+          notice: El retiro fue realizado
+      realpointcoins:
+        index:
+          one: Retiros pendientes
+          all: Últimas 24 horas
+          empty: Sin datos
+        show:
+          process: Aceptado
+          succeed: Retirar
+          reject: Rechazar
+          succeed_confirm: Retiro de proceso?
+          reject_confirm: Rechazar extracción?
+          withdraw: Retiros
+        update:
+          notice: El retiro fue realizado
+      litecoins:
+        index:
+          one: Retiros pendientes
+          all: Últimas 24 horas
+          empty: Sin datos
+        show:
+          process: Aceptado
+          succeed: Retirar
+          reject: Rechazar
+          succeed_confirm: Retiro de proceso?
+          reject_confirm: Rechazar extracción?
+          withdraw: Retiros
+        update:
+          notice: El retiro fue realizado
+      peercoins:
+        index:
+          one: Retiros pendientes
+          all: Últimas 24 horas
+          empty: Sin datos
+        show:
+          process: Aceptado
+          succeed: Retirar
+          reject: Rechazar
+          succeed_confirm: Retiro de proceso?
+          reject_confirm: Rechazar retiro?
+          withdraw: Retiros
+        update:
+          notice: El retiro fue realizado
+      blackcoins:
+        index:
+          one: Retiros pendientes
+          all: Últimas 24 horas
+          empty: Sin datos
+        show:
+          process: Aceptado
+          succeed: Retirar
+          reject: Rechazar
+          succeed_confirm: Retiro de proceso?
+          reject_confirm: Rechazar extracción?
+          withdraw: Retiros
+        update:
+          notice: El retiro fue realizado
+      tritiumcoins:
+        index:
+          one: Retiros pendientes
+          all: Últimas 24 horas
+          empty: Sin datos
+        show:
+          process: Aceptado
+          succeed: Retirar
+          reject: Rechazar
+          succeed_confirm: Retiro de proceso?
+          reject_confirm: Rechazar extracción?
+          withdraw: Retiros
+        update:
+          notice: El retiro fue realizado
+  deposits/satoshi:
+    aasm_state:
+      submitted: Enviado
+      accepted: Aceptado
+      checked: Revisado
+      warning: Advertencia
+  deposits/realpointcoin:
+    aasm_state:
+      submitted: Enviado
+      accepted: Aceptado
+      checked: Revisado
+      warning: Advertencia
+  deposits/litecoin:
+    aasm_state:
+      submitted: Enviado
+      accepted: Aceptado
+      checked: Revisado
+      warning: Advertencia
+  deposits/blackcoin:
+    aasm_state:
+      submitted: Enviado
+      accepted: Aceptado
+      checked: Revisado
+      warning: Advertencia
+  deposits/peercoin:
+    aasm_state:
+      submitted: Enviado
+      accepted: Aceptado
+      checked: Revisado
+      warning: Advertencia
+  deposits/tritiumcoin:
+    aasm_state:
+      submitted: Enviado
+      accepted: Aceptado
+      checked: Revisado
+      warning: Advertencia
+  doorkeeper:
+    scopes:
+      profile: Lea su perfil básico (por ejemplo, nombre, correo electrónico) y saldos de cuenta
+      history: Lea su historial de intercambio
+      trade: Enviar y cancelar pedidos
+    authorizations:
+      new:
+        title: Autorización de la aplicación LatinBit
+        authorize_html: Autorizo <strong class='text-info'>%{name}</strong> para usar tu cuenta?
+        scopes: 'Esta aplicación podrá:'
+        authorize: Autorizar
+        deny: Rechazar
+    errors:
+      messages:
+        invalid_request: A la solicitud le falta un parámetro requerido, incluye un valor de parámetro no soportado, o está mal realizado.
+        invalid_redirect_uri: El redireccionamiento URI incluido no es válido.
+        unauthorized_client: El cliente no está autorizado para realizar esta solicitud usando este método.
+        access_denied: El servidor de autorización denegaron la solicitud.
+        invalid_scope: Su solicitud no es válida,es desconocida o mal realizada.
+        server_error: El servidor de autorización encontró una condición inesperada lo que le impidió cumplir con la solicitud.
+        temporarily_unavailable: El servidor de autorizaciones actualmente no puede manejar la solicitud debido a una sobrecarga temporal o mantenimiento del servidor.
+        credential_flow_not_configured: El flujo de credenciales de contraseña del recurso falló debido a que está desconfigurado.
+        resource_owner_authenticator_not_configured: El propietario del recurso encontró el error debido a Doorkeeper.configure.resource_owner_authenticator no ha sido configurado.
+        unsupported_response_type: El servidor de autorizaciones no es compatible con este tipo de respuesta
+        invalid_client: La autenticación del cliente falló debido a un método de autenticación no compatible.
+        invalid_grant: La autorización proporcionada no es válida, expiró, revocó, no coincide con el URI de redireccionamiento utilizado en la solicitud de autorización, o fue emitido a otro cliente.
+        unsupported_grant_type: El tipo de autorización no es compatible con el servidor de autorizaciones.
+        invalid_resource_owner: Las credenciales proporcionadas no son válidas, o el propietario del recurso no puede ser encontrado.
+        invalid_token:
+          revoked: El token de acceso fue anulado
+          expired: El token de acceso a expirado
+          unknown: El token de acceso no existe
+    flash:
+      applications:
+        create:
+          notice: Aplicación creada
+        destroy:
+          notice: Aplicación eliminada
+        update:
+          notice: Aplicacion actualizada.
+      authorized_applications:
+        destroy:
+          notice: Aplicación eliminada
+  easy_table:
+    satoshi:
+      amount: Monto
+      txid: ID de transacción
+      created_at: Creado en
+      confirmations: Confirmaciones
+      member_name: Usuario
+      state_and_actions: Estado / Acciones
+      currency_obj_key_text: Criptomoneda
+    realpointcoin:
+      amount: Monto
+      txid: ID de transacción
+      created_at: Creado en
+      confirmations: Confirmaciones
+      member_name: Usuario
+      state_and_actions: Estado / Acciones
+      currency_obj_key_text: Criptomoneda
+    litecoin:
+      amount: Monto
+      txid: ID de transacción
+      created_at: Creado en
+      confirmations: Confirmaciones
+      member_name: Usuario
+      state_and_actions: Estado / Acciones
+      currency_obj_key_text: Criptomoneda
+    blackcoin:
+      amount: Monto
+      txid: ID de transacción
+      created_at: Creado en
+      confirmations: Confirmaciones
+      member_name: Miembro
+      state_and_actions: Estado / Acciones
+      currency_obj_key_text: Criptomonedas
+    peercoin:
+      amount: Monto
+      txid: ID de transacción
+      created_at: Creado en
+      confirmations: Confirmaciones
+      member_name: Usuario
+      state_and_actions: Estado / Acciones
+      currency_obj_key_text: Criptomoneda
+    tritiumcoin:
+      amount: Monto
+      txid: ID de transacción
+      created_at: Creado en
+      confirmations: Confirmaciones
+      member_name: Usuario
+      state_and_actions: Estado / Acciones
+      currency_obj_key_text: Criptomoneda
+    bank:
+      sn: SN
+      amount: Cantidad
+      created_at: en
+      fund_source: Fuente de fondos
+      memo: Memo
+      member_name: Miembro
+      state_and_actions: Estado / Acciones
+      currency_obj_key_text: Criptomonedas
+  enumerize:
+    account_version:
+      reason:
+        fix: ARREGLO
+        unknown: DESCONOCIDO
+        strike_add: TRADE PLUS
+        strike_sub: TRADE SUB
+        strike_fee: TRADE COMISION
+        strike_unlock: TRADE DESBLOQUEAR
+        order_cancel: ORDEN  CANCELADA
+        order_submit: ORDER ENVIADA
+        deposit: DEPOSITO
+        withdraw: RETIRO
+        withdraw_lock: RETIRO BLOQUEADO
+        withdraw_unlock: RETIRO DESBLOQUEADO
+    state:
+      done: Completado
+      wait: Espere
+      cancel: Cancelado
+    currency:
+      usd: USD
+      eur: EUR
+      cny: CNY
+      eur: EUR
+      btc: BTC
+      ltc: LTC
+      ppc: PPC
+      blk: BLK
+      rpt: RPT
+      trt: TRT
+    order:
+      state:
+        done: Completado
+        wait: Espere
+        cancel: Cancelado
+    deposit:
+      aasm_state:
+        submitted: Enviado
+        submitting: Enviando
+        accepted: Aceptado
+        cancelled: Cancelado
+        rejected: Rechazado
+        checked: Revisado
+        warning: Advertencia
+    withdraw:
+      state:
+        submitting: Enviando
+        submitted: Enviado 
+        rejected: Rechazado
+        accepted: Aceptado
+        suspect: Sospechoso
+        Procesando: Procesando
+        done: Completado
+        canceled: Cancelado
+    fund_source:
+      category:
+        satoshi: Bitcoin
+        realpointcoin: RealPointCoin
+        litecoin: Litecoin
+        blackcoin: Blackcoin
+        peercoin: PeerCoin
+        tritiumcoin: Tritiumcoin
+        bank: Banco
+    id_document:
+      id_document_type:
+        id_card: Documento de identidad
+        passport: Pasaporte
+        driver_license: Licencia de Manejo
+      id_bill_type:
+        bank_statement: Estado de Cuenta Bancaria
+        tax_bill: Recibo de servicios (agua, luz o telefono)
+  views:
+    pagination:
+      first: "&laquo; First"
+      last: Last &raquo;
+      previous: "&lsaquo; Prev"
+      next: Next &rsaquo;
+      truncate: "..."
+
+  mailer:
+    dear_user: Querido usuario,
+    signature: Gracias,<br/>El equipo de LatinBit
+    please_contact: Si no es usted, por favor comuniquese con nosotros lo mas pronto posible <a href='mailto:%{contact_mail}'>contact us</a>.
+    footer: Este es un correo electrónico generado automáticamente, no responda. Si tiene alguna pregunta, <a href="mailto:%{contact_mail}">envíenos un mensaje</a>
+  comment_mailer:
+    admin_notification:
+      subject: "[LatinBit] Respuesta del usuario a ticket"
+      notification_content: Usuario %{email}, por favor revise el ticket, siga el enlace a continuación para ver los detalles
+    user_notification:
+      subject: "[LatinBit] Su ticket recibio una respuesta"
+      notification_content: 'Su boleto recibió una nueva respuesta, por favor siga el enlace a continuación para ver los detalles: '
+  deposit_mailer:
+    accepted:
+      subject: "[LatinBit] Su depósito ha sido acreditado en su cuenta"
+      content: Su %{currency} ha sido acreditado en su cuenta
+  member_mailer:
+    notify_signin:
+      subject: "[LatinBit] Usted acaba de iniciar sesión"
+      just_signed_in: Acaba de iniciar sesión
+    google_auth_activated:
+      subject: "[LatinBit] Google authenticator activado"
+      google_auth_activated: Has activado Google authenticator con éxito
+    google_auth_deactivated:
+      subject: "[LatinBit] Google authenticator desactivado"
+      google_auth_deactivated: Has desactivado el autenticador de google con éxito
+    sms_auth_activated:
+      subject: "[LatinBit] SMS authenticator activado"
+      sms_auth_activated: Has activado SMS authenticator con éxito.
+    sms_auth_deactivated:
+      subject: "[LatinBit] SMS authenticator deactivado"
+      sms_auth_deactivated: Has desactivadoSMS authenticator con éxito
+    reset_password_done:
+      subject: "[LatinBit] Tu contraseña ha cambiado"
+      successful: Tu contraseña ha sido cambiada exitosamente.
+    phone_number_verified:
+      subject: "[LatinBit] Su número de teléfono será verificado"
+      verified: 'Tu número de celular a sido verificado: %{phone_number}'
+  system_mailer:
+    daily_stats:
+      member_stats: Estadisticas de los miembros
+      signup: Registrate
+      activation: Activación
+      asset_stats: Cambio de valor
+      trade_stats: Cambio de intercambios
+      asset_value_change_total: Total de cambios en los activos digitales
+      trades_change_total: total de cambios en los intercambios
+  ticket_mailer:
+    admin_notification:
+      subject: "[LatinBit] El usuario creo un nuevo ticket"
+      admin_notification_content: Usuario %{email} creo un nuevo ticket,por favor, siga el enlace de abajo para ver el detalle
+    author_notification:
+      subject: "[LatinBit] Gracias por enviar el ticket"
+      thanks_for_submit_ticket: Gracias por enviarnos el ticket, nos pondremos en contacto con usted lo antes posible.
+  token_mailer:
+    activation:
+      subject: "[LatinBit] Activación de la cuenta"
+      click_to_verify: 'Gracias por registrarse en LatinBit, por favor, siga este enlace para verificar su correo electrónico:'
+      unable_to_click: Copie y abra el enlace en su navegador si no puede hacer clic.
+      link_expire: El enlace vence en 30 minutos.
+    reset_password:
+      subject: "[LatinBit] Por favor, cambie su contraseña"
+      hi: Hola,
+      follow_the_link: 'Siga este enlace para restablecer su contraseña en 30 minutos:'
+  withdraw_mailer:
+    submitted:
+      subject: "[LatinBit] Actualización de estado de retiros"
+      content: La solicitud de su %{currency} retiro se ha enviado correctamente, lo procesaremos lo antes posible. Por favor se paciente con nosotros. Póngase en contacto con nosotros si tiene alguna pregunta.
+    Procesando:
+      subject: "[LatinBit] Actualización de estado de retiros"
+      content: La solicitud de retiro de su %{currency} está en proceso. Por favor se paciente con nosotros. Póngase en contacto con nosotros si tiene alguna pregunta.
+    done:
+      subject: "[LatinBit] Actualización de estado de retiros."
+      content: La solicitud de retiro de su %{currency} está completa. Por favor, míralo. Póngase en contacto con nosotros si tiene alguna pregunta.
+    withdraw_state:
+      subject: "[LatinBit] Actualización de estado de retiros"
+      your_state: 'Su estado de retiro: '
+
+  'true': Verdadero
+  'false': Falso
+  view_on_github: Ver en LatinBit
+  slogan: Intercambios de criptomonedas latino.
+  tags:
+    vip: VIP
+    hero: Miembro Heroe
+    admin: Administrador
+  trade:
+    markets: Mercados
+    realtime_price:
+      title: Precio en tiempo real
+    account_balance:
+      title: Balance
+  gon:
+    ask: Mi Venta
+    bid: Mi Compra
+    brand: LatinBit Exchange
+    notification:
+      title: LatinBit Exchange
+      enabled: Notificación habilitada
+      new_trade: "%{kind} orden#%{id} se ejecuto al %{price} %{quote_unit} por %{volume} %{base_unit}。"
+  back: Regresar
+  invalid_password: Contraseña inválida
+  all: Todo
+  date:
+    formats:
+      date-short: "%m-%d"
+      short: "%m-%d %H:%M"
+      default: "%m/%d/%Y %H:%M"
+  time:
+    formats:
+      date-short: "%m-%d"
+      short: "%m-%d %H:%M"
+      default: "%m/%d/%Y %H:%M"
+  sms:
+    verification_code: 'Tu código de verificación de número telefonico es: %{code}.'
+    password_changed: Hola %{email}, tu contraseña ha sido cambiada exitosamente
+    deposit_done: Hola %{email},la solicitud de su depósito está completa.
+    withdraw_done: Hola %{email}, la solicitud de su retiro está completa.
+  header:
+    home: Inicio
+    dashboard: Tablero
+    admin: Panel de administrador
+    market: Trading
+    settings: Perfil
+    signin: Iniciar sesión
+    signout: Salir
+    signup: Registrarse
+    login_via_weibo: Cargando via LatinBit
+    funds: Fondos
+    getstart: Vamos a comenzar
+    assets: Solvencia
+    history: Historial
+    order_history: Historial de  ordenes
+    trade_history: Historial de mercado
+    account_history: Historial de su cuenta
+    my_profile: Mi perfil
+    tickets: Tickets
+    account_balance: Total de activos
+    back: Regresar
+    total: Total
+    deposit: Depositos
+    withdraw: Retiros
+  admin_header:
+    deposits: Depositos
+    withdraws: Retiros
+    statistics: Datos estadísticos
+    id_documents: Verificar cuenta
+  footer:
+    about: Acerca de nosotros
+    privacy: Privacidad
+    contact: Contactanos
+    price: Precio
+    liability_proof: Prueba de responsabilidad
+  actions:
+    go: Ir
+    submit: Enviar
+    deposit: Deposito
+    select: Porfavor selecciona
+    unlock: Desbloquear
+    confirm: Confirmar
+    back: Regresar
+    block: Ver en el Bloque
+    destroy: Eliminar
+    destroy_confirm: ¿Está seguro que desea eliminar esto?
+    detail: Detalle
+    publish: Publicar
+    edit: Editar
+    preview: Presentación preliminar
+    close: Cerrar
+    cancel: Cancelar
+    view: Vista
+    member: Miembro
+    transact: Gestionar
+    reject: Rechazar
+    clipboard:
+      click: Click para copiar
+      done: Copiado
+  chart:
+    open: Abierto
+    high: Maximo
+    low: Mínimo
+    close: Cerrado
+    price: Precio
+    volume: Volumen
+    candlestick: 'Grafico de velas'
+    line: 'Promedio'
+    minute: m
+    hour: Hora
+    day: Día
+    week: Semana
+    month: Mes
+    year: Año
+    zoom: Zoom
+    ask: Compra
+    bid: Venta
+    depth: Profundidad
+    depth_title: Profundidad del mercado
+  'yes': 'Si'
+  'no': 'No'
+  simple_captcha:
+    label: Actualizar la página para obtener un nuevo captcha.
+    placeholder: tipear los caracteres de la imagen
+  helpers:
+    action:
+      view: Vista
+      customer_service: contactanos
+    submit:
+      order_ask:
+        create: Compra
+      order_bid:
+        create: Venta
+      document:
+        create: Crear Documento
+        update: Actualizar Documento
+        destroy: Deshacer documento
+      member:
+        update: Abrir la cuenta
+      identity:
+        save: iniciar sesión
+        create: Registrarse
+        destroy: Salir
+        verify: Verificar
+        update: Cambiar
+      two_factor:
+        create: Verificar
+        update: Activar
+      reset_two_factor:
+        create: Reiniciar doble factor de autentificación
+      reset_password:
+        update: Restablecer contraseña de inicio de sesión 
+        create: Restablecer contraseña de inicio de sesión 
+      fund_source:
+        create: Guardar
+      deposit:
+        create: Deposito
+      id_document:
+        create: Enviar
+      withdraw:
+        create: Enviar
+      ticket:
+        create: Enviar
+  activations:
+    new:
+      notice: Hemos enviado un mensaje a tu correo electrónico para restablecer su contraseña. Si no ves el correo electrónico en tu bandeja de entrada, revisa otros lugares donde podria estar, como tu carpeta de correo no deseado o envie la solicitud nuevamente.
+      verified: Su dirección de correo electrónico ha sido verificada con éxito.
+      login_required: Es necesario iniciar sesión!
+      tip: El enlace de activación fue enviado a %{email}
+      spam: Por favor revise su carpeta de spam para ver el enlace de activación.
+    edit:
+      notice: Cuenta activada exitosamente! Por favor, inicia sesión a continuación.
+      alert: El enlace de activación ha expirado o no es válido.
+  authentications:
+    emails:
+      new:
+        title: Configurar el correo electronico
+        setup_email: Por favor, configure su dirección de correo electrónico.
+        warning: Por favor revise su bandeja de entrada después de guardar la dirección de correo electrónico.
+        email_address: dirección de correo electrónico
+        save: Guardar
+    weibo:
+      destroy:
+        last_auth_alert: No se pudo eliminar la última autenticación
+        unbind_success: Desconectarse de LatinBit
+      new:
+        title: Configurar la contraseña
+        save: Guardar
+      create:
+        success: Configuración de contraseña exitosa
+  forum:
+    index:
+      notice:
+        display_name: Por favor, configure su nombre para mostrar en el foro.
+  identities:
+    new:
+      title: Registrese
+      signin: Iniciar sesión
+      password: Por favor, introduzca una contraseña de al menos 6 caracteres y es mejor contener letras mayúsculas y minúsculas y números.
+    update:
+      auth-error: La contraseña que ingresó es incorrecta, vuelva a ingresar.
+      auth-same: La nueva contraseña que ingresó es la misma que la contraseña anterior, por favor volver a ingresar.
+      notice: La contraseña de la cuenta se actualizó correctamente.
+  layouts:
+    admin:
+      menus:
+        sections:
+          members: Miembros
+          deposits: Depósitos
+          sites_statistics: Análisis
+          operating: Operaciones
+        items:
+          operating:
+            proofs: Comprobación
+            deposits: Depósitos
+            documents: Documentos
+            withdraws: Retiros
+            tickets: Tickets
+          deposits:
+            currency: Dépositos
+    application:
+      close: Cerrar
+    meta:
+      page_title: LatinBit - Intercambio de criptomonedas
+      page_description: LatinBit - Intercambio de criptomonedas
+      page_keywords: LatinBit,Bitcoin,Exchange,Criptomonedas
+  members:
+    edit:
+      name: Por favor llene la aplicación.
+  reset_passwords:
+    create:
+      success: Un correo electrónico ha sido enviado a su buzón de correo para restablecer su contraseña. Si no recibe un correo electrónico, primero vaya a "correo no deseado" o envíe la solicitud nuevamente.
+    edit:
+      password: Ingrese una contraseña de al menos 6 caracteres y es mejor incluir letras y números en mayúsculas y minúsculas.
+      invalid: Solicitud no válida
+      submit: Restablecer contraseña de acceso.
+      alert: Enlace de restablecimiento de contraseña inválido.
+    update:
+      success: La contraseña de inicio de sesión se ha restablecido, recuerde su nueva contraseña.
+      invalid: Solicitud no válida
+  sessions:
+    new:
+      reset_password: ¿olvido su contraseña?
+    new_with_two_factor_auth:
+      title: Verificación de 2 pasos
+      reset_two_factor: Perdió el dispositivo de verificación de 2 pasos
+    create_with_two_factor_auth:
+      session_expired: Sesión expirada. Inténtalo de nuevo.
+    create:
+      error: Su cuenta ha sido deshabilitada, póngase en contacto con el administrador si tiene algún problema.
+      put_capture: Intenta ingresar captcha de nuevo
+    failure:
+      account_locked: Demasiados intentos fallidos de inicio de sesión. Para garantizar la seguridad de su cuenta, hemos bloqueado su cuenta. Para desbloquear, restablezca su contraseña haciendo clic en "Olvidé mi contraseña".
+      error: Usuario o contraseña incorrectos, intente de nuevo.
+  shared:
+    admin:
+      member:
+        member_info: Usuario Info
+        deactive_sms_two_factor: SMS TFA
+        deactive_app_two_factor: Google TFA
+        inactive: Inactivo
+        deactive: Desactivar
+        are_you_sure: ¿Estás seguro de desactivar la autenticación de dos factores?
+      account:
+        account_info: Información de la cuenta
+        payment_address: Dirección de dépositos
+    alert:
+      modern: Para no afectar la experiencia de trading, utilice la herramienta más popular de navegación, le recomendamos que use <a target='_blank' href='https://www.google.com/#q=google+chrome'> Google Chrome </a>
+      pusher_unavailable: La conexión de red no está disponible temporalmente ... <a href='#' class='alert-link'>Porfavor refresque</a>.
+    header:
+      balance: Balance
+    header_account_balance:
+      locked: Bloqueado
+    market:
+      ticker:
+        ask_price: Compra
+        bid_price: Venta
+        high_price: Maximo
+        low_price: Mínimo
+        volume: Volumen
+        latest_price: Final
+    frame:
+      deposit_now: Depositar ahora
+  two_factors:
+    index:
+      verify: Verificar
+    update:
+      alert: Error de código de verificación de dos factores, vuelva a ingresar.
+    auth:
+      please_active_two_factor: Primero configure el número de móvil o el autenticador de Google.
+      submit: Enviar
+      otp_placeholder: Contraseña de 6-dígitos
+      google_app: Google Authenticator
+      sms: SMS Mensaje de verificación
+      send_code: Enviar código
+      send_code_alt: Reenviar en COUNT segundos
+      hints:
+        app: Google Authenticator generará una nueva contraseña cada 30 segundos, por favor ingrese a tiempo.
+        sms: Le enviaremos un mensaje de texto a su teléfono con el código de verificación.
+  verify:
+    google_auths:
+      edit:
+        submit: Inhabilitar
+        warning: 'Tip: Si ha perdido su Autenticación de dos factores por alguna razón y no puede iniciar sesión en su cuenta de LatinBit, póngase en contacto con nuestra línea al servicio del cliente.'
+      show:
+        step-1: Paso 1
+        step-2: Paso 2
+        step-3: Paso 3
+        or: O
+        download-app: Instale la aplicación Google Authenticator en su teléfono inteligente y ábralo.
+        guide-link: "<a href='https://support.google.com/accounts/answer/1066447' target='_blank'> (Instrucciones de instalacion)</a>"
+        scan-qr-code: Escanee el siguiente código QR con la aplicación Google Authenticator, o agregue el texto de cifrado al validador de forma manual.
+        enter-passcode: Complete la contraseña dinámica que muestra su celular (Google Authenticator) para activar la autenticación de dos factores.
+        submit: Habilitar
+        ios: Iphone iOS
+        android: Android
+        blackbery: Blackberry
+        notice:
+          already_activated: El Google Authenticator ya se ha establecido
+          not_activated_yet: El Google Authenticator no ha sido establecido todavía
+      update:
+        alert: La contraseña para la autenticación es incorrecta, vuelva a ingresar.
+        notice: Doble factor de autentificación ha sido habilitado exitosamente.
+        sms_two_factor_error: El código SMS de verificación es incorrecto, por favor reintentar.
+      destroy:
+        alert: La contraseña para la autenticación es incorrecta, vuelva a ingresar.
+        notice: Doble factor de autentificación ha sido desactivado exitosamente
+    sms_auths:
+      show:
+        title: Verificar número de teléfono
+        description: Proporcionar un número de celular, hará que su cuenta sea más segura. Puede restablecer rápidamente su contraseña y las operaciones de su cuenta serán notificadas al número brindado. (Opcional)
+        warning: No podrá recuperar la contraseña de su cuenta si no está configurado el número de celular o el doble factor de autentificación.
+        phone_number: número de teléfono.
+        send_code: Enviar código
+        send_code_alt: Reenviar en COUNT segundos
+        input_otp: Ingrese el código de 6 dígitos que le enviamos
+        submit: Guardar
+        notice:
+          send_code_success: El código de verificación fue enviado con éxito
+          otp_success: Verificar el éxito del código.
+          already_activated: Su número de teléfono ha sido activado.
+        alert:
+          phone_number_error: Error de número de teléfono
+  withdraw_channel:
+    bank:
+      key: Transferencia bancaria
+      title: Transferencia bancaria
+      intro: Depósitos de transferencia bancaria, Recomendado para grandes recargas
+      latency: 30 minutos
+      transfer: Manual
+      go: Retiros
+    satoshi:
+      key: Blockchain
+      title: Bitcoin Blockchain
+      intro: Retira Bitcoin a tu propia wallet de Bitcoin
+      latency: 30 minutos
+      transfer: Manual
+      go: Retirar
+    litecoin:
+      key: Litecoin_Chain
+      title: Litecoin Blockchain
+      intro: Retirar Litecoin a tu propia wallet Litecoin
+      latency: 30 minutes
+      transfer: Manual
+      go: Retirar
+    peercoin:
+      key: Peercoin_Chain
+      title: Peercoin Blockchain
+      intro: Retirar Peercoin a tu propia wallet Peercoin
+      latency: 30 minutes
+      transfer: Manual
+      go: Retirar
+    blackcoin:
+      key: Blackcoin_Chain
+      title: Blackcoin Blockchain
+      intro: Retirar Blackcoin a tu propia wallet Blackcoin
+      latency: 30 minutes
+      transfer: Manual
+      go: Retiros
+    realpointcoin:
+      key: Realpointcoin_Chain
+      title: Realpointcoin Blockchain
+      intro: Retirar Realpointcoin a tu propia wallet Realpointcoin
+      latency: 30 minutes
+      transfer: Manual
+      go: Retirar
+    tritiumcoin:
+      key: Tritiumcoin_Chain
+      title: Tritium Blockchain
+      intro: Retirar Tritium a tu propia wallet Tritium
+      latency: 30 minutes
+      transfer: Manual
+      go: Retirar
+  withdraws:
+    invalid_address: No es válida. No puede retirarse a esta dirección.
+  withdraws/bank:
+    aasm_state:
+      submitting: Enviando
+      submitted: Enviado
+      rejected: Rechazado
+      accepted: Aceptado
+      suspect: Sospechoso
+      Procesando: Procesando
+      done: Completado
+      almost_done: Casi termina
+      canceled: Cancelado
+      failed: Ha fallado
+  withdraws/satoshi:
+    aasm_state:
+      submitting: Enviando
+      submitted: Enviado
+      rejected: Rechazado
+      accepted: Aceptado
+      suspect: Sospechoso
+      Procesando: Procesando
+      done: Completado
+      almost_done: Casi termina
+      canceled: Cancelado
+      failed: Ha fallado
+  withdraws/realpointcoin:
+    aasm_state:
+      submitting: Enviando
+      submitted: Enviado
+      rejected: Rechazado
+      accepted: Aceptado
+      suspect: Sospechoso
+      Procesando: Procesando
+      done: Completado
+      almost_done: Casi termina
+      canceled: Cancelado
+      failed: Ha fallado
+  withdraws/litecoin:
+    aasm_state:
+      submitting: Enviando
+      submitted: Enviado
+      rejected: Rechazado
+      accepted: Aceptado
+      suspect: Sospechoso
+      Procesando: Procesando
+      done: Completado
+      almost_done: Casi termina
+      canceled: Cancelado
+      failed: Ha fallado
+  withdraws/blackcoin:
+    aasm_state:
+      submitting: Enviando
+      submitted: Enviado
+      rejected: Rechazado
+      accepted: Aceptado
+      suspect: Sospechoso
+      Procesando: Procesando
+      done: Completado
+      almost_done: Casi termina
+      canceled: Cancelado
+      failed: Ha fallado
+  withdraws/peercoin:
+    aasm_state:
+      submitting: Enviando
+      submitted: Enviado
+      rejected: Rechazado
+      accepted: Aceptado
+      suspect: Sospechoso
+      Procesando: Procesando
+      done: Completado
+      almost_done: Casi termina
+      canceled: Cancelado
+      failed: Ha fallado
+  withdraws/tritiumcoin:
+    aasm_state:
+      submitting: Enviando
+      submitted: Enviado
+      rejected: Rechazado
+      accepted: Aceptado
+      suspect: Sospechoso
+      Procesando: Procesando
+      done: Completado
+      almost_done: Casi termina
+      canceled: Cancelado
+      failed: Ha fallado
+  mainpage:
+    message1: TU PÁGINA PROFESIONAL DE INTERCAMBIO DE CRIPTOMONEDAS
+    message2: La nueva generación de Exchange en vivo de Múltiples Criptomonedas 24/7
+    message3: LatinBit  ofrece una plataforma fácil, segura e inteligente para el intercambio de múltiples criptomonedas haciendo uso de herramientas  gráficas  simples y avanzadas, para un buen análisis en sus transacciones.
+    message3с: Comenzar
+    message4a: Exchange de criptomonedas
+    message4b: Proporcionamos una experiencia de clase mundial para comprar y vender múltiples criptomonedas.
+    message5a: Experiencia amigable
+    message5b: Deposite sus fondos de una forma rápida para que pueda comprar y vender criptomonedas de manera instantánea.
+    message6a: Tan fácil como sea posible.
+    message6b: Elija las criptomonedas que le gustaría intercambiar, sólo seleccione comprar o vender, ¡eso es todo!
+    message7a: La mejor plataforma de traiding.
+    message7b: Para los Traders que exigen operaciones de forma rápida; billeteras seguras,estables y prácticas.
+    message8a: Atención al Cliente 24/7
+    message8b: Si tu eres nuevo o eres un experto en trading y criptomonedas,proporcionamos soporte amigable a todos los miembros de nuestra comunidad!
+    message9a: La nueva generación de Exchange en vivo de Múltiples Criptomonedas 24/7
+    message9b: La nueva generación de Exchange en vivo de Múltiples Criptomonedas 24/7
+    message10a: Seguro y confiable
+    message10b: Adquiere billeteras seguras con autenticación bidireccional para mantener a los ladrones alejados de su cuenta.
+    message11a: Comisiones bajas y competitivas.
+    message11b: Tarifas más bajas y opciones especiales para traders de gran volumen.
+
+    message12: ¡Abre una cuenta gratis y comienza a hacer traiding ahora!
+    message13: Beneficios Exclusivos
+    message14: Tu experiencia importa
+    message15: Nuestros sistemas se actualizan y prueban constantemente para garantizar que estamos superando los mejores estándares de la industria
+    message16: Máxima seguridad
+    message17: Para proteger a los usuarios, integramos la autenticación de dos factores para todas las transacciones mediante el autenticador de Google.
+    message18: Operaciones confidenciales
+    message19: Se requiere verificación para cada operación, por lo que puede sentirse tranquilo sobre la seguridad de sus intercambios e información personal.

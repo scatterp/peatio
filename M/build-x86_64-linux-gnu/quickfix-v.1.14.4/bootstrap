@@ -1,0 +1,15 @@
+#!/bin/sh
+
+rm -rf *.cache config
+mkdir config
+touch README NEWS AUTHORS INSTALL ChangeLog
+
+set -ex
+case `uname` in Darwin*) glibtoolize --copy ;;
+  *) libtoolize --copy ;; esac
+
+autoreconf -i -Wall,no-obsolete
+rm -rf autom4te.cache config.h.in~
+set +ex
+
+echo "Now run configure with any arguments necessary"
