@@ -263,15 +263,11 @@ header {
     &.tabs-left {
       left: 3px;
       li { float: right; } // turn tabs
-      @include transform(rotate(-90deg));
-      @include transform-origin(left bottom);
     }
 
     &.tabs-right {
       right: 3px;
       li { float: left; } // turn tabs
-      @include transform(rotate(90deg));
-      @include transform-origin(right bottom);
     }
   }
 
@@ -686,7 +682,6 @@ header {
   .sideways li {
     direction: rtl;
     unicode-bidi: bidi-override;
-    v { display: inline-block; @include transform(rotate(-270deg)); }
   }
 
   #account_summary {
