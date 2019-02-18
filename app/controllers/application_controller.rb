@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
+  protect_from_forgery with: :null_session
 
   helper_method :current_user, :is_admin?, :current_market, :gon
   before_action :set_timezone, :set_gon
