@@ -1,5 +1,0 @@
-language: ruby
-rvm:
-  - 2.2.1
-notifications:
-  slack: peatio:F2FWrCANEK3QcjHC16OO541l
