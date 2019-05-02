@@ -48,7 +48,7 @@ gem 'coffee-rails', '>= 4.2.2'
 gem 'uglifier', '>= 2.7.2'
 gem "jquery-rails", ">= 3.1.4"
 gem "angularjs-rails"
-gem 'bootstrap-sass', '~> 3.2.0.2'
+gem 'bootstrap-sass', '~> 3.4.0.0'
 gem 'bootstrap-wysihtml5-rails', '>= 0.3.1.24'
 gem 'font-awesome-sass'
 gem 'bourbon'
