@@ -46,9 +46,9 @@ gem 'slim-rails', '>= 3.1.3'
 gem 'sass-rails', '>= 5.0.6'
 gem 'coffee-rails', '>= 4.2.2'
 gem 'uglifier', '>= 2.7.2'
-gem "jquery-rails", ">= 3.1.4"
+gem "jquery-rails", ">= 4.3.4"
 gem "angularjs-rails"
-gem 'bootstrap-sass', '~> 3.2.0.2'
+gem 'bootstrap-sass', '~> 3.4.0.0'
 gem 'bootstrap-wysihtml5-rails', '>= 0.3.1.24'
 gem 'font-awesome-sass'
 gem 'bourbon'
@@ -80,7 +80,7 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'quiet_assets', '>= 1.1.0'
-  gem 'mails_viewer', '>= 0.1.2'
+  gem 'mails_viewer', '>= 0.2.0'
   gem 'timecop'
   gem 'dotenv-rails'
   gem 'rspec-rails', '>= 3.7.1'
