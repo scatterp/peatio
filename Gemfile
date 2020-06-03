@@ -94,7 +94,7 @@ group :test do
   gem 'capybara', '>= 2.15.4'
   gem 'launchy'
   gem 'selenium-webdriver', '>= 2.39.0'
-  gem 'poltergeist', '>= 1.16.0'
+  gem 'poltergeist', '>= 1.18.1'
 
   # rspec-rails rely on test-unit if rails version less then 4.1.0
   # but test-unit has been removed from ruby core since 2.2.0
