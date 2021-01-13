@@ -13,9 +13,9 @@ gem 'jbuilder'
 gem 'bcrypt-ruby', '~> 3.1.2'
 
 gem 'doorkeeper', '~> 1.4.2'
-gem 'omniauth', '~> 1.2.2'
-gem 'omniauth-identity', '~> 1.1.1'
-gem 'omniauth-weibo-oauth2', '~> 0.4.0'
+gem 'omniauth', '~> 2.0.0'
+gem 'omniauth-identity', '~> 2.0.0'
+gem 'omniauth-weibo-oauth2', '~> 0.4.4'
 
 gem 'figaro', '>= 0.7.0'
 gem 'hashie'
