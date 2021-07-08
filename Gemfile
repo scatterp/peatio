@@ -7,7 +7,7 @@ gem 'mysql2'
 gem 'daemons-rails'
 gem 'redis-rails', '>= 5.0.2'
 gem 'responders', '~> 2.0'
-gem 'rotp'
+gem 'rotp', '>= 4.1.0'
 gem 'json'
 gem 'jbuilder'
 gem 'bcrypt-ruby', '~> 3.1.2'
@@ -91,10 +91,10 @@ group :test do
   gem 'database_cleaner'
   gem 'mocha', :require => false
   gem 'shoulda-matchers'
-  gem 'capybara', '>= 2.15.4'
-  gem 'launchy'
+  gem 'capybara', '>= 3.14.0'
+  gem 'launchy', '>= 2.4.3'
   gem 'selenium-webdriver', '>= 2.39.0'
-  gem 'poltergeist', '>= 1.16.0'
+  gem 'poltergeist', '>= 1.18.1'
 
   # rspec-rails rely on test-unit if rails version less then 4.1.0
   # but test-unit has been removed from ruby core since 2.2.0
